@@ -1,0 +1,26 @@
+test_edge_rows_cover_nulls_multiplicity_and_tied_revenue (test_corpus.CorpusTests.test_edge_rows_cover_nulls_multiplicity_and_tied_revenue) ... FAIL
+test_real_database_constraints_and_no_overwrite (test_corpus.CorpusTests.test_real_database_constraints_and_no_overwrite) ... ok
+test_worlds_include_anchor_edge_empty_and_reproduce (test_corpus.CorpusTests.test_worlds_include_anchor_edge_empty_and_reproduce) ... FAIL
+
+======================================================================
+FAIL: test_edge_rows_cover_nulls_multiplicity_and_tied_revenue (test_corpus.CorpusTests.test_edge_rows_cover_nulls_multiplicity_and_tied_revenue)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_corpus.py", line 38, in test_edge_rows_cover_nulls_multiplicity_and_tied_revenue
+    self.assertIn("commerce-edge", worlds)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'commerce-edge' not found in {}
+
+======================================================================
+FAIL: test_worlds_include_anchor_edge_empty_and_reproduce (test_corpus.CorpusTests.test_worlds_include_anchor_edge_empty_and_reproduce)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_corpus.py", line 15, in test_worlds_include_anchor_edge_empty_and_reproduce
+    self.assertEqual(18, len(worlds))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 18 != 0
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.002s
+
+FAILED (failures=2)

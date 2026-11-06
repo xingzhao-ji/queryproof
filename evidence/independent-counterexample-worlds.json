@@ -1,0 +1,734 @@
+{
+  "version": 1,
+  "worlds": [
+    {
+      "id": "reviewer-commerce-101-lines",
+      "schema": "commerce",
+      "tables": {
+        "customers": [
+          {
+            "id": 1,
+            "region": null
+          }
+        ],
+        "orders": [
+          {
+            "id": 1,
+            "customer_id": 1,
+            "status": "paid",
+            "ordered_on": "2025-01-01"
+          }
+        ],
+        "lines": [
+          {
+            "id": 1,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 2,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 3,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 4,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 5,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 6,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 7,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 8,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 9,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 10,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 11,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 12,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 13,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 14,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 15,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 16,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 17,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 18,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 19,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 20,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 21,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 22,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 23,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 24,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 25,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 26,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 27,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 28,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 29,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 30,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 31,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 32,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 33,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 34,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 35,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 36,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 37,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 38,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 39,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 40,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 41,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 42,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 43,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 44,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 45,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 46,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 47,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 48,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 49,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 50,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 51,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 52,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 53,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 54,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 55,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 56,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 57,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 58,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 59,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 60,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 61,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 62,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 63,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 64,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 65,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 66,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 67,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 68,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 69,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 70,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 71,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 72,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 73,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 74,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 75,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 76,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 77,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 78,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 79,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 80,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 81,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 82,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 83,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 84,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 85,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 86,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 87,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 88,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 89,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 90,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 91,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 92,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 93,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 94,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 95,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 96,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 97,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 98,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 99,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 100,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          },
+          {
+            "id": 101,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 1
+          }
+        ]
+      }
+    }
+  ]
+}

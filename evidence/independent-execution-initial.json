@@ -1,0 +1,125 @@
+{
+  "method": "Independent real-worker probes, synthetic disposable database, no gold inspected",
+  "results": [
+    {
+      "name": "comment_write",
+      "status": "policy",
+      "rows": [],
+      "error": "not authorized",
+      "elapsed_seconds": 0.06796670900075696,
+      "reaped": true
+    },
+    {
+      "name": "vacuum_write",
+      "status": "policy",
+      "rows": [],
+      "error": "authorization denied",
+      "elapsed_seconds": 0.07589787500910461,
+      "reaped": true
+    },
+    {
+      "name": "pragma_function",
+      "status": "policy",
+      "rows": [],
+      "error": "access to pragma_database_list.seq is prohibited",
+      "elapsed_seconds": 0.07490891698398627,
+      "reaped": true
+    },
+    {
+      "name": "extension",
+      "status": "policy",
+      "rows": [],
+      "error": "not authorized to use function: load_extension",
+      "elapsed_seconds": 0.07285458300611936,
+      "reaped": true
+    },
+    {
+      "name": "schema_alias",
+      "status": "policy",
+      "rows": [],
+      "error": "access to sqlite_master.name is prohibited",
+      "elapsed_seconds": 0.07457724999403581,
+      "reaped": true
+    },
+    {
+      "name": "unbounded_recursive",
+      "status": "limit",
+      "rows": [],
+      "error": "interrupted",
+      "elapsed_seconds": 0.06875412497902289,
+      "reaped": true
+    },
+    {
+      "name": "nonfinite",
+      "status": "error",
+      "rows": [],
+      "error": "non-finite result",
+      "elapsed_seconds": 0.07513208402087912,
+      "reaped": true
+    },
+    {
+      "name": "blob",
+      "status": "policy",
+      "rows": [],
+      "error": "BLOB results unsupported",
+      "elapsed_seconds": 0.069929166988004,
+      "reaped": true
+    },
+    {
+      "name": "integer_overflow",
+      "status": "ok",
+      "rows": [
+        [
+          9.223372036854776e+18
+        ]
+      ],
+      "error": null,
+      "elapsed_seconds": 0.07151683297706768,
+      "reaped": true
+    },
+    {
+      "name": "nul",
+      "status": "policy",
+      "rows": [],
+      "error": "SQL must be nonempty UTF-8 <=16 KiB",
+      "elapsed_seconds": null
+    },
+    {
+      "name": "surrogate",
+      "exception_type": "UnicodeEncodeError",
+      "error": "'utf-8' codec can't encode character '\\ud800' in position 8: surrogates not allowed"
+    },
+    {
+      "name": "oversized_sql",
+      "status": "policy",
+      "rows": [],
+      "error": "SQL must be nonempty UTF-8 <=16 KiB",
+      "elapsed_seconds": null
+    },
+    {
+      "name": "permitted_cte",
+      "status": "ok",
+      "rows": [
+        [
+          1
+        ]
+      ],
+      "error": null,
+      "elapsed_seconds": 0.07451504198252223,
+      "reaped": true
+    },
+    {
+      "name": "empty_two_columns",
+      "status": "ok",
+      "rows": [],
+      "error": null,
+      "elapsed_seconds": 0.07812258298508823,
+      "reaped": true
+    }
+  ],
+  "source_unchanged": true,
+  "source_hashes": {
+    "queryproof/execution.py": "c40df12f6d275d333844a24b8186ed0eaa155f7544324d52b6a62d308b5bddf7",
+    "queryproof/worker.py": "d43350551dcaea3abd75b0304861f13d89d9367bab05dee445b3487f02ea8d5d"
+  }
+}

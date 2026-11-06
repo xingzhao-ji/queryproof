@@ -1,0 +1,19 @@
+{
+  "all_prior_result_bytes_preserved": true,
+  "committed_before_kill": {
+    "C01--C01-gold--commerce-anchor.json": "0a2a72b2ea07139d9286617e0171e9fddba17ed13f9e8d12800bcc0890328360",
+    "C01--C01-gold--commerce-edge.json": "716485ce54f89dc07ee9ab8d99675a833aa6bfce685a1b05f171dc3cdf2863d9"
+  },
+  "frozen_sha256": "585e685d78b28da74ed098ce9988aeaf44aea1c9d00592b38a88d7169ae3dfcb",
+  "method": "actual SIGKILL of running CLI evaluator followed by same-path resume",
+  "partial_complete": false,
+  "partial_completed_worlds": 2,
+  "resumed_complete": true,
+  "resumed_completed_worlds": 18,
+  "resumed_planned_worlds": 18,
+  "returncode": -9,
+  "run_path": "$HOME/.cache/job-apps-runtime/queryproof/crash-drills/owner-v2/run",
+  "run_sha256": "c3770b5c304ae0f17cb02c8f78b1e7670c4731ba7cc99ea5023fd807b9544eb3",
+  "script_sha256": "9b51ca31371a85be20167efd1def8f7aade2a91c443e18a2af2f92529993bad7",
+  "version": 1
+}

@@ -1,0 +1,81 @@
+test_duplicate_json_ids_and_unknown_tasks_rejected_without_publication (test_freeze.FreezeTests.test_duplicate_json_ids_and_unknown_tasks_rejected_without_publication) ... ok
+test_freeze_binds_source_worlds_and_planned_slots (test_freeze.FreezeTests.test_freeze_binds_source_worlds_and_planned_slots) ... ok
+test_import_preserves_all_slots_and_malformed_sql (test_freeze.FreezeTests.test_import_preserves_all_slots_and_malformed_sql) ... ok
+test_modified_slots_limits_policy_or_prompt_cannot_redefine_freeze (test_freeze.FreezeTests.test_modified_slots_limits_policy_or_prompt_cannot_redefine_freeze) ... 
+  test_modified_slots_limits_policy_or_prompt_cannot_redefine_freeze (test_freeze.FreezeTests.test_modified_slots_limits_policy_or_prompt_cannot_redefine_freeze) (mutation='slots') ... FAIL
+  test_modified_slots_limits_policy_or_prompt_cannot_redefine_freeze (test_freeze.FreezeTests.test_modified_slots_limits_policy_or_prompt_cannot_redefine_freeze) (mutation='limits') ... FAIL
+  test_modified_slots_limits_policy_or_prompt_cannot_redefine_freeze (test_freeze.FreezeTests.test_modified_slots_limits_policy_or_prompt_cannot_redefine_freeze) (mutation='policy') ... FAIL
+  test_modified_slots_limits_policy_or_prompt_cannot_redefine_freeze (test_freeze.FreezeTests.test_modified_slots_limits_policy_or_prompt_cannot_redefine_freeze) (mutation='prompt') ... FAIL
+test_non_string_task_id_is_failed_capture_not_typeerror (test_freeze.FreezeTests.test_non_string_task_id_is_failed_capture_not_typeerror) ... ERROR
+test_stale_control_adjudication_cannot_freeze (test_freeze.FreezeTests.test_stale_control_adjudication_cannot_freeze) ... FAIL
+test_whole_malformed_model_capture_is_preserved_with_all_slots (test_freeze.FreezeTests.test_whole_malformed_model_capture_is_preserved_with_all_slots) ... FAIL
+
+======================================================================
+ERROR: test_non_string_task_id_is_failed_capture_not_typeerror (test_freeze.FreezeTests.test_non_string_task_id_is_failed_capture_not_typeerror)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_freeze.py", line 111, in test_non_string_task_id_is_failed_capture_not_typeerror
+    result=imports.import_candidates(root,frozen,raw,Path(folder)/"imported","agent_capture","direct_v1")
+  File "$HOME/Desktop/job-apps/projects/queryproof/queryproof/imports.py", line 37, in import_candidates
+    if not isinstance(item,dict) or set(item)!=allowed or not isinstance(item["id"],str) or not ID.fullmatch(item["id"]) or item["id"] in seen or item["task_id"] not in known:
+                                                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: cannot use 'list' as a set element (unhashable type: 'list')
+
+======================================================================
+FAIL: test_modified_slots_limits_policy_or_prompt_cannot_redefine_freeze (test_freeze.FreezeTests.test_modified_slots_limits_policy_or_prompt_cannot_redefine_freeze) (mutation='slots')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_freeze.py", line 83, in test_modified_slots_limits_policy_or_prompt_cannot_redefine_freeze
+    with self.assertRaises(ValueError):freeze.verify(root,frozen)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_modified_slots_limits_policy_or_prompt_cannot_redefine_freeze (test_freeze.FreezeTests.test_modified_slots_limits_policy_or_prompt_cannot_redefine_freeze) (mutation='limits')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_freeze.py", line 83, in test_modified_slots_limits_policy_or_prompt_cannot_redefine_freeze
+    with self.assertRaises(ValueError):freeze.verify(root,frozen)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_modified_slots_limits_policy_or_prompt_cannot_redefine_freeze (test_freeze.FreezeTests.test_modified_slots_limits_policy_or_prompt_cannot_redefine_freeze) (mutation='policy')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_freeze.py", line 83, in test_modified_slots_limits_policy_or_prompt_cannot_redefine_freeze
+    with self.assertRaises(ValueError):freeze.verify(root,frozen)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_modified_slots_limits_policy_or_prompt_cannot_redefine_freeze (test_freeze.FreezeTests.test_modified_slots_limits_policy_or_prompt_cannot_redefine_freeze) (mutation='prompt')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_freeze.py", line 83, in test_modified_slots_limits_policy_or_prompt_cannot_redefine_freeze
+    with self.assertRaises(ValueError):freeze.verify(root,frozen)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_stale_control_adjudication_cannot_freeze (test_freeze.FreezeTests.test_stale_control_adjudication_cannot_freeze)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_freeze.py", line 91, in test_stale_control_adjudication_cannot_freeze
+    with self.assertRaises(ValueError):freeze.create(root,Path(folder)/"other-freeze",root/"evidence/test-agreement.json")
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_whole_malformed_model_capture_is_preserved_with_all_slots (test_freeze.FreezeTests.test_whole_malformed_model_capture_is_preserved_with_all_slots)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_freeze.py", line 102, in test_whole_malformed_model_capture_is_preserved_with_all_slots
+    self.assertEqual(24,len(result.get("slots",[])))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 24 != 0
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.175s
+
+FAILED (failures=6, errors=1)

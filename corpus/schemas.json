@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "schemas": {
+    "commerce": {
+      "tables": {
+        "customers": [
+          "id",
+          "region"
+        ],
+        "orders": [
+          "id",
+          "customer_id",
+          "status",
+          "ordered_on"
+        ],
+        "lines": [
+          "id",
+          "order_id",
+          "sku",
+          "quantity",
+          "unit_cents"
+        ]
+      },
+      "ddl": "CREATE TABLE customers(id INTEGER PRIMARY KEY CHECK(id>0), region TEXT) STRICT;\nCREATE TABLE orders(id INTEGER PRIMARY KEY CHECK(id>0), customer_id INTEGER NOT NULL REFERENCES customers(id), status TEXT NOT NULL CHECK(status IN ('paid','pending','cancelled')), ordered_on TEXT NOT NULL) STRICT;\nCREATE TABLE lines(id INTEGER PRIMARY KEY CHECK(id>0), order_id INTEGER NOT NULL REFERENCES orders(id), sku TEXT NOT NULL CHECK(sku IN ('A','B','C')), quantity INTEGER NOT NULL CHECK(quantity BETWEEN 1 AND 5), unit_cents INTEGER NOT NULL CHECK(unit_cents BETWEEN 0 AND 10000)) STRICT;"
+    },
+    "support": {
+      "tables": {
+        "agents": [
+          "id",
+          "team"
+        ],
+        "tickets": [
+          "id",
+          "agent_id",
+          "opened_on",
+          "resolved_on",
+          "priority"
+        ],
+        "events": [
+          "id",
+          "ticket_id",
+          "kind",
+          "happened_on"
+        ]
+      },
+      "ddl": "CREATE TABLE agents(id INTEGER PRIMARY KEY CHECK(id>0), team TEXT NOT NULL) STRICT;\nCREATE TABLE tickets(id INTEGER PRIMARY KEY CHECK(id>0), agent_id INTEGER REFERENCES agents(id), opened_on TEXT NOT NULL, resolved_on TEXT CHECK(resolved_on IS NULL OR resolved_on>=opened_on), priority INTEGER NOT NULL CHECK(priority BETWEEN 0 AND 3)) STRICT;\nCREATE TABLE events(id INTEGER PRIMARY KEY CHECK(id>0), ticket_id INTEGER NOT NULL REFERENCES tickets(id), kind TEXT NOT NULL CHECK(kind IN ('reply','note')), happened_on TEXT NOT NULL) STRICT;"
+    },
+    "billing": {
+      "tables": {
+        "accounts": [
+          "id",
+          "plan",
+          "active"
+        ],
+        "invoices": [
+          "id",
+          "account_id",
+          "issued_on",
+          "total_cents"
+        ],
+        "payments": [
+          "id",
+          "invoice_id",
+          "amount_cents",
+          "paid_on"
+        ]
+      },
+      "ddl": "CREATE TABLE accounts(id INTEGER PRIMARY KEY CHECK(id>0), plan TEXT NOT NULL CHECK(plan IN ('basic','pro')), active INTEGER NOT NULL CHECK(active IN (0,1))) STRICT;\nCREATE TABLE invoices(id INTEGER PRIMARY KEY CHECK(id>0), account_id INTEGER NOT NULL REFERENCES accounts(id), issued_on TEXT NOT NULL, total_cents INTEGER NOT NULL CHECK(total_cents BETWEEN 0 AND 50000)) STRICT;\nCREATE TABLE payments(id INTEGER PRIMARY KEY CHECK(id>0), invoice_id INTEGER NOT NULL REFERENCES invoices(id), amount_cents INTEGER NOT NULL CHECK(amount_cents BETWEEN 1 AND 50000), paid_on TEXT NOT NULL) STRICT;"
+    }
+  }
+}

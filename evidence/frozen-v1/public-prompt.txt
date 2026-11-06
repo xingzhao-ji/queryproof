@@ -1,0 +1,69 @@
+Write one SQLite SELECT/WITH query for each of the following 24 tasks. Do not run queries or inspect any files, worlds, gold answers or tools. Return one JSON object only: {"version":1,"candidates":[{"id":"C01","task_id":"C01","sql":"SELECT ..."},...]}. Use each task ID once. No markdown, explanations or invented metadata.
+
+Only these deterministic SQL functions are supported: abs, avg, coalesce, count, dense_rank, ifnull, lag, lead, length, lower, max, min, nullif, rank, round, row_number, substr, substring, sum, total, upper. SELECT/CTEs, joins, EXISTS, CASE, set operations and windows are allowed. One statement, <=16 KiB; no PRAGMA/schema access/extensions/writes. SQLite STRICT types; dates are canonical valid YYYY-MM-DD; integer currency cents. Column aliases do not matter, position and declared type do. Unordered results are bags retaining duplicates; ordered results must follow every tie breaker. Finite real results use absolute/relative tolerance 1e-9. All output columns non-NULL. IDs positive; all FKs valid. Payments and events occur on/after parent dates. Resolved dates are on/after opening. Empty tables/zero-child entities, repeated dates, NULLs and overpayments are possible.
+
+SCHEMA commerce
+
+CREATE TABLE customers(id INTEGER PRIMARY KEY CHECK(id>0), region TEXT) STRICT;
+CREATE TABLE orders(id INTEGER PRIMARY KEY CHECK(id>0), customer_id INTEGER NOT NULL REFERENCES customers(id), status TEXT NOT NULL CHECK(status IN ('paid','pending','cancelled')), ordered_on TEXT NOT NULL) STRICT;
+CREATE TABLE lines(id INTEGER PRIMARY KEY CHECK(id>0), order_id INTEGER NOT NULL REFERENCES orders(id), sku TEXT NOT NULL CHECK(sku IN ('A','B','C')), quantity INTEGER NOT NULL CHECK(quantity BETWEEN 1 AND 5), unit_cents INTEGER NOT NULL CHECK(unit_cents BETWEEN 0 AND 10000)) STRICT;
+
+SCHEMA support
+
+CREATE TABLE agents(id INTEGER PRIMARY KEY CHECK(id>0), team TEXT NOT NULL) STRICT;
+CREATE TABLE tickets(id INTEGER PRIMARY KEY CHECK(id>0), agent_id INTEGER REFERENCES agents(id), opened_on TEXT NOT NULL, resolved_on TEXT CHECK(resolved_on IS NULL OR resolved_on>=opened_on), priority INTEGER NOT NULL CHECK(priority BETWEEN 0 AND 3)) STRICT;
+CREATE TABLE events(id INTEGER PRIMARY KEY CHECK(id>0), ticket_id INTEGER NOT NULL REFERENCES tickets(id), kind TEXT NOT NULL CHECK(kind IN ('reply','note')), happened_on TEXT NOT NULL) STRICT;
+
+SCHEMA billing
+
+CREATE TABLE accounts(id INTEGER PRIMARY KEY CHECK(id>0), plan TEXT NOT NULL CHECK(plan IN ('basic','pro')), active INTEGER NOT NULL CHECK(active IN (0,1))) STRICT;
+CREATE TABLE invoices(id INTEGER PRIMARY KEY CHECK(id>0), account_id INTEGER NOT NULL REFERENCES accounts(id), issued_on TEXT NOT NULL, total_cents INTEGER NOT NULL CHECK(total_cents BETWEEN 0 AND 50000)) STRICT;
+CREATE TABLE payments(id INTEGER PRIMARY KEY CHECK(id>0), invoice_id INTEGER NOT NULL REFERENCES invoices(id), amount_cents INTEGER NOT NULL CHECK(amount_cents BETWEEN 1 AND 50000), paid_on TEXT NOT NULL) STRICT;
+
+C01 [commerce]: For every customer, sum revenue of all their paid-order lines; return zero for no such lines. Output: customer_id integer, revenue_cents integer; bag, one row/customer
+
+C02 [commerce]: Return customers with no paid orders, including customers with no orders. A paid order with zero lines still disqualifies. Output: customer_id integer; bag
+
+C03 [commerce]: Return customers having at least two paid orders and their count of paid orders. Zero-line orders count once; multiple lines do not increase the count. Output: customer_id integer, paid_order_count integer; bag
+
+C04 [commerce]: For each customer with any paid orders, select the most recent paid order by ordered_on; break date ties by greatest order ID. Output: customer_id integer, order_id integer; bag
+
+C05 [commerce]: Sum paid-order line revenue for ordered_on >= 2025-01-01 and < 2025-02-01, returning one zero if there are no qualifying lines. Output: revenue_cents integer; exactly one row
+
+C06 [commerce]: Return at most two customers by paid-line revenue, including zero-revenue customers, ordered revenue descending then customer ID ascending. Output: customer_id integer, revenue_cents integer; ordered
+
+C07 [commerce]: For every line of a paid order, emit its SKU once per line (not once per quantity). Retain repeated SKUs from different lines. Output: sku text; bag
+
+C08 [commerce]: Return customers who bought both SKU A and SKU B on paid orders; the items may be on different orders. Zero-priced lines qualify. Output: customer_id integer; bag
+
+S01 [support]: For every agent count assigned tickets, including zero for agents without tickets. Unassigned tickets belong to no agent. Output: agent_id integer, ticket_count integer; bag
+
+S02 [support]: Return agents with no assigned unresolved tickets (resolved_on IS NULL). Agents without tickets qualify; unassigned tickets do not disqualify anyone. Output: agent_id integer; bag
+
+S03 [support]: Return tickets with at least two reply events and the count of replies only. Notes do not count. Output: ticket_id integer, reply_count integer; bag
+
+S04 [support]: For each ticket with reply events, return earliest reply by happened_on, breaking date ties by smallest event ID. Output: ticket_id integer, event_id integer; bag
+
+S05 [support]: Return tickets opened >= 2025-01-01 and < 2025-02-01 that were still unresolved at the start of 2025-02-01: resolved_on is NULL or >= 2025-02-01. Output: ticket_id integer; bag
+
+S06 [support]: Return at most three currently unresolved tickets (resolved_on IS NULL) ordered priority descending then ticket ID ascending, including unassigned tickets. Output: ticket_id integer, priority integer; ordered
+
+S07 [support]: Return distinct team names of agents assigned at least one ticket. Two agents in the same team still produce one row. Unassigned tickets contribute nothing. Output: team text; bag
+
+S08 [support]: Return agents assigned at least one high-priority ticket (priority >= 2) and at least one low-priority ticket (priority = 0). The tickets may be resolved or unresolved. Priority 1 is neither. Output: agent_id integer; bag
+
+B01 [billing]: Return every invoice with its outstanding cents: total_cents minus sum of all its payments, treating absent payments as zero. Negative outstanding is retained. Output: invoice_id integer, outstanding_cents integer; bag
+
+B02 [billing]: Return accounts whose combined outstanding cents across all invoices is positive, with that combined amount. No-invoice accounts have zero and do not qualify; overpayments offset unpaid invoices. Output: account_id integer, outstanding_cents integer; bag
+
+B03 [billing]: Return invoices that have no payment records, even if total_cents is zero. Any payment disqualifies. Output: invoice_id integer; bag
+
+B04 [billing]: Return accounts with at least one invoice and no invoice whose outstanding cents is positive. Zero/overpaid invoices qualify as paid; no-invoice accounts do not qualify. Output: account_id integer; bag
+
+B05 [billing]: For each year-month appearing in invoice issue dates, sum total_cents (not payments), sorted year-month ascending. Include a zero total month if it has invoices. Output: month text formatted YYYY-MM, billed_cents integer; ordered
+
+B06 [billing]: Return each payment and the cumulative paid amount for its invoice through that payment in (paid_on ascending, payment ID ascending) order. Return all rows ordered invoice ID, paid_on, payment ID ascending. Output: invoice_id integer, payment_id integer, cumulative_cents integer; ordered
+
+B07 [billing]: For each account plan represented by at least one invoice, return the average invoice total_cents across invoices in that plan. Each invoice has equal weight, not each account. Output: plan text, mean_cents real; bag
+
+B08 [billing]: Return active accounts with no invoice issued >= 2025-01-01 and < 2025-02-01. Inactive accounts never qualify; invoices outside January do not disqualify. Output: account_id integer; bag

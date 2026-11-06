@@ -1,0 +1,1662 @@
+{
+  "version": 1,
+  "recorded_at_utc": "2026-10-23T20:06:46.321562+00:00",
+  "method": "Direct SQLite execution of inspected authored SQL against independently frozen Python answers; independent typed comparison, no product executor/grader imports.",
+  "input_sha256": {
+    "corpus/tasks.json": "8a212e1e8654d4b6cffad94472783d1e153584d08e28d292085976f93c0ae195",
+    "corpus/schemas.json": "51f1d2de36f129185c1a54160c7a4266b33120db789ae3cc3fb97341f2ad7893",
+    "corpus/worlds.json": "731c66878d4774841ea6db0ca4162e091ce1c7c49653e122238305aa43c49aae",
+    "docs/task-contract.md": "f914a3199dc503d7a072a44fc845ff702e8c75b4fb3bf185780b3c9c3c971bc4",
+    "corpus/oracles.json": "02eccb173affad7ee9d08ba846aeb8b882450ac81bfd9152f26a9a6a3f2f7a11",
+    "evidence/independent-expected.json": "dea0fa294c6523506feda7c8c6ad7968a428fd02f4ecef77c4106b808dfaef71"
+  },
+  "reference_sha256": "108bf1e7e9edc8c04f24ae63d64316263b327d5871ee0e65ddc5fd79fe72a0e0",
+  "expected_file_sha256": "dea0fa294c6523506feda7c8c6ad7968a428fd02f4ecef77c4106b808dfaef71",
+  "sql_sha256": {
+    "corpus/oracles.json": "02eccb173affad7ee9d08ba846aeb8b882450ac81bfd9152f26a9a6a3f2f7a11",
+    "corpus/controls.json": "9ca76d54b662604d090567a4d1f44fd7e7d381465f157b578b9c85b193a14f00"
+  },
+  "checker_sha256": "565a3cee38ae18dd7caad84c7e4cfd29bd49e767a6ec4524cc2bf93cdd7eae84",
+  "python_sqlite_version": "3.53.4",
+  "scope": "Synthetic authored controls; not real model outputs, human labels or universal SQL-equivalence proof.",
+  "status": "passed",
+  "candidate_count": 72,
+  "execution_cells": 432,
+  "adjudications": [
+    {
+      "candidate_id": "C01-gold",
+      "task_id": "C01",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Every customer survives even without matching line rows; correlated paid-line aggregation is equivalent. The mutant removes no-line customers.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "C01-equiv",
+      "task_id": "C01",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Every customer survives even without matching line rows; correlated paid-line aggregation is equivalent. The mutant removes no-line customers.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "C01-mutant",
+      "task_id": "C01",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": false,
+      "reviewer_reason": "Every customer survives even without matching line rows; correlated paid-line aggregation is equivalent. The mutant removes no-line customers.",
+      "first_counterexample": {
+        "candidate_id": "C01-mutant",
+        "task_id": "C01",
+        "world_id": "commerce-edge",
+        "world_role": "edge",
+        "match": false,
+        "expected_rows": [
+          [
+            1,
+            1000
+          ],
+          [
+            2,
+            1000
+          ],
+          [
+            3,
+            999
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            6,
+            50
+          ],
+          [
+            7,
+            0
+          ]
+        ],
+        "observed_rows": [
+          [
+            1,
+            1000
+          ],
+          [
+            2,
+            1000
+          ],
+          [
+            3,
+            999
+          ],
+          [
+            6,
+            50
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_id": "C02-gold",
+      "task_id": "C02",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "A non-null order primary key makes the anti-join equivalent. The mutant also forbids non-paid orders.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "C02-equiv",
+      "task_id": "C02",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "A non-null order primary key makes the anti-join equivalent. The mutant also forbids non-paid orders.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "C02-mutant",
+      "task_id": "C02",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": false,
+      "reviewer_reason": "A non-null order primary key makes the anti-join equivalent. The mutant also forbids non-paid orders.",
+      "first_counterexample": {
+        "candidate_id": "C02-mutant",
+        "task_id": "C02",
+        "world_id": "commerce-edge",
+        "world_role": "edge",
+        "match": false,
+        "expected_rows": [
+          [
+            4
+          ],
+          [
+            7
+          ]
+        ],
+        "observed_rows": [
+          [
+            7
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_id": "C03-gold",
+      "task_id": "C03",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Both valid forms count orders directly. Joining lines changes the counted unit and omits zero-line orders.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "C03-equiv",
+      "task_id": "C03",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Both valid forms count orders directly. Joining lines changes the counted unit and omits zero-line orders.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "C03-mutant",
+      "task_id": "C03",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": false,
+      "reviewer_reason": "Both valid forms count orders directly. Joining lines changes the counted unit and omits zero-line orders.",
+      "first_counterexample": {
+        "candidate_id": "C03-mutant",
+        "task_id": "C03",
+        "world_id": "commerce-edge",
+        "world_role": "edge",
+        "match": false,
+        "expected_rows": [
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            5,
+            2
+          ]
+        ],
+        "observed_rows": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_id": "C04-gold",
+      "task_id": "C04",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Date then ID defines a total order. Anti-dominance selects its unique maximum; maximum ID alone is insufficient.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "C04-equiv",
+      "task_id": "C04",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Date then ID defines a total order. Anti-dominance selects its unique maximum; maximum ID alone is insufficient.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "C04-mutant",
+      "task_id": "C04",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": false,
+      "reviewer_reason": "Date then ID defines a total order. Anti-dominance selects its unique maximum; maximum ID alone is insufficient.",
+      "first_counterexample": {
+        "candidate_id": "C04-mutant",
+        "task_id": "C04",
+        "world_id": "commerce-edge",
+        "world_role": "edge",
+        "match": false,
+        "expected_rows": [
+          [
+            1,
+            9
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            6,
+            11
+          ]
+        ],
+        "observed_rows": [
+          [
+            1,
+            9
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            6,
+            11
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_id": "C05-gold",
+      "task_id": "C05",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Line membership preserves multiplicity and the half-open date interval. Including the February boundary is incorrect.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "C05-equiv",
+      "task_id": "C05",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Line membership preserves multiplicity and the half-open date interval. Including the February boundary is incorrect.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "C05-mutant",
+      "task_id": "C05",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": false,
+      "reviewer_reason": "Line membership preserves multiplicity and the half-open date interval. Including the February boundary is incorrect.",
+      "first_counterexample": {
+        "candidate_id": "C05-mutant",
+        "task_id": "C05",
+        "world_id": "commerce-edge",
+        "world_role": "edge",
+        "match": false,
+        "expected_rows": [
+          [
+            1550
+          ]
+        ],
+        "observed_rows": [
+          [
+            2549
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_id": "C06-gold",
+      "task_id": "C06",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Correlated totals and joined totals rank the same customers; descending ID breaks the required tie direction.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "C06-equiv",
+      "task_id": "C06",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Correlated totals and joined totals rank the same customers; descending ID breaks the required tie direction.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "C06-mutant",
+      "task_id": "C06",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": false,
+      "reviewer_reason": "Correlated totals and joined totals rank the same customers; descending ID breaks the required tie direction.",
+      "first_counterexample": {
+        "candidate_id": "C06-mutant",
+        "task_id": "C06",
+        "world_id": "commerce-edge",
+        "world_role": "edge",
+        "match": false,
+        "expected_rows": [
+          [
+            1,
+            1000
+          ],
+          [
+            2,
+            1000
+          ]
+        ],
+        "observed_rows": [
+          [
+            2,
+            1000
+          ],
+          [
+            1,
+            1000
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_id": "C07-gold",
+      "task_id": "C07",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Membership and the PK join preserve one output per line. DISTINCT discards required repetitions.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "C07-equiv",
+      "task_id": "C07",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Membership and the PK join preserve one output per line. DISTINCT discards required repetitions.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "C07-mutant",
+      "task_id": "C07",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": false,
+      "reviewer_reason": "Membership and the PK join preserve one output per line. DISTINCT discards required repetitions.",
+      "first_counterexample": {
+        "candidate_id": "C07-mutant",
+        "task_id": "C07",
+        "world_id": "commerce-edge",
+        "world_role": "edge",
+        "match": false,
+        "expected_rows": [
+          [
+            "A"
+          ],
+          [
+            "A"
+          ],
+          [
+            "B"
+          ],
+          [
+            "C"
+          ],
+          [
+            "A"
+          ],
+          [
+            "B"
+          ],
+          [
+            "C"
+          ],
+          [
+            "A"
+          ],
+          [
+            "C"
+          ]
+        ],
+        "observed_rows": [
+          [
+            "A"
+          ],
+          [
+            "B"
+          ],
+          [
+            "C"
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_id": "C08-gold",
+      "task_id": "C08",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Existence of each of A and B is equivalent to two distinct matching SKUs. Either-SKU membership is weaker.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "C08-equiv",
+      "task_id": "C08",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Existence of each of A and B is equivalent to two distinct matching SKUs. Either-SKU membership is weaker.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "C08-mutant",
+      "task_id": "C08",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": false,
+      "reviewer_reason": "Existence of each of A and B is equivalent to two distinct matching SKUs. Either-SKU membership is weaker.",
+      "first_counterexample": {
+        "candidate_id": "C08-mutant",
+        "task_id": "C08",
+        "world_id": "commerce-edge",
+        "world_role": "edge",
+        "match": false,
+        "expected_rows": [
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "observed_rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_id": "S01-gold",
+      "task_id": "S01",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Counting matching ticket IDs or a correlated count yields zero for empty agents; the inner join omits them.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "S01-equiv",
+      "task_id": "S01",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Counting matching ticket IDs or a correlated count yields zero for empty agents; the inner join omits them.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "S01-mutant",
+      "task_id": "S01",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": false,
+      "reviewer_reason": "Counting matching ticket IDs or a correlated count yields zero for empty agents; the inner join omits them.",
+      "first_counterexample": {
+        "candidate_id": "S01-mutant",
+        "task_id": "S01",
+        "world_id": "support-edge",
+        "world_role": "edge",
+        "match": false,
+        "expected_rows": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            0
+          ]
+        ],
+        "observed_rows": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_id": "S02-gold",
+      "task_id": "S02",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "The anti-join checks ticket ID after correlation and ignores null assignments. NOT IN over nullable agent IDs can exclude all rows.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "S02-equiv",
+      "task_id": "S02",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "The anti-join checks ticket ID after correlation and ignores null assignments. NOT IN over nullable agent IDs can exclude all rows.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "S02-mutant",
+      "task_id": "S02",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": false,
+      "reviewer_reason": "The anti-join checks ticket ID after correlation and ignores null assignments. NOT IN over nullable agent IDs can exclude all rows.",
+      "first_counterexample": {
+        "candidate_id": "S02-mutant",
+        "task_id": "S02",
+        "world_id": "support-edge",
+        "world_role": "edge",
+        "match": false,
+        "expected_rows": [
+          [
+            5
+          ],
+          [
+            6
+          ]
+        ],
+        "observed_rows": []
+      }
+    },
+    {
+      "candidate_id": "S03-gold",
+      "task_id": "S03",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Both valid forms count reply records per ticket. Including notes changes the count and qualifying set.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "S03-equiv",
+      "task_id": "S03",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Both valid forms count reply records per ticket. Including notes changes the count and qualifying set.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "S03-mutant",
+      "task_id": "S03",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": false,
+      "reviewer_reason": "Both valid forms count reply records per ticket. Including notes changes the count and qualifying set.",
+      "first_counterexample": {
+        "candidate_id": "S03-mutant",
+        "task_id": "S03",
+        "world_id": "support-edge",
+        "world_role": "edge",
+        "match": false,
+        "expected_rows": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "observed_rows": [
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_id": "S04-gold",
+      "task_id": "S04",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Anti-dominance implements earliest date then least ID. The reversed ID tie choice violates the contract.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "S04-equiv",
+      "task_id": "S04",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Anti-dominance implements earliest date then least ID. The reversed ID tie choice violates the contract.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "S04-mutant",
+      "task_id": "S04",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": false,
+      "reviewer_reason": "Anti-dominance implements earliest date then least ID. The reversed ID tie choice violates the contract.",
+      "first_counterexample": {
+        "candidate_id": "S04-mutant",
+        "task_id": "S04",
+        "world_id": "support-edge",
+        "world_role": "edge",
+        "match": false,
+        "expected_rows": [
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            9,
+            11
+          ]
+        ],
+        "observed_rows": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            9,
+            11
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_id": "S05-gold",
+      "task_id": "S05",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "For null resolution the high sentinel qualifies, matching the explicit null branch; currently unresolved-only wrongly drops later-resolved tickets.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "S05-equiv",
+      "task_id": "S05",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "For null resolution the high sentinel qualifies, matching the explicit null branch; currently unresolved-only wrongly drops later-resolved tickets.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "S05-mutant",
+      "task_id": "S05",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": false,
+      "reviewer_reason": "For null resolution the high sentinel qualifies, matching the explicit null branch; currently unresolved-only wrongly drops later-resolved tickets.",
+      "first_counterexample": {
+        "candidate_id": "S05-mutant",
+        "task_id": "S05",
+        "world_id": "support-edge",
+        "world_role": "edge",
+        "match": false,
+        "expected_rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            9
+          ]
+        ],
+        "observed_rows": [
+          [
+            1
+          ],
+          [
+            6
+          ],
+          [
+            9
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_id": "S06-gold",
+      "task_id": "S06",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Unique priority/ID ordering makes the first three row numbers equivalent to LIMIT. Reversing IDs changes ties.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "S06-equiv",
+      "task_id": "S06",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Unique priority/ID ordering makes the first three row numbers equivalent to LIMIT. Reversing IDs changes ties.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "S06-mutant",
+      "task_id": "S06",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": false,
+      "reviewer_reason": "Unique priority/ID ordering makes the first three row numbers equivalent to LIMIT. Reversing IDs changes ties.",
+      "first_counterexample": {
+        "candidate_id": "S06-mutant",
+        "task_id": "S06",
+        "world_id": "support-edge",
+        "world_role": "edge",
+        "match": false,
+        "expected_rows": [
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            9,
+            3
+          ]
+        ],
+        "observed_rows": [
+          [
+            9,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_id": "S07-gold",
+      "task_id": "S07",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Grouping team names after the join returns each qualifying team once. Per-agent emission duplicates shared teams.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "S07-equiv",
+      "task_id": "S07",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Grouping team names after the join returns each qualifying team once. Per-agent emission duplicates shared teams.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "S07-mutant",
+      "task_id": "S07",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": false,
+      "reviewer_reason": "Grouping team names after the join returns each qualifying team once. Per-agent emission duplicates shared teams.",
+      "first_counterexample": {
+        "candidate_id": "S07-mutant",
+        "task_id": "S07",
+        "world_id": "support-edge",
+        "world_role": "edge",
+        "match": false,
+        "expected_rows": [
+          [
+            "blue"
+          ],
+          [
+            "green"
+          ],
+          [
+            "red"
+          ]
+        ],
+        "observed_rows": [
+          [
+            "red"
+          ],
+          [
+            "blue"
+          ],
+          [
+            "red"
+          ],
+          [
+            "green"
+          ],
+          [
+            "blue"
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_id": "S08-gold",
+      "task_id": "S08",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "The two existence conditions equal two positive conditional counts. Priority 1 must not satisfy the low-priority condition.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "S08-equiv",
+      "task_id": "S08",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "The two existence conditions equal two positive conditional counts. Priority 1 must not satisfy the low-priority condition.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "S08-mutant",
+      "task_id": "S08",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": false,
+      "reviewer_reason": "The two existence conditions equal two positive conditional counts. Priority 1 must not satisfy the low-priority condition.",
+      "first_counterexample": {
+        "candidate_id": "S08-mutant",
+        "task_id": "S08",
+        "world_id": "support-edge",
+        "world_role": "edge",
+        "match": false,
+        "expected_rows": [
+          [
+            1
+          ]
+        ],
+        "observed_rows": [
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_id": "B01-gold",
+      "task_id": "B01",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "One payment sum per invoice is equivalent to grouped joins. Inner joining payments loses unpaid invoices.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "B01-equiv",
+      "task_id": "B01",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "One payment sum per invoice is equivalent to grouped joins. Inner joining payments loses unpaid invoices.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "B01-mutant",
+      "task_id": "B01",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": false,
+      "reviewer_reason": "One payment sum per invoice is equivalent to grouped joins. Inner joining payments loses unpaid invoices.",
+      "first_counterexample": {
+        "candidate_id": "B01-mutant",
+        "task_id": "B01",
+        "world_id": "billing-edge",
+        "world_role": "edge",
+        "match": false,
+        "expected_rows": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            500
+          ],
+          [
+            3,
+            -200
+          ],
+          [
+            4,
+            900
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            7,
+            -200
+          ],
+          [
+            8,
+            0
+          ]
+        ],
+        "observed_rows": [
+          [
+            1,
+            0
+          ],
+          [
+            3,
+            -200
+          ],
+          [
+            4,
+            900
+          ],
+          [
+            7,
+            -200
+          ],
+          [
+            8,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_id": "B02-gold",
+      "task_id": "B02",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Aggregate signed invoice balances before account filtering. Removing negative balances changes overpayment offsets.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "B02-equiv",
+      "task_id": "B02",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Aggregate signed invoice balances before account filtering. Removing negative balances changes overpayment offsets.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "B02-mutant",
+      "task_id": "B02",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": false,
+      "reviewer_reason": "Aggregate signed invoice balances before account filtering. Removing negative balances changes overpayment offsets.",
+      "first_counterexample": {
+        "candidate_id": "B02-mutant",
+        "task_id": "B02",
+        "world_id": "billing-edge",
+        "world_role": "edge",
+        "match": false,
+        "expected_rows": [
+          [
+            1,
+            500
+          ],
+          [
+            2,
+            700
+          ]
+        ],
+        "observed_rows": [
+          [
+            1,
+            500
+          ],
+          [
+            2,
+            900
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_id": "B03-gold",
+      "task_id": "B03",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Both anti-joins ask whether any payment row exists. Positive remaining debt is a different condition.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "B03-equiv",
+      "task_id": "B03",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Both anti-joins ask whether any payment row exists. Positive remaining debt is a different condition.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "B03-mutant",
+      "task_id": "B03",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": false,
+      "reviewer_reason": "Both anti-joins ask whether any payment row exists. Positive remaining debt is a different condition.",
+      "first_counterexample": {
+        "candidate_id": "B03-mutant",
+        "task_id": "B03",
+        "world_id": "billing-edge",
+        "world_role": "edge",
+        "match": false,
+        "expected_rows": [
+          [
+            2
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ]
+        ],
+        "observed_rows": [
+          [
+            2
+          ],
+          [
+            4
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_id": "B04-gold",
+      "task_id": "B04",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "A nonempty group with maximum balance <=0 has every invoice non-positive. Omitting existence admits no-invoice accounts.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "B04-equiv",
+      "task_id": "B04",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "A nonempty group with maximum balance <=0 has every invoice non-positive. Omitting existence admits no-invoice accounts.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "B04-mutant",
+      "task_id": "B04",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": false,
+      "reviewer_reason": "A nonempty group with maximum balance <=0 has every invoice non-positive. Omitting existence admits no-invoice accounts.",
+      "first_counterexample": {
+        "candidate_id": "B04-mutant",
+        "task_id": "B04",
+        "world_id": "billing-edge",
+        "world_role": "edge",
+        "match": false,
+        "expected_rows": [
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "observed_rows": [
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_id": "B05-gold",
+      "task_id": "B05",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Distinct months plus a correlated invoice sum equal grouped billing totals. Payment totals measure something else.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "B05-equiv",
+      "task_id": "B05",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Distinct months plus a correlated invoice sum equal grouped billing totals. Payment totals measure something else.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "B05-mutant",
+      "task_id": "B05",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": false,
+      "reviewer_reason": "Distinct months plus a correlated invoice sum equal grouped billing totals. Payment totals measure something else.",
+      "first_counterexample": {
+        "candidate_id": "B05-mutant",
+        "task_id": "B05",
+        "world_id": "billing-edge",
+        "world_role": "edge",
+        "match": false,
+        "expected_rows": [
+          [
+            "2024-12",
+            200
+          ],
+          [
+            "2025-01",
+            1900
+          ],
+          [
+            "2025-02",
+            1000
+          ]
+        ],
+        "observed_rows": [
+          [
+            "2024-12",
+            400
+          ],
+          [
+            "2025-01",
+            1600
+          ],
+          [
+            "2025-02",
+            100
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_id": "B06-gold",
+      "task_id": "B06",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "The correlated prefix includes payments through the current date/ID pair. RANGE over date alone absorbs same-date peers too early.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "B06-equiv",
+      "task_id": "B06",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "The correlated prefix includes payments through the current date/ID pair. RANGE over date alone absorbs same-date peers too early.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "B06-mutant",
+      "task_id": "B06",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": false,
+      "reviewer_reason": "The correlated prefix includes payments through the current date/ID pair. RANGE over date alone absorbs same-date peers too early.",
+      "first_counterexample": {
+        "candidate_id": "B06-mutant",
+        "task_id": "B06",
+        "world_id": "billing-edge",
+        "world_role": "edge",
+        "match": false,
+        "expected_rows": [
+          [
+            1,
+            1,
+            300
+          ],
+          [
+            1,
+            2,
+            1000
+          ],
+          [
+            3,
+            3,
+            400
+          ],
+          [
+            4,
+            4,
+            100
+          ],
+          [
+            7,
+            5,
+            500
+          ],
+          [
+            8,
+            6,
+            100
+          ]
+        ],
+        "observed_rows": [
+          [
+            1,
+            1,
+            1000
+          ],
+          [
+            1,
+            2,
+            1000
+          ],
+          [
+            3,
+            3,
+            400
+          ],
+          [
+            4,
+            4,
+            100
+          ],
+          [
+            7,
+            5,
+            500
+          ],
+          [
+            8,
+            6,
+            100
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_id": "B07-gold",
+      "task_id": "B07",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Floating sum divided by invoice count gives equal invoice weights. Averaging account means changes weights when counts differ.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "B07-equiv",
+      "task_id": "B07",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "Floating sum divided by invoice count gives equal invoice weights. Averaging account means changes weights when counts differ.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "B07-mutant",
+      "task_id": "B07",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": false,
+      "reviewer_reason": "Floating sum divided by invoice count gives equal invoice weights. Averaging account means changes weights when counts differ.",
+      "first_counterexample": {
+        "candidate_id": "B07-mutant",
+        "task_id": "B07",
+        "world_id": "billing-edge",
+        "world_role": "edge",
+        "match": false,
+        "expected_rows": [
+          [
+            "basic",
+            380.0
+          ],
+          [
+            "pro",
+            400.0
+          ]
+        ],
+        "observed_rows": [
+          [
+            "basic",
+            316.6666666666667
+          ],
+          [
+            "pro",
+            300.0
+          ]
+        ]
+      }
+    },
+    {
+      "candidate_id": "B08-gold",
+      "task_id": "B08",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "The January-filtered anti-join preserves active accounts with only other-month invoices. Rejecting any invoice is stronger than requested.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "B08-equiv",
+      "task_id": "B08",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": true,
+      "reviewer_reason": "The January-filtered anti-join preserves active accounts with only other-month invoices. Rejecting any invoice is stronger than requested.",
+      "first_counterexample": null
+    },
+    {
+      "candidate_id": "B08-mutant",
+      "task_id": "B08",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "label_supported": true,
+      "anchor_accepts": true,
+      "suite_accepts": false,
+      "reviewer_reason": "The January-filtered anti-join preserves active accounts with only other-month invoices. Rejecting any invoice is stronger than requested.",
+      "first_counterexample": {
+        "candidate_id": "B08-mutant",
+        "task_id": "B08",
+        "world_id": "billing-edge",
+        "world_role": "edge",
+        "match": false,
+        "expected_rows": [
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            6
+          ]
+        ],
+        "observed_rows": [
+          [
+            6
+          ]
+        ]
+      }
+    }
+  ]
+}

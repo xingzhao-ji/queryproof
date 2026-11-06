@@ -1,0 +1,36 @@
+test_model_primary_rate_includes_missing_and_invalid_slots (test_cli.ProductTests.test_model_primary_rate_includes_missing_and_invalid_slots) ... FAIL
+test_real_cli_task_run_inspect_compare_and_report (test_cli.ProductTests.test_real_cli_task_run_inspect_compare_and_report) ... FAIL
+test_report_escapes_untrusted_text (test_cli.ProductTests.test_report_escapes_untrusted_text) ... FAIL
+
+======================================================================
+FAIL: test_model_primary_rate_includes_missing_and_invalid_slots (test_cli.ProductTests.test_model_primary_rate_includes_missing_and_invalid_slots)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_cli.py", line 49, in test_model_primary_rate_includes_missing_and_invalid_slots
+    self.assertEqual(24,summary.get("primary_model_denominator"))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 24 != None
+
+======================================================================
+FAIL: test_real_cli_task_run_inspect_compare_and_report (test_cli.ProductTests.test_real_cli_task_run_inspect_compare_and_report)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_cli.py", line 22, in test_real_cli_task_run_inspect_compare_and_report
+    self.assertEqual(0,task.returncode,task.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : CLI not implemented
+
+
+======================================================================
+FAIL: test_report_escapes_untrusted_text (test_cli.ProductTests.test_report_escapes_untrusted_text)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_cli.py", line 57, in test_report_escapes_untrusted_text
+    self.assertIn("&lt;script&gt;",rendered)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '&lt;script&gt;' not found in ''
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.214s
+
+FAILED (failures=3)

@@ -1,0 +1,947 @@
+{
+  "candidates": [
+    {
+      "capture_error": null,
+      "id": "C01-gold",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "rationale": "Gold identity sanity control, not an independent positive label.",
+      "sql": "SELECT c.id, COALESCE(SUM(l.quantity*l.unit_cents),0) FROM customers c LEFT JOIN orders o ON o.customer_id=c.id AND o.status='paid' LEFT JOIN lines l ON l.order_id=o.id GROUP BY c.id",
+      "task_id": "C01"
+    },
+    {
+      "capture_error": null,
+      "id": "C01-equiv",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "Correlated sum per customer preserves zero-child entities and paid-only line revenue.",
+      "sql": "SELECT c.id,COALESCE((SELECT SUM(l.quantity*l.unit_cents) FROM lines l JOIN orders o ON o.id=l.order_id WHERE o.customer_id=c.id AND o.status='paid'),0) FROM customers c",
+      "task_id": "C01"
+    },
+    {
+      "capture_error": null,
+      "id": "C01-mutant",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Inner joins drop zero-revenue customers with no paid lines.",
+      "sql": "SELECT c.id, COALESCE(SUM(l.quantity*l.unit_cents),0) FROM customers c JOIN orders o ON o.customer_id=c.id AND o.status='paid' JOIN lines l ON l.order_id=o.id GROUP BY c.id",
+      "task_id": "C01"
+    },
+    {
+      "capture_error": null,
+      "id": "C02-gold",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "rationale": "Gold identity sanity control, not an independent positive label.",
+      "sql": "SELECT c.id FROM customers c WHERE NOT EXISTS (SELECT 1 FROM orders o WHERE o.customer_id=c.id AND o.status='paid')",
+      "task_id": "C02"
+    },
+    {
+      "capture_error": null,
+      "id": "C02-equiv",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "Left anti join uses non-NULL primary key, so paid zero-line orders disqualify.",
+      "sql": "SELECT c.id FROM customers c LEFT JOIN orders o ON o.customer_id=c.id AND o.status='paid' WHERE o.id IS NULL",
+      "task_id": "C02"
+    },
+    {
+      "capture_error": null,
+      "id": "C02-mutant",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Rejects customers with only pending/cancelled orders, though those should qualify.",
+      "sql": "SELECT id FROM customers WHERE id NOT IN (SELECT customer_id FROM orders)",
+      "task_id": "C02"
+    },
+    {
+      "capture_error": null,
+      "id": "C03-gold",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "rationale": "Gold identity sanity control, not an independent positive label.",
+      "sql": "SELECT customer_id, COUNT(*) FROM orders WHERE status='paid' GROUP BY customer_id HAVING COUNT(*)>=2",
+      "task_id": "C03"
+    },
+    {
+      "capture_error": null,
+      "id": "C03-equiv",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "Correlated count sees each paid order once and filters the same count.",
+      "sql": "SELECT c.id,(SELECT COUNT(*) FROM orders o WHERE o.customer_id=c.id AND o.status='paid') FROM customers c WHERE (SELECT COUNT(*) FROM orders o WHERE o.customer_id=c.id AND o.status='paid')>=2",
+      "task_id": "C03"
+    },
+    {
+      "capture_error": null,
+      "id": "C03-mutant",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Counts joined lines instead of paid orders; drops zero-line orders.",
+      "sql": "SELECT o.customer_id,COUNT(*) FROM orders o JOIN lines l ON l.order_id=o.id WHERE o.status='paid' GROUP BY o.customer_id HAVING COUNT(*)>=2",
+      "task_id": "C03"
+    },
+    {
+      "capture_error": null,
+      "id": "C04-gold",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "rationale": "Gold identity sanity control, not an independent positive label.",
+      "sql": "SELECT customer_id,id FROM (SELECT customer_id,id,ROW_NUMBER() OVER(PARTITION BY customer_id ORDER BY ordered_on DESC,id DESC) AS r FROM orders WHERE status='paid') WHERE r=1",
+      "task_id": "C04"
+    },
+    {
+      "capture_error": null,
+      "id": "C04-equiv",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "Anti-dominance uses the full date then greatest-ID order.",
+      "sql": "SELECT o.customer_id,o.id FROM orders o WHERE o.status='paid' AND NOT EXISTS (SELECT 1 FROM orders n WHERE n.customer_id=o.customer_id AND n.status='paid' AND (n.ordered_on>o.ordered_on OR (n.ordered_on=o.ordered_on AND n.id>o.id)))",
+      "task_id": "C04"
+    },
+    {
+      "capture_error": null,
+      "id": "C04-mutant",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Largest ID is not necessarily latest date.",
+      "sql": "SELECT customer_id,MAX(id) FROM orders WHERE status='paid' GROUP BY customer_id",
+      "task_id": "C04"
+    },
+    {
+      "capture_error": null,
+      "id": "C05-gold",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "rationale": "Gold identity sanity control, not an independent positive label.",
+      "sql": "SELECT COALESCE(SUM(l.quantity*l.unit_cents),0) FROM orders o JOIN lines l ON l.order_id=o.id WHERE o.status='paid' AND o.ordered_on>='2025-01-01' AND o.ordered_on<'2025-02-01'",
+      "task_id": "C05"
+    },
+    {
+      "capture_error": null,
+      "id": "C05-equiv",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "Membership selects each line exactly once; the same half-open date window and singleton zero apply.",
+      "sql": "SELECT COALESCE(SUM(quantity*unit_cents),0) FROM lines WHERE order_id IN (SELECT id FROM orders WHERE status='paid' AND ordered_on>='2025-01-01' AND ordered_on<'2025-02-01')",
+      "task_id": "C05"
+    },
+    {
+      "capture_error": null,
+      "id": "C05-mutant",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Includes February 1 despite the half-open January window.",
+      "sql": "SELECT COALESCE(SUM(l.quantity*l.unit_cents),0) FROM orders o JOIN lines l ON l.order_id=o.id WHERE o.status='paid' AND o.ordered_on>='2025-01-01' AND o.ordered_on<='2025-02-01'",
+      "task_id": "C05"
+    },
+    {
+      "capture_error": null,
+      "id": "C06-gold",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "rationale": "Gold identity sanity control, not an independent positive label.",
+      "sql": "SELECT c.id,COALESCE(SUM(l.quantity*l.unit_cents),0) AS revenue FROM customers c LEFT JOIN orders o ON o.customer_id=c.id AND o.status='paid' LEFT JOIN lines l ON l.order_id=o.id GROUP BY c.id ORDER BY revenue DESC,c.id ASC LIMIT 2",
+      "task_id": "C06"
+    },
+    {
+      "capture_error": null,
+      "id": "C06-equiv",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "Correlated aggregation keeps every customer and identical ranking/tie break.",
+      "sql": "SELECT c.id,COALESCE((SELECT SUM(l.quantity*l.unit_cents) FROM orders o JOIN lines l ON l.order_id=o.id WHERE o.customer_id=c.id AND o.status='paid'),0) AS revenue FROM customers c ORDER BY revenue DESC,c.id ASC LIMIT 2",
+      "task_id": "C06"
+    },
+    {
+      "capture_error": null,
+      "id": "C06-mutant",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Reverses the required customer-ID tie break.",
+      "sql": "SELECT c.id,COALESCE(SUM(l.quantity*l.unit_cents),0) AS revenue FROM customers c LEFT JOIN orders o ON o.customer_id=c.id AND o.status='paid' LEFT JOIN lines l ON l.order_id=o.id GROUP BY c.id ORDER BY revenue DESC,c.id DESC LIMIT 2",
+      "task_id": "C06"
+    },
+    {
+      "capture_error": null,
+      "id": "C07-gold",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "rationale": "Gold identity sanity control, not an independent positive label.",
+      "sql": "SELECT l.sku FROM lines l JOIN orders o ON o.id=l.order_id WHERE o.status='paid'",
+      "task_id": "C07"
+    },
+    {
+      "capture_error": null,
+      "id": "C07-equiv",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "IN filters line rows without DISTINCT or quantity expansion.",
+      "sql": "SELECT sku FROM lines WHERE order_id IN (SELECT id FROM orders WHERE status='paid')",
+      "task_id": "C07"
+    },
+    {
+      "capture_error": null,
+      "id": "C07-mutant",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Removes repeated line SKUs, violating bag multiplicity.",
+      "sql": "SELECT DISTINCT l.sku FROM lines l JOIN orders o ON o.id=l.order_id WHERE o.status='paid'",
+      "task_id": "C07"
+    },
+    {
+      "capture_error": null,
+      "id": "C08-gold",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "rationale": "Gold identity sanity control, not an independent positive label.",
+      "sql": "SELECT o.customer_id FROM orders o JOIN lines l ON l.order_id=o.id WHERE o.status='paid' AND l.sku IN ('A','B') GROUP BY o.customer_id HAVING COUNT(DISTINCT l.sku)=2",
+      "task_id": "C08"
+    },
+    {
+      "capture_error": null,
+      "id": "C08-equiv",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "Two independent existence checks allow A and B on different orders and zero-priced lines.",
+      "sql": "SELECT c.id FROM customers c WHERE EXISTS (SELECT 1 FROM orders o JOIN lines l ON l.order_id=o.id WHERE o.customer_id=c.id AND o.status='paid' AND l.sku='A') AND EXISTS (SELECT 1 FROM orders o JOIN lines l ON l.order_id=o.id WHERE o.customer_id=c.id AND o.status='paid' AND l.sku='B')",
+      "task_id": "C08"
+    },
+    {
+      "capture_error": null,
+      "id": "C08-mutant",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Requires either SKU, not both.",
+      "sql": "SELECT DISTINCT o.customer_id FROM orders o JOIN lines l ON l.order_id=o.id WHERE o.status='paid' AND l.sku IN ('A','B')",
+      "task_id": "C08"
+    },
+    {
+      "capture_error": null,
+      "id": "S01-gold",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "rationale": "Gold identity sanity control, not an independent positive label.",
+      "sql": "SELECT a.id,COUNT(t.id) FROM agents a LEFT JOIN tickets t ON t.agent_id=a.id GROUP BY a.id",
+      "task_id": "S01"
+    },
+    {
+      "capture_error": null,
+      "id": "S01-equiv",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "Correlated count returns zero for empty agents and never assigns NULL.",
+      "sql": "SELECT a.id,(SELECT COUNT(*) FROM tickets t WHERE t.agent_id=a.id) FROM agents a",
+      "task_id": "S01"
+    },
+    {
+      "capture_error": null,
+      "id": "S01-mutant",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Drops agents without tickets.",
+      "sql": "SELECT a.id,COUNT(t.id) FROM agents a JOIN tickets t ON t.agent_id=a.id GROUP BY a.id",
+      "task_id": "S01"
+    },
+    {
+      "capture_error": null,
+      "id": "S02-gold",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "rationale": "Gold identity sanity control, not an independent positive label.",
+      "sql": "SELECT a.id FROM agents a WHERE NOT EXISTS (SELECT 1 FROM tickets t WHERE t.agent_id=a.id AND t.resolved_on IS NULL)",
+      "task_id": "S02"
+    },
+    {
+      "capture_error": null,
+      "id": "S02-equiv",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "Anti join on a non-NULL ticket key ignores unassigned tickets.",
+      "sql": "SELECT a.id FROM agents a LEFT JOIN tickets t ON t.agent_id=a.id AND t.resolved_on IS NULL WHERE t.id IS NULL",
+      "task_id": "S02"
+    },
+    {
+      "capture_error": null,
+      "id": "S02-mutant",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "NULL unassigned ticket poisons NOT IN and wrongly removes eligible agents.",
+      "sql": "SELECT id FROM agents WHERE id NOT IN (SELECT agent_id FROM tickets WHERE resolved_on IS NULL)",
+      "task_id": "S02"
+    },
+    {
+      "capture_error": null,
+      "id": "S03-gold",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "rationale": "Gold identity sanity control, not an independent positive label.",
+      "sql": "SELECT ticket_id,COUNT(*) FROM events WHERE kind='reply' GROUP BY ticket_id HAVING COUNT(*)>=2",
+      "task_id": "S03"
+    },
+    {
+      "capture_error": null,
+      "id": "S03-equiv",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "Correlated count includes replies only and applies the same threshold.",
+      "sql": "SELECT t.id,(SELECT COUNT(*) FROM events e WHERE e.ticket_id=t.id AND e.kind='reply') FROM tickets t WHERE (SELECT COUNT(*) FROM events e WHERE e.ticket_id=t.id AND e.kind='reply')>=2",
+      "task_id": "S03"
+    },
+    {
+      "capture_error": null,
+      "id": "S03-mutant",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Counts notes as replies.",
+      "sql": "SELECT ticket_id,COUNT(*) FROM events GROUP BY ticket_id HAVING COUNT(*)>=2",
+      "task_id": "S03"
+    },
+    {
+      "capture_error": null,
+      "id": "S04-gold",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "rationale": "Gold identity sanity control, not an independent positive label.",
+      "sql": "SELECT ticket_id,id FROM (SELECT ticket_id,id,ROW_NUMBER() OVER(PARTITION BY ticket_id ORDER BY happened_on ASC,id ASC) AS r FROM events WHERE kind='reply') WHERE r=1",
+      "task_id": "S04"
+    },
+    {
+      "capture_error": null,
+      "id": "S04-equiv",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "Anti-dominance selects earliest date then smallest ID among replies.",
+      "sql": "SELECT e.ticket_id,e.id FROM events e WHERE e.kind='reply' AND NOT EXISTS (SELECT 1 FROM events n WHERE n.ticket_id=e.ticket_id AND n.kind='reply' AND (n.happened_on<e.happened_on OR (n.happened_on=e.happened_on AND n.id<e.id)))",
+      "task_id": "S04"
+    },
+    {
+      "capture_error": null,
+      "id": "S04-mutant",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Chooses largest event ID for earliest-date ties.",
+      "sql": "SELECT ticket_id,id FROM (SELECT ticket_id,id,ROW_NUMBER() OVER(PARTITION BY ticket_id ORDER BY happened_on ASC,id DESC) AS r FROM events WHERE kind='reply') WHERE r=1",
+      "task_id": "S04"
+    },
+    {
+      "capture_error": null,
+      "id": "S05-gold",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "rationale": "Gold identity sanity control, not an independent positive label.",
+      "sql": "SELECT id FROM tickets WHERE opened_on>='2025-01-01' AND opened_on<'2025-02-01' AND (resolved_on IS NULL OR resolved_on>='2025-02-01')",
+      "task_id": "S05"
+    },
+    {
+      "capture_error": null,
+      "id": "S05-equiv",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "The sentinel for NULL is later than every valid YYYY-MM-DD; resolution on the cutoff qualifies.",
+      "sql": "SELECT id FROM tickets WHERE opened_on>='2025-01-01' AND opened_on<'2025-02-01' AND COALESCE(resolved_on,'9999-12-31')>='2025-02-01'",
+      "task_id": "S05"
+    },
+    {
+      "capture_error": null,
+      "id": "S05-mutant",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Only current unresolved status, omitting tickets resolved on/after the cutoff.",
+      "sql": "SELECT id FROM tickets WHERE opened_on>='2025-01-01' AND opened_on<'2025-02-01' AND resolved_on IS NULL",
+      "task_id": "S05"
+    },
+    {
+      "capture_error": null,
+      "id": "S06-gold",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "rationale": "Gold identity sanity control, not an independent positive label.",
+      "sql": "SELECT id,priority FROM tickets WHERE resolved_on IS NULL ORDER BY priority DESC,id ASC LIMIT 3",
+      "task_id": "S06"
+    },
+    {
+      "capture_error": null,
+      "id": "S06-equiv",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "Window rank uses total order and the output repeats that order.",
+      "sql": "SELECT id,priority FROM (SELECT id,priority,ROW_NUMBER() OVER(ORDER BY priority DESC,id ASC) AS r FROM tickets WHERE resolved_on IS NULL) WHERE r<=3 ORDER BY priority DESC,id ASC",
+      "task_id": "S06"
+    },
+    {
+      "capture_error": null,
+      "id": "S06-mutant",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Reverses ID ties when priorities match.",
+      "sql": "SELECT id,priority FROM tickets WHERE resolved_on IS NULL ORDER BY priority DESC,id DESC LIMIT 3",
+      "task_id": "S06"
+    },
+    {
+      "capture_error": null,
+      "id": "S07-gold",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "rationale": "Gold identity sanity control, not an independent positive label.",
+      "sql": "SELECT DISTINCT a.team FROM agents a WHERE EXISTS (SELECT 1 FROM tickets t WHERE t.agent_id=a.id)",
+      "task_id": "S07"
+    },
+    {
+      "capture_error": null,
+      "id": "S07-equiv",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "Grouping by team deduplicates across tickets and same-team agents.",
+      "sql": "SELECT a.team FROM agents a JOIN tickets t ON t.agent_id=a.id GROUP BY a.team",
+      "task_id": "S07"
+    },
+    {
+      "capture_error": null,
+      "id": "S07-mutant",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Emits repeated team names from multiple qualifying agents.",
+      "sql": "SELECT a.team FROM agents a WHERE EXISTS (SELECT 1 FROM tickets t WHERE t.agent_id=a.id)",
+      "task_id": "S07"
+    },
+    {
+      "capture_error": null,
+      "id": "S08-gold",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "rationale": "Gold identity sanity control, not an independent positive label.",
+      "sql": "SELECT a.id FROM agents a WHERE EXISTS (SELECT 1 FROM tickets t WHERE t.agent_id=a.id AND t.priority>=2) AND EXISTS (SELECT 1 FROM tickets t WHERE t.agent_id=a.id AND t.priority=0)",
+      "task_id": "S08"
+    },
+    {
+      "capture_error": null,
+      "id": "S08-equiv",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "Conditional existence counts exclude NULL assignments and distinguish priority 1.",
+      "sql": "SELECT agent_id FROM tickets WHERE agent_id IS NOT NULL GROUP BY agent_id HAVING SUM(CASE WHEN priority>=2 THEN 1 ELSE 0 END)>0 AND SUM(CASE WHEN priority=0 THEN 1 ELSE 0 END)>0",
+      "task_id": "S08"
+    },
+    {
+      "capture_error": null,
+      "id": "S08-mutant",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Treats priority 1 as low priority contrary to the task.",
+      "sql": "SELECT a.id FROM agents a WHERE EXISTS (SELECT 1 FROM tickets t WHERE t.agent_id=a.id AND t.priority>=2) AND EXISTS (SELECT 1 FROM tickets t WHERE t.agent_id=a.id AND t.priority<=1)",
+      "task_id": "S08"
+    },
+    {
+      "capture_error": null,
+      "id": "B01-gold",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "rationale": "Gold identity sanity control, not an independent positive label.",
+      "sql": "SELECT i.id,i.total_cents-COALESCE(SUM(p.amount_cents),0) FROM invoices i LEFT JOIN payments p ON p.invoice_id=i.id GROUP BY i.id",
+      "task_id": "B01"
+    },
+    {
+      "capture_error": null,
+      "id": "B01-equiv",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "Correlated payment sum preserves missing payments and negative balances.",
+      "sql": "SELECT i.id,i.total_cents-COALESCE((SELECT SUM(amount_cents) FROM payments p WHERE p.invoice_id=i.id),0) FROM invoices i",
+      "task_id": "B01"
+    },
+    {
+      "capture_error": null,
+      "id": "B01-mutant",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Drops invoices without payment records.",
+      "sql": "SELECT i.id,i.total_cents-COALESCE(SUM(p.amount_cents),0) FROM invoices i JOIN payments p ON p.invoice_id=i.id GROUP BY i.id",
+      "task_id": "B01"
+    },
+    {
+      "capture_error": null,
+      "id": "B02-gold",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "rationale": "Gold identity sanity control, not an independent positive label.",
+      "sql": "WITH balances AS (SELECT i.account_id,i.total_cents-COALESCE(SUM(p.amount_cents),0) AS balance FROM invoices i LEFT JOIN payments p ON p.invoice_id=i.id GROUP BY i.id) SELECT account_id,SUM(balance) FROM balances GROUP BY account_id HAVING SUM(balance)>0",
+      "task_id": "B02"
+    },
+    {
+      "capture_error": null,
+      "id": "B02-equiv",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "One contribution per invoice, overpayments remain negative before account aggregation.",
+      "sql": "SELECT a.id,SUM(i.total_cents-COALESCE((SELECT SUM(p.amount_cents) FROM payments p WHERE p.invoice_id=i.id),0)) AS balance FROM accounts a JOIN invoices i ON i.account_id=a.id GROUP BY a.id HAVING balance>0",
+      "task_id": "B02"
+    },
+    {
+      "capture_error": null,
+      "id": "B02-mutant",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Drops negative invoice balances before summation, preventing overpayment offsets.",
+      "sql": "WITH balances AS (SELECT i.account_id,i.total_cents-COALESCE(SUM(p.amount_cents),0) AS balance FROM invoices i LEFT JOIN payments p ON p.invoice_id=i.id GROUP BY i.id) SELECT account_id,SUM(balance) FROM balances WHERE balance>0 GROUP BY account_id HAVING SUM(balance)>0",
+      "task_id": "B02"
+    },
+    {
+      "capture_error": null,
+      "id": "B03-gold",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "rationale": "Gold identity sanity control, not an independent positive label.",
+      "sql": "SELECT i.id FROM invoices i WHERE NOT EXISTS (SELECT 1 FROM payments p WHERE p.invoice_id=i.id)",
+      "task_id": "B03"
+    },
+    {
+      "capture_error": null,
+      "id": "B03-equiv",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "Anti join tests records, not monetary balance.",
+      "sql": "SELECT i.id FROM invoices i LEFT JOIN payments p ON p.invoice_id=i.id WHERE p.id IS NULL",
+      "task_id": "B03"
+    },
+    {
+      "capture_error": null,
+      "id": "B03-mutant",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Tests unpaid balance rather than absence of payment records, missing zero-total invoices.",
+      "sql": "SELECT i.id FROM invoices i WHERE i.total_cents>COALESCE((SELECT SUM(p.amount_cents) FROM payments p WHERE p.invoice_id=i.id),0)",
+      "task_id": "B03"
+    },
+    {
+      "capture_error": null,
+      "id": "B04-gold",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "rationale": "Gold identity sanity control, not an independent positive label.",
+      "sql": "SELECT a.id FROM accounts a WHERE EXISTS (SELECT 1 FROM invoices i WHERE i.account_id=a.id) AND NOT EXISTS (SELECT 1 FROM invoices i WHERE i.account_id=a.id AND i.total_cents>COALESCE((SELECT SUM(p.amount_cents) FROM payments p WHERE p.invoice_id=i.id),0))",
+      "task_id": "B04"
+    },
+    {
+      "capture_error": null,
+      "id": "B04-equiv",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "Grouping requires at least one invoice; maximum balance checks every invoice.",
+      "sql": "WITH balances AS (SELECT i.account_id,i.total_cents-COALESCE((SELECT SUM(p.amount_cents) FROM payments p WHERE p.invoice_id=i.id),0) AS b FROM invoices i) SELECT account_id FROM balances GROUP BY account_id HAVING MAX(b)<=0",
+      "task_id": "B04"
+    },
+    {
+      "capture_error": null,
+      "id": "B04-mutant",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Vacuously includes accounts with no invoices.",
+      "sql": "SELECT a.id FROM accounts a WHERE NOT EXISTS (SELECT 1 FROM invoices i WHERE i.account_id=a.id AND i.total_cents>COALESCE((SELECT SUM(p.amount_cents) FROM payments p WHERE p.invoice_id=i.id),0))",
+      "task_id": "B04"
+    },
+    {
+      "capture_error": null,
+      "id": "B05-gold",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "rationale": "Gold identity sanity control, not an independent positive label.",
+      "sql": "SELECT SUBSTR(issued_on,1,7) AS month,SUM(total_cents) FROM invoices GROUP BY SUBSTR(issued_on,1,7) ORDER BY month ASC",
+      "task_id": "B05"
+    },
+    {
+      "capture_error": null,
+      "id": "B05-equiv",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "Distinct month plus correlated invoice totals preserves zero-total months.",
+      "sql": "SELECT DISTINCT SUBSTR(i.issued_on,1,7) AS month,(SELECT SUM(j.total_cents) FROM invoices j WHERE SUBSTR(j.issued_on,1,7)=SUBSTR(i.issued_on,1,7)) FROM invoices i ORDER BY month",
+      "task_id": "B05"
+    },
+    {
+      "capture_error": null,
+      "id": "B05-mutant",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Aggregates payments rather than billed invoice totals, dropping unpaid months.",
+      "sql": "SELECT SUBSTR(i.issued_on,1,7) AS month,SUM(p.amount_cents) FROM invoices i JOIN payments p ON p.invoice_id=i.id GROUP BY SUBSTR(i.issued_on,1,7) ORDER BY month",
+      "task_id": "B05"
+    },
+    {
+      "capture_error": null,
+      "id": "B06-gold",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "rationale": "Gold identity sanity control, not an independent positive label.",
+      "sql": "SELECT invoice_id,id,SUM(amount_cents) OVER(PARTITION BY invoice_id ORDER BY paid_on,id ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) FROM payments ORDER BY invoice_id,paid_on,id",
+      "task_id": "B06"
+    },
+    {
+      "capture_error": null,
+      "id": "B06-equiv",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "Correlated prefix includes this payment and uses both date and ID.",
+      "sql": "SELECT p.invoice_id,p.id,(SELECT SUM(q.amount_cents) FROM payments q WHERE q.invoice_id=p.invoice_id AND (q.paid_on<p.paid_on OR (q.paid_on=p.paid_on AND q.id<=p.id))) FROM payments p ORDER BY p.invoice_id,p.paid_on,p.id",
+      "task_id": "B06"
+    },
+    {
+      "capture_error": null,
+      "id": "B06-mutant",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Default RANGE frame groups all same-day payments instead of ID-ordered prefixes.",
+      "sql": "SELECT invoice_id,id,SUM(amount_cents) OVER(PARTITION BY invoice_id ORDER BY paid_on) FROM payments ORDER BY invoice_id,paid_on,id",
+      "task_id": "B06"
+    },
+    {
+      "capture_error": null,
+      "id": "B07-gold",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "rationale": "Gold identity sanity control, not an independent positive label.",
+      "sql": "SELECT a.plan,AVG(i.total_cents) FROM accounts a JOIN invoices i ON i.account_id=a.id GROUP BY a.plan",
+      "task_id": "B07"
+    },
+    {
+      "capture_error": null,
+      "id": "B07-equiv",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "Real-valued sum/count weights invoices, not accounts.",
+      "sql": "SELECT a.plan,SUM(i.total_cents)*1.0/COUNT(*) FROM invoices i JOIN accounts a ON a.id=i.account_id GROUP BY a.plan",
+      "task_id": "B07"
+    },
+    {
+      "capture_error": null,
+      "id": "B07-mutant",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Weights account averages equally instead of weighting every invoice equally.",
+      "sql": "SELECT plan,AVG(mean) FROM (SELECT a.id,a.plan,AVG(i.total_cents) AS mean FROM accounts a JOIN invoices i ON i.account_id=a.id GROUP BY a.id) GROUP BY plan",
+      "task_id": "B07"
+    },
+    {
+      "capture_error": null,
+      "id": "B08-gold",
+      "label": "sanity",
+      "label_kind": "exact_gold",
+      "rationale": "Gold identity sanity control, not an independent positive label.",
+      "sql": "SELECT a.id FROM accounts a WHERE a.active=1 AND NOT EXISTS (SELECT 1 FROM invoices i WHERE i.account_id=a.id AND i.issued_on>='2025-01-01' AND i.issued_on<'2025-02-01')",
+      "task_id": "B08"
+    },
+    {
+      "capture_error": null,
+      "id": "B08-equiv",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "Left anti join only within January keeps active outside-month/no-invoice accounts.",
+      "sql": "SELECT a.id FROM accounts a LEFT JOIN invoices i ON i.account_id=a.id AND i.issued_on>='2025-01-01' AND i.issued_on<'2025-02-01' WHERE a.active=1 AND i.id IS NULL",
+      "task_id": "B08"
+    },
+    {
+      "capture_error": null,
+      "id": "B08-mutant",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Disqualifies accounts for invoices outside January.",
+      "sql": "SELECT a.id FROM accounts a WHERE a.active=1 AND NOT EXISTS (SELECT 1 FROM invoices i WHERE i.account_id=a.id)",
+      "task_id": "B08"
+    }
+  ],
+  "cohort": "authored-v1",
+  "frozen_sha256": "31f8c39a507953ea54b52721c1592efa53e4771c26fb96d0644da216abde3085",
+  "kind": "authored_control",
+  "raw_sha256": "809a161f63a9359cf6017c0555b8a3abe22150e317b700862b4c26b2f6e55442",
+  "slots": [
+    {
+      "candidate_id": "C01-gold",
+      "task_id": "C01"
+    },
+    {
+      "candidate_id": "C01-equiv",
+      "task_id": "C01"
+    },
+    {
+      "candidate_id": "C01-mutant",
+      "task_id": "C01"
+    },
+    {
+      "candidate_id": "C02-gold",
+      "task_id": "C02"
+    },
+    {
+      "candidate_id": "C02-equiv",
+      "task_id": "C02"
+    },
+    {
+      "candidate_id": "C02-mutant",
+      "task_id": "C02"
+    },
+    {
+      "candidate_id": "C03-gold",
+      "task_id": "C03"
+    },
+    {
+      "candidate_id": "C03-equiv",
+      "task_id": "C03"
+    },
+    {
+      "candidate_id": "C03-mutant",
+      "task_id": "C03"
+    },
+    {
+      "candidate_id": "C04-gold",
+      "task_id": "C04"
+    },
+    {
+      "candidate_id": "C04-equiv",
+      "task_id": "C04"
+    },
+    {
+      "candidate_id": "C04-mutant",
+      "task_id": "C04"
+    },
+    {
+      "candidate_id": "C05-gold",
+      "task_id": "C05"
+    },
+    {
+      "candidate_id": "C05-equiv",
+      "task_id": "C05"
+    },
+    {
+      "candidate_id": "C05-mutant",
+      "task_id": "C05"
+    },
+    {
+      "candidate_id": "C06-gold",
+      "task_id": "C06"
+    },
+    {
+      "candidate_id": "C06-equiv",
+      "task_id": "C06"
+    },
+    {
+      "candidate_id": "C06-mutant",
+      "task_id": "C06"
+    },
+    {
+      "candidate_id": "C07-gold",
+      "task_id": "C07"
+    },
+    {
+      "candidate_id": "C07-equiv",
+      "task_id": "C07"
+    },
+    {
+      "candidate_id": "C07-mutant",
+      "task_id": "C07"
+    },
+    {
+      "candidate_id": "C08-gold",
+      "task_id": "C08"
+    },
+    {
+      "candidate_id": "C08-equiv",
+      "task_id": "C08"
+    },
+    {
+      "candidate_id": "C08-mutant",
+      "task_id": "C08"
+    },
+    {
+      "candidate_id": "S01-gold",
+      "task_id": "S01"
+    },
+    {
+      "candidate_id": "S01-equiv",
+      "task_id": "S01"
+    },
+    {
+      "candidate_id": "S01-mutant",
+      "task_id": "S01"
+    },
+    {
+      "candidate_id": "S02-gold",
+      "task_id": "S02"
+    },
+    {
+      "candidate_id": "S02-equiv",
+      "task_id": "S02"
+    },
+    {
+      "candidate_id": "S02-mutant",
+      "task_id": "S02"
+    },
+    {
+      "candidate_id": "S03-gold",
+      "task_id": "S03"
+    },
+    {
+      "candidate_id": "S03-equiv",
+      "task_id": "S03"
+    },
+    {
+      "candidate_id": "S03-mutant",
+      "task_id": "S03"
+    },
+    {
+      "candidate_id": "S04-gold",
+      "task_id": "S04"
+    },
+    {
+      "candidate_id": "S04-equiv",
+      "task_id": "S04"
+    },
+    {
+      "candidate_id": "S04-mutant",
+      "task_id": "S04"
+    },
+    {
+      "candidate_id": "S05-gold",
+      "task_id": "S05"
+    },
+    {
+      "candidate_id": "S05-equiv",
+      "task_id": "S05"
+    },
+    {
+      "candidate_id": "S05-mutant",
+      "task_id": "S05"
+    },
+    {
+      "candidate_id": "S06-gold",
+      "task_id": "S06"
+    },
+    {
+      "candidate_id": "S06-equiv",
+      "task_id": "S06"
+    },
+    {
+      "candidate_id": "S06-mutant",
+      "task_id": "S06"
+    },
+    {
+      "candidate_id": "S07-gold",
+      "task_id": "S07"
+    },
+    {
+      "candidate_id": "S07-equiv",
+      "task_id": "S07"
+    },
+    {
+      "candidate_id": "S07-mutant",
+      "task_id": "S07"
+    },
+    {
+      "candidate_id": "S08-gold",
+      "task_id": "S08"
+    },
+    {
+      "candidate_id": "S08-equiv",
+      "task_id": "S08"
+    },
+    {
+      "candidate_id": "S08-mutant",
+      "task_id": "S08"
+    },
+    {
+      "candidate_id": "B01-gold",
+      "task_id": "B01"
+    },
+    {
+      "candidate_id": "B01-equiv",
+      "task_id": "B01"
+    },
+    {
+      "candidate_id": "B01-mutant",
+      "task_id": "B01"
+    },
+    {
+      "candidate_id": "B02-gold",
+      "task_id": "B02"
+    },
+    {
+      "candidate_id": "B02-equiv",
+      "task_id": "B02"
+    },
+    {
+      "candidate_id": "B02-mutant",
+      "task_id": "B02"
+    },
+    {
+      "candidate_id": "B03-gold",
+      "task_id": "B03"
+    },
+    {
+      "candidate_id": "B03-equiv",
+      "task_id": "B03"
+    },
+    {
+      "candidate_id": "B03-mutant",
+      "task_id": "B03"
+    },
+    {
+      "candidate_id": "B04-gold",
+      "task_id": "B04"
+    },
+    {
+      "candidate_id": "B04-equiv",
+      "task_id": "B04"
+    },
+    {
+      "candidate_id": "B04-mutant",
+      "task_id": "B04"
+    },
+    {
+      "candidate_id": "B05-gold",
+      "task_id": "B05"
+    },
+    {
+      "candidate_id": "B05-equiv",
+      "task_id": "B05"
+    },
+    {
+      "candidate_id": "B05-mutant",
+      "task_id": "B05"
+    },
+    {
+      "candidate_id": "B06-gold",
+      "task_id": "B06"
+    },
+    {
+      "candidate_id": "B06-equiv",
+      "task_id": "B06"
+    },
+    {
+      "candidate_id": "B06-mutant",
+      "task_id": "B06"
+    },
+    {
+      "candidate_id": "B07-gold",
+      "task_id": "B07"
+    },
+    {
+      "candidate_id": "B07-equiv",
+      "task_id": "B07"
+    },
+    {
+      "candidate_id": "B07-mutant",
+      "task_id": "B07"
+    },
+    {
+      "candidate_id": "B08-gold",
+      "task_id": "B08"
+    },
+    {
+      "candidate_id": "B08-equiv",
+      "task_id": "B08"
+    },
+    {
+      "candidate_id": "B08-mutant",
+      "task_id": "B08"
+    }
+  ],
+  "version": 1
+}

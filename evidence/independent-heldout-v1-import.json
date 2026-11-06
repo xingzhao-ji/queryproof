@@ -1,0 +1,167 @@
+{
+  "candidates": [
+    {
+      "capture_error": null,
+      "id": "held-C02-except",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "PK customer IDs are unique; set difference removes exactly customers with a paid order.",
+      "sql": "SELECT id FROM customers EXCEPT SELECT customer_id FROM orders WHERE status='paid'",
+      "task_id": "C02"
+    },
+    {
+      "capture_error": null,
+      "id": "held-C08-intersect",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "Intersection of distinct customer sets requires each SKU without requiring a shared order.",
+      "sql": "SELECT o.customer_id FROM orders o JOIN lines l ON l.order_id=o.id WHERE o.status='paid' AND l.sku='A' INTERSECT SELECT o.customer_id FROM orders o JOIN lines l ON l.order_id=o.id WHERE o.status='paid' AND l.sku='B'",
+      "task_id": "C08"
+    },
+    {
+      "capture_error": null,
+      "id": "held-S02-except",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "Set difference ignores nullable unassigned IDs because no positive agent PK equals NULL.",
+      "sql": "SELECT id FROM agents EXCEPT SELECT agent_id FROM tickets WHERE resolved_on IS NULL",
+      "task_id": "S02"
+    },
+    {
+      "capture_error": null,
+      "id": "held-S04-subquery",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "Correlated ordered first element implements earliest date/least ID, with existence excluding no-reply tickets.",
+      "sql": "SELECT t.id,(SELECT e.id FROM events e WHERE e.ticket_id=t.id AND e.kind='reply' ORDER BY e.happened_on,e.id LIMIT 1) FROM tickets t WHERE EXISTS(SELECT 1 FROM events e WHERE e.ticket_id=t.id AND e.kind='reply')",
+      "task_id": "S04"
+    },
+    {
+      "capture_error": null,
+      "id": "held-B04-except",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "Nonempty invoice-owner set minus owners with any positive invoice balance enforces both clauses.",
+      "sql": "SELECT account_id FROM invoices EXCEPT SELECT i.account_id FROM invoices i WHERE i.total_cents > COALESCE((SELECT SUM(p.amount_cents) FROM payments p WHERE p.invoice_id=i.id),0)",
+      "task_id": "B04"
+    },
+    {
+      "capture_error": null,
+      "id": "held-B06-range-pair",
+      "label": "positive",
+      "label_kind": "equivalent",
+      "rationale": "Date/PK ordering has unique peers, so RANGE includes exactly the same prefix as ROWS.",
+      "sql": "SELECT invoice_id,id,SUM(amount_cents) OVER(PARTITION BY invoice_id ORDER BY paid_on,id RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) FROM payments ORDER BY invoice_id,paid_on,id",
+      "task_id": "B06"
+    },
+    {
+      "capture_error": null,
+      "id": "held-C01-unit-only",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Drops quantity multiplication; a quantity-two positive-priced line is a direct counterexample.",
+      "sql": "SELECT c.id,COALESCE(SUM(l.unit_cents),0) FROM customers c LEFT JOIN orders o ON o.customer_id=c.id AND o.status='paid' LEFT JOIN lines l ON l.order_id=o.id GROUP BY c.id",
+      "task_id": "C01"
+    },
+    {
+      "capture_error": null,
+      "id": "held-C07-limit100",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Undocumented truncation violates one-row-per-paid-line multiplicity on a valid 101-line world; frozen small worlds may miss it.",
+      "sql": "SELECT l.sku FROM lines l JOIN orders o ON o.id=l.order_id WHERE o.status='paid' LIMIT 100",
+      "task_id": "C07"
+    },
+    {
+      "capture_error": null,
+      "id": "held-S01-unresolved-only",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Requested all assigned tickets, not only unresolved ones.",
+      "sql": "SELECT a.id,COUNT(t.id) FROM agents a LEFT JOIN tickets t ON t.agent_id=a.id AND t.resolved_on IS NULL GROUP BY a.id",
+      "task_id": "S01"
+    },
+    {
+      "capture_error": null,
+      "id": "held-S05-strict-cutoff",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Resolution exactly February 1 must qualify; strict comparison excludes it.",
+      "sql": "SELECT id FROM tickets WHERE opened_on>='2025-01-01' AND opened_on<'2025-02-01' AND (resolved_on IS NULL OR resolved_on>'2025-02-01')",
+      "task_id": "S05"
+    },
+    {
+      "capture_error": null,
+      "id": "held-B02-join-inflation",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Each extra payment repeats invoice principal before summing, unlike one signed balance per invoice.",
+      "sql": "SELECT i.account_id,SUM(i.total_cents)-COALESCE(SUM(p.amount_cents),0) AS outstanding FROM invoices i LEFT JOIN payments p ON p.invoice_id=i.id GROUP BY i.account_id HAVING outstanding>0",
+      "task_id": "B02"
+    },
+    {
+      "capture_error": null,
+      "id": "held-B07-integer-division",
+      "label": "negative",
+      "label_kind": "semantic_mutant",
+      "rationale": "Integer division loses fractional cents in an average; represented plan invoices with totals 1 and 2 require1.5.",
+      "sql": "SELECT a.plan,SUM(i.total_cents)/COUNT(*) FROM accounts a JOIN invoices i ON i.account_id=a.id GROUP BY a.plan",
+      "task_id": "B07"
+    }
+  ],
+  "cohort": "independent-heldout-v1",
+  "frozen_sha256": "31f8c39a507953ea54b52721c1592efa53e4771c26fb96d0644da216abde3085",
+  "kind": "reviewer_probe",
+  "raw_sha256": "0f059a22c0b08c5577520b6fce8a2b6c720679d28a7c353d163bdc20cc93b980",
+  "slots": [
+    {
+      "candidate_id": "held-C02-except",
+      "task_id": "C02"
+    },
+    {
+      "candidate_id": "held-C08-intersect",
+      "task_id": "C08"
+    },
+    {
+      "candidate_id": "held-S02-except",
+      "task_id": "S02"
+    },
+    {
+      "candidate_id": "held-S04-subquery",
+      "task_id": "S04"
+    },
+    {
+      "candidate_id": "held-B04-except",
+      "task_id": "B04"
+    },
+    {
+      "candidate_id": "held-B06-range-pair",
+      "task_id": "B06"
+    },
+    {
+      "candidate_id": "held-C01-unit-only",
+      "task_id": "C01"
+    },
+    {
+      "candidate_id": "held-C07-limit100",
+      "task_id": "C07"
+    },
+    {
+      "candidate_id": "held-S01-unresolved-only",
+      "task_id": "S01"
+    },
+    {
+      "candidate_id": "held-S05-strict-cutoff",
+      "task_id": "S05"
+    },
+    {
+      "candidate_id": "held-B02-join-inflation",
+      "task_id": "B02"
+    },
+    {
+      "candidate_id": "held-B07-integer-division",
+      "task_id": "B07"
+    }
+  ],
+  "version": 1
+}

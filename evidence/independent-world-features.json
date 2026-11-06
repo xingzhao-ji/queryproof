@@ -1,0 +1,26 @@
+{
+  "commerce": {
+    "customer_without_orders": true,
+    "paid_order_without_lines": true,
+    "multiple_paid_orders_same_date_customer": true,
+    "all_time_boundaries": true,
+    "zero_price": true,
+    "all_empty_world": true
+  },
+  "support": {
+    "unassigned": true,
+    "shared_team": true,
+    "agent_without_tickets": true,
+    "tied_reply_dates": true,
+    "february_first_resolution": true,
+    "all_empty_world": true
+  },
+  "billing": {
+    "invoice_without_payments": true,
+    "account_without_invoices": true,
+    "overpaid_invoice": true,
+    "zero_invoice": true,
+    "tied_payment_dates": true,
+    "all_empty_world": true
+  }
+}

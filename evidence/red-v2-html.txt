@@ -1,0 +1,18 @@
+test_model_headline_uses_planned_denominator_not_calibration (test_cli.ProductTests.test_model_headline_uses_planned_denominator_not_calibration) ... FAIL
+test_model_primary_rate_includes_missing_and_invalid_slots (test_cli.ProductTests.test_model_primary_rate_includes_missing_and_invalid_slots) ... ok
+test_real_cli_task_run_inspect_compare_and_report (test_cli.ProductTests.test_real_cli_task_run_inspect_compare_and_report) ... ok
+test_report_escapes_untrusted_text (test_cli.ProductTests.test_report_escapes_untrusted_text) ... ok
+
+======================================================================
+FAIL: test_model_headline_uses_planned_denominator_not_calibration (test_cli.ProductTests.test_model_headline_uses_planned_denominator_not_calibration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_cli.py", line 64, in test_model_headline_uses_planned_denominator_not_calibration
+    self.assertIn("3 / 24",headline)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: '3 / 24' not found in '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src \'none\'; style-src \'unsafe-inline\'"><title>QueryProof report</title><style>body{font:16px system-ui,sans-serif;line-height:1.5;max-width:1120px;margin:48px auto;padding:0 24px;color:#18302c;background:#f7f8f5}h1{font-size:44px;margin-bottom:8px}p{max-width:85ch}table{width:100%;border-collapse:collapse;background:white}th,td{text-align:left;padding:12px;border-bottom:1px solid #d0d9d3}details{margin:16px 0;border:1px solid #c1cec8;background:white;padding:18px;border-radius:8px}summary{cursor:pointer;font-weight:650}pre{overflow:auto;max-height:600px;font:13px ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere;background:#edf2ee;padding:16px}small{color:#48675d}</style><h1>QueryProof</h1><p>Inspect what a SQL answer does across multiple database worlds. A finite passing suite is evidence, not proof of universal equivalence.</p><table><caption>Grader calibration — labeled equivalents and semantic mutants only</caption><thead><tr><th>Grader</th><th>False accepts / negatives</th><th>False rejects / positives</th><th>Pending</th></tr></thead><tbody></tbody></table>'
+
+----------------------------------------------------------------------
+Ran 4 tests in 2.614s
+
+FAILED (failures=1)

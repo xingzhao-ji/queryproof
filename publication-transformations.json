@@ -1,0 +1,96 @@
+{
+  "transformations": [
+    {
+      "path": "README.md",
+      "original_sha256": "f8d95736f4526800fa836151756bdf1e68e31b63659cb46ef534932bcd62485f",
+      "published_sha256": "bf5286f51033bf1e50959803c94f3b3d47ec455a706e4a933b491975bca85973",
+      "reason": "Standalone instructions, private path redaction or omission of private portfolio/qualification discussion; technical outcomes preserved."
+    },
+    {
+      "path": "evidence/red-oracles.txt",
+      "original_sha256": "41c4121bfa9c31ab2ce0b69bda7c96b1411d49e495cbf0db10915dde38a10632",
+      "published_sha256": "7aa0978420b2b942f2be7e9fb59bed00fa9f26f9d894f5a242e3e60e2e30d7e2",
+      "reason": "Standalone instructions, private path redaction or omission of private portfolio/qualification discussion; technical outcomes preserved."
+    },
+    {
+      "path": "evidence/red-v2-boundaries.txt",
+      "original_sha256": "82605ff76f4f382ffa3b4e876510e6f638bd11de2563ee5dfa5c7ea9885bc0d1",
+      "published_sha256": "0e9f6015cd97d307f52059cdff8085fc0ce497b21d412a73e634c99ecd3ca78f",
+      "reason": "Standalone instructions, private path redaction or omission of private portfolio/qualification discussion; technical outcomes preserved."
+    },
+    {
+      "path": "evidence/red-runs.txt",
+      "original_sha256": "3e1a4ef50766787e87b1b058f601ef31a748c963b3290f8aebc81a256cdcdb67",
+      "published_sha256": "5042a0cb8ac4e74d9c15dc5a2abae55f038d78ebacb238b320532c732c92ef11",
+      "reason": "Standalone instructions, private path redaction or omission of private portfolio/qualification discussion; technical outcomes preserved."
+    },
+    {
+      "path": "evidence/red-cli.txt",
+      "original_sha256": "7a5e767338074b4d07abf1d20678b720bf8dd299ed9242c45670301701117573",
+      "published_sha256": "baacd54f361acd456d744201a1a510cfdec777493419c924518be7df214c1aa8",
+      "reason": "Standalone instructions, private path redaction or omission of private portfolio/qualification discussion; technical outcomes preserved."
+    },
+    {
+      "path": "evidence/red-freeze.txt",
+      "original_sha256": "4c94564e5c31336147f377a083aeaf35e97f5a1b5597f40bc63a84ff76044884",
+      "published_sha256": "03b86389a470a4d4fabdaae76b28d0a237096b1dbb5b5373b62f33a814170beb",
+      "reason": "Standalone instructions, private path redaction or omission of private portfolio/qualification discussion; technical outcomes preserved."
+    },
+    {
+      "path": "evidence/crash-resume-v2.json",
+      "original_sha256": "b186e5a06f35170d296de50476629af0b798629c1a8c050f33467b1ed6364c86",
+      "published_sha256": "4101c898b3a995803e37e257cb400b3461751a4c742ad85e5f1f12f688f1bd8c",
+      "reason": "Standalone instructions, private path redaction or omission of private portfolio/qualification discussion; technical outcomes preserved."
+    },
+    {
+      "path": "evidence/red-corpus.txt",
+      "original_sha256": "53d58db5968be760d0147e30536bd6a471e031bbada3b9466602562e252cab15",
+      "published_sha256": "eab1c1832ea67413eea728cb897195312985eb7fb046b78d4f68f661b93ab1ae",
+      "reason": "Standalone instructions, private path redaction or omission of private portfolio/qualification discussion; technical outcomes preserved."
+    },
+    {
+      "path": "evidence/red-surrogate.txt",
+      "original_sha256": "044f581bb5045350bb182cfbc56ecb71cf51d8008f930a7e28f7734b4f9e685d",
+      "published_sha256": "d0438c2545d3c7860d8a63f74e16ca1d7f1e16f99380be8457129cc77ba4645e",
+      "reason": "Standalone instructions, private path redaction or omission of private portfolio/qualification discussion; technical outcomes preserved."
+    },
+    {
+      "path": "evidence/red-execution.txt",
+      "original_sha256": "773324c5ef2cd91c6a455e5316e73d09c7f6e6eeb9500d00a2ab4c2c364d8f4b",
+      "published_sha256": "f613e349e72ad13d7807c92df073c6c0f270e64821138a82215179a66206ba83",
+      "reason": "Standalone instructions, private path redaction or omission of private portfolio/qualification discussion; technical outcomes preserved."
+    },
+    {
+      "path": "evidence/red-v2-html.txt",
+      "original_sha256": "b98a4fa1063817c31d6d8c647c301566949f4329fabac790985dce1f2f58a6d8",
+      "published_sha256": "2c76f2ca9bd792001f4e90b63f09161015bc471509206b8203970f1849055590",
+      "reason": "Standalone instructions, private path redaction or omission of private portfolio/qualification discussion; technical outcomes preserved."
+    },
+    {
+      "path": "evidence/root-capture-task.txt",
+      "original_sha256": "6e6478e999d1642d7c600de440a32af3b21bfa20be7a25f9d39d4ce334f9c57e",
+      "published_sha256": "275575bc011d16bb32c93c377eed0017740f1cb1677a93c3187d2dc60fc28f03",
+      "reason": "Standalone instructions, private path redaction or omission of private portfolio/qualification discussion; technical outcomes preserved."
+    },
+    {
+      "path": "docs/independent-employer-review.md",
+      "original_sha256": "95dc55649db609721d73922c8199e2b9ae0876576970d796d4f68d6d56ca65c6",
+      "published_sha256": "5f3965bcdbf4fe4369c8658cf128856f8e730d906d92e5c99d43ad23b8f76b64",
+      "reason": "Standalone instructions, private path redaction or omission of private portfolio/qualification discussion; technical outcomes preserved."
+    },
+    {
+      "path": "docs/design.md",
+      "original_sha256": "bff3749925e578546bb24741472838f5ad61651ed74f0199c68eedff6298b955",
+      "published_sha256": "78d43d3278b29bbaeef3a57a0ab9d177431e391ae558a370b2de809e87958d76",
+      "reason": "Standalone instructions, private path redaction or omission of private portfolio/qualification discussion; technical outcomes preserved."
+    }
+  ],
+  "excluded_workflow_and_bundle_files": [
+    "docs/independent-design-review.md",
+    "docs/plan.md",
+    "docs/progress.md",
+    "evidence/queryproof-replay-v2.tar.gz",
+    "evidence/replay-package.json"
+  ],
+  "frozen_v2_inputs_unchanged": 20
+}

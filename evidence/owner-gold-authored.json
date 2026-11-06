@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "authored_at_utc": "2026-10-23T20:04:04.786746+00:00",
+  "independent_expected_rows_inspected": false,
+  "independent_reference_source_inspected": false,
+  "sha256": {
+    "corpus/oracles.json": "02eccb173affad7ee9d08ba846aeb8b882450ac81bfd9152f26a9a6a3f2f7a11",
+    "corpus/controls.json": "9ca76d54b662604d090567a4d1f44fd7e7d381465f157b578b9c85b193a14f00"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "frozen_manifest_sha256": "585e685d78b28da74ed098ce9988aeaf44aea1c9d00592b38a88d7169ae3dfcb",
+  "results": [
+    {
+      "case": "empty_planned_slots",
+      "outcome": "ValueError: frozen policy/slots/limits/prompt differs from bound implementation"
+    },
+    {
+      "case": "changed_policy_limits",
+      "outcome": "ValueError: frozen policy/slots/limits/prompt differs from bound implementation"
+    },
+    {
+      "case": "changed_policy_name",
+      "outcome": "ValueError: frozen policy/slots/limits/prompt differs from bound implementation"
+    },
+    {
+      "case": "modified_prompt_and_digest",
+      "outcome": "ValueError: frozen policy/slots/limits/prompt differs from bound implementation"
+    },
+    {
+      "case": "malformed",
+      "raw_retained": true,
+      "slots": 24,
+      "capture_complete": false,
+      "denominator": 24,
+      "successes": 0,
+      "invalid_slots": 24,
+      "missing_slots": 0,
+      "execution_complete": true
+    },
+    {
+      "case": "list-task-id",
+      "raw_retained": true,
+      "slots": 24,
+      "capture_complete": false,
+      "denominator": 24,
+      "successes": 0,
+      "invalid_slots": 24,
+      "missing_slots": 0,
+      "execution_complete": true
+    },
+    {
+      "case": "invalid-utf8",
+      "raw_retained": true,
+      "slots": 24,
+      "capture_complete": false,
+      "denominator": 24,
+      "successes": 0,
+      "invalid_slots": 24,
+      "missing_slots": 0,
+      "execution_complete": true
+    }
+  ],
+  "scope": "Synthetic reviewer fault injections, NOT actual model outputs. Private copied freeze mutations only; frozen-v2/source/corpus unchanged.",
+  "previous_findings": "evidence/independent-integrity-v1.json"
+}

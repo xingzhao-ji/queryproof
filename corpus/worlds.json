@@ -1,0 +1,3756 @@
+{
+  "version": 1,
+  "worlds": [
+    {
+      "id": "commerce-anchor",
+      "schema": "commerce",
+      "seed": 17,
+      "role": "anchor",
+      "tables": {
+        "customers": [
+          {
+            "id": 1,
+            "region": "north"
+          },
+          {
+            "id": 2,
+            "region": "south"
+          }
+        ],
+        "orders": [
+          {
+            "id": 1,
+            "customer_id": 1,
+            "status": "paid",
+            "ordered_on": "2025-01-10"
+          },
+          {
+            "id": 2,
+            "customer_id": 1,
+            "status": "paid",
+            "ordered_on": "2025-01-20"
+          },
+          {
+            "id": 3,
+            "customer_id": 2,
+            "status": "paid",
+            "ordered_on": "2025-01-11"
+          }
+        ],
+        "lines": [
+          {
+            "id": 1,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 100
+          },
+          {
+            "id": 2,
+            "order_id": 2,
+            "sku": "B",
+            "quantity": 1,
+            "unit_cents": 200
+          },
+          {
+            "id": 3,
+            "order_id": 3,
+            "sku": "C",
+            "quantity": 1,
+            "unit_cents": 50
+          }
+        ]
+      }
+    },
+    {
+      "id": "commerce-edge",
+      "schema": "commerce",
+      "seed": 41,
+      "role": "edge",
+      "tables": {
+        "customers": [
+          {
+            "id": 1,
+            "region": "north"
+          },
+          {
+            "id": 2,
+            "region": "south"
+          },
+          {
+            "id": 3,
+            "region": null
+          },
+          {
+            "id": 4,
+            "region": "north"
+          },
+          {
+            "id": 5,
+            "region": "west"
+          },
+          {
+            "id": 6,
+            "region": "south"
+          },
+          {
+            "id": 7,
+            "region": "east"
+          }
+        ],
+        "orders": [
+          {
+            "id": 1,
+            "customer_id": 1,
+            "status": "paid",
+            "ordered_on": "2025-01-01"
+          },
+          {
+            "id": 2,
+            "customer_id": 1,
+            "status": "paid",
+            "ordered_on": "2025-01-15"
+          },
+          {
+            "id": 3,
+            "customer_id": 2,
+            "status": "pending",
+            "ordered_on": "2025-01-15"
+          },
+          {
+            "id": 4,
+            "customer_id": 3,
+            "status": "paid",
+            "ordered_on": "2025-02-01"
+          },
+          {
+            "id": 5,
+            "customer_id": 2,
+            "status": "paid",
+            "ordered_on": "2024-12-31"
+          },
+          {
+            "id": 6,
+            "customer_id": 2,
+            "status": "paid",
+            "ordered_on": "2025-01-31"
+          },
+          {
+            "id": 7,
+            "customer_id": 3,
+            "status": "paid",
+            "ordered_on": "2025-01-15"
+          },
+          {
+            "id": 8,
+            "customer_id": 4,
+            "status": "cancelled",
+            "ordered_on": "2025-01-15"
+          },
+          {
+            "id": 9,
+            "customer_id": 1,
+            "status": "paid",
+            "ordered_on": "2025-01-15"
+          },
+          {
+            "id": 10,
+            "customer_id": 5,
+            "status": "paid",
+            "ordered_on": "2025-01-31"
+          },
+          {
+            "id": 11,
+            "customer_id": 6,
+            "status": "paid",
+            "ordered_on": "2025-01-15"
+          },
+          {
+            "id": 12,
+            "customer_id": 5,
+            "status": "paid",
+            "ordered_on": "2025-01-16"
+          }
+        ],
+        "lines": [
+          {
+            "id": 1,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 100
+          },
+          {
+            "id": 2,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 2,
+            "unit_cents": 100
+          },
+          {
+            "id": 3,
+            "order_id": 2,
+            "sku": "B",
+            "quantity": 1,
+            "unit_cents": 300
+          },
+          {
+            "id": 4,
+            "order_id": 9,
+            "sku": "C",
+            "quantity": 1,
+            "unit_cents": 400
+          },
+          {
+            "id": 5,
+            "order_id": 5,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 500
+          },
+          {
+            "id": 6,
+            "order_id": 6,
+            "sku": "B",
+            "quantity": 1,
+            "unit_cents": 500
+          },
+          {
+            "id": 7,
+            "order_id": 4,
+            "sku": "C",
+            "quantity": 1,
+            "unit_cents": 999
+          },
+          {
+            "id": 8,
+            "order_id": 7,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 0
+          },
+          {
+            "id": 9,
+            "order_id": 3,
+            "sku": "B",
+            "quantity": 1,
+            "unit_cents": 10000
+          },
+          {
+            "id": 10,
+            "order_id": 8,
+            "sku": "C",
+            "quantity": 1,
+            "unit_cents": 123
+          },
+          {
+            "id": 11,
+            "order_id": 11,
+            "sku": "C",
+            "quantity": 1,
+            "unit_cents": 50
+          }
+        ]
+      }
+    },
+    {
+      "id": "commerce-73",
+      "schema": "commerce",
+      "seed": 73,
+      "role": "generated",
+      "tables": {
+        "customers": [
+          {
+            "id": 1,
+            "region": "north"
+          },
+          {
+            "id": 2,
+            "region": null
+          },
+          {
+            "id": 3,
+            "region": "south"
+          },
+          {
+            "id": 4,
+            "region": "north"
+          },
+          {
+            "id": 5,
+            "region": "south"
+          },
+          {
+            "id": 6,
+            "region": null
+          },
+          {
+            "id": 7,
+            "region": "north"
+          },
+          {
+            "id": 8,
+            "region": "north"
+          }
+        ],
+        "orders": [
+          {
+            "id": 1,
+            "customer_id": 5,
+            "status": "paid",
+            "ordered_on": "2025-01-31"
+          },
+          {
+            "id": 2,
+            "customer_id": 4,
+            "status": "paid",
+            "ordered_on": "2025-01-31"
+          },
+          {
+            "id": 3,
+            "customer_id": 1,
+            "status": "paid",
+            "ordered_on": "2025-01-15"
+          },
+          {
+            "id": 4,
+            "customer_id": 4,
+            "status": "paid",
+            "ordered_on": "2025-01-31"
+          },
+          {
+            "id": 5,
+            "customer_id": 3,
+            "status": "cancelled",
+            "ordered_on": "2025-01-31"
+          },
+          {
+            "id": 6,
+            "customer_id": 5,
+            "status": "cancelled",
+            "ordered_on": "2025-01-01"
+          },
+          {
+            "id": 7,
+            "customer_id": 7,
+            "status": "paid",
+            "ordered_on": "2025-01-15"
+          },
+          {
+            "id": 8,
+            "customer_id": 5,
+            "status": "paid",
+            "ordered_on": "2025-02-02"
+          },
+          {
+            "id": 9,
+            "customer_id": 7,
+            "status": "paid",
+            "ordered_on": "2025-01-31"
+          },
+          {
+            "id": 10,
+            "customer_id": 6,
+            "status": "pending",
+            "ordered_on": "2025-01-15"
+          },
+          {
+            "id": 11,
+            "customer_id": 2,
+            "status": "paid",
+            "ordered_on": "2024-12-31"
+          },
+          {
+            "id": 12,
+            "customer_id": 2,
+            "status": "pending",
+            "ordered_on": "2025-01-15"
+          },
+          {
+            "id": 13,
+            "customer_id": 6,
+            "status": "paid",
+            "ordered_on": "2025-01-01"
+          },
+          {
+            "id": 14,
+            "customer_id": 5,
+            "status": "paid",
+            "ordered_on": "2025-02-01"
+          },
+          {
+            "id": 15,
+            "customer_id": 4,
+            "status": "paid",
+            "ordered_on": "2024-12-31"
+          },
+          {
+            "id": 16,
+            "customer_id": 7,
+            "status": "paid",
+            "ordered_on": "2025-02-02"
+          },
+          {
+            "id": 17,
+            "customer_id": 2,
+            "status": "paid",
+            "ordered_on": "2025-02-01"
+          },
+          {
+            "id": 18,
+            "customer_id": 2,
+            "status": "cancelled",
+            "ordered_on": "2025-01-31"
+          }
+        ],
+        "lines": [
+          {
+            "id": 1,
+            "order_id": 1,
+            "sku": "C",
+            "quantity": 5,
+            "unit_cents": 50
+          },
+          {
+            "id": 2,
+            "order_id": 1,
+            "sku": "B",
+            "quantity": 3,
+            "unit_cents": 50
+          },
+          {
+            "id": 3,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 4,
+            "unit_cents": 0
+          },
+          {
+            "id": 4,
+            "order_id": 2,
+            "sku": "B",
+            "quantity": 1,
+            "unit_cents": 0
+          },
+          {
+            "id": 5,
+            "order_id": 2,
+            "sku": "B",
+            "quantity": 4,
+            "unit_cents": 50
+          },
+          {
+            "id": 6,
+            "order_id": 2,
+            "sku": "B",
+            "quantity": 4,
+            "unit_cents": 0
+          },
+          {
+            "id": 7,
+            "order_id": 3,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 500
+          },
+          {
+            "id": 8,
+            "order_id": 4,
+            "sku": "B",
+            "quantity": 4,
+            "unit_cents": 100
+          },
+          {
+            "id": 9,
+            "order_id": 4,
+            "sku": "C",
+            "quantity": 4,
+            "unit_cents": 0
+          },
+          {
+            "id": 10,
+            "order_id": 5,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 0
+          },
+          {
+            "id": 11,
+            "order_id": 5,
+            "sku": "C",
+            "quantity": 3,
+            "unit_cents": 500
+          },
+          {
+            "id": 12,
+            "order_id": 5,
+            "sku": "B",
+            "quantity": 5,
+            "unit_cents": 0
+          },
+          {
+            "id": 13,
+            "order_id": 6,
+            "sku": "B",
+            "quantity": 1,
+            "unit_cents": 50
+          },
+          {
+            "id": 14,
+            "order_id": 9,
+            "sku": "A",
+            "quantity": 2,
+            "unit_cents": 333
+          },
+          {
+            "id": 15,
+            "order_id": 9,
+            "sku": "A",
+            "quantity": 5,
+            "unit_cents": 500
+          },
+          {
+            "id": 16,
+            "order_id": 10,
+            "sku": "C",
+            "quantity": 2,
+            "unit_cents": 0
+          },
+          {
+            "id": 17,
+            "order_id": 10,
+            "sku": "A",
+            "quantity": 2,
+            "unit_cents": 500
+          },
+          {
+            "id": 18,
+            "order_id": 10,
+            "sku": "A",
+            "quantity": 4,
+            "unit_cents": 50
+          },
+          {
+            "id": 19,
+            "order_id": 11,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 500
+          },
+          {
+            "id": 20,
+            "order_id": 11,
+            "sku": "B",
+            "quantity": 3,
+            "unit_cents": 500
+          },
+          {
+            "id": 21,
+            "order_id": 11,
+            "sku": "B",
+            "quantity": 3,
+            "unit_cents": 50
+          },
+          {
+            "id": 22,
+            "order_id": 12,
+            "sku": "B",
+            "quantity": 3,
+            "unit_cents": 50
+          },
+          {
+            "id": 23,
+            "order_id": 12,
+            "sku": "B",
+            "quantity": 4,
+            "unit_cents": 333
+          },
+          {
+            "id": 24,
+            "order_id": 13,
+            "sku": "A",
+            "quantity": 4,
+            "unit_cents": 100
+          },
+          {
+            "id": 25,
+            "order_id": 13,
+            "sku": "B",
+            "quantity": 5,
+            "unit_cents": 0
+          },
+          {
+            "id": 26,
+            "order_id": 13,
+            "sku": "B",
+            "quantity": 3,
+            "unit_cents": 0
+          },
+          {
+            "id": 27,
+            "order_id": 15,
+            "sku": "C",
+            "quantity": 3,
+            "unit_cents": 500
+          },
+          {
+            "id": 28,
+            "order_id": 15,
+            "sku": "A",
+            "quantity": 3,
+            "unit_cents": 500
+          },
+          {
+            "id": 29,
+            "order_id": 15,
+            "sku": "B",
+            "quantity": 4,
+            "unit_cents": 333
+          },
+          {
+            "id": 30,
+            "order_id": 16,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 50
+          },
+          {
+            "id": 31,
+            "order_id": 16,
+            "sku": "C",
+            "quantity": 5,
+            "unit_cents": 0
+          },
+          {
+            "id": 32,
+            "order_id": 16,
+            "sku": "A",
+            "quantity": 3,
+            "unit_cents": 50
+          },
+          {
+            "id": 33,
+            "order_id": 17,
+            "sku": "B",
+            "quantity": 5,
+            "unit_cents": 100
+          },
+          {
+            "id": 34,
+            "order_id": 17,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 500
+          },
+          {
+            "id": 35,
+            "order_id": 18,
+            "sku": "B",
+            "quantity": 4,
+            "unit_cents": 100
+          },
+          {
+            "id": 36,
+            "order_id": 18,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 100
+          },
+          {
+            "id": 37,
+            "order_id": 18,
+            "sku": "C",
+            "quantity": 1,
+            "unit_cents": 50
+          }
+        ]
+      }
+    },
+    {
+      "id": "commerce-101",
+      "schema": "commerce",
+      "seed": 101,
+      "role": "generated",
+      "tables": {
+        "customers": [
+          {
+            "id": 1,
+            "region": "south"
+          },
+          {
+            "id": 2,
+            "region": null
+          },
+          {
+            "id": 3,
+            "region": "south"
+          },
+          {
+            "id": 4,
+            "region": "north"
+          },
+          {
+            "id": 5,
+            "region": "north"
+          },
+          {
+            "id": 6,
+            "region": null
+          },
+          {
+            "id": 7,
+            "region": "south"
+          },
+          {
+            "id": 8,
+            "region": "south"
+          }
+        ],
+        "orders": [
+          {
+            "id": 1,
+            "customer_id": 2,
+            "status": "paid",
+            "ordered_on": "2025-01-15"
+          },
+          {
+            "id": 2,
+            "customer_id": 4,
+            "status": "paid",
+            "ordered_on": "2025-01-15"
+          },
+          {
+            "id": 3,
+            "customer_id": 4,
+            "status": "paid",
+            "ordered_on": "2025-01-15"
+          },
+          {
+            "id": 4,
+            "customer_id": 2,
+            "status": "paid",
+            "ordered_on": "2024-12-31"
+          },
+          {
+            "id": 5,
+            "customer_id": 4,
+            "status": "pending",
+            "ordered_on": "2025-01-01"
+          },
+          {
+            "id": 6,
+            "customer_id": 4,
+            "status": "pending",
+            "ordered_on": "2025-01-01"
+          },
+          {
+            "id": 7,
+            "customer_id": 6,
+            "status": "cancelled",
+            "ordered_on": "2025-01-31"
+          },
+          {
+            "id": 8,
+            "customer_id": 2,
+            "status": "paid",
+            "ordered_on": "2025-01-31"
+          },
+          {
+            "id": 9,
+            "customer_id": 4,
+            "status": "pending",
+            "ordered_on": "2025-01-01"
+          },
+          {
+            "id": 10,
+            "customer_id": 1,
+            "status": "pending",
+            "ordered_on": "2025-02-02"
+          },
+          {
+            "id": 11,
+            "customer_id": 7,
+            "status": "pending",
+            "ordered_on": "2025-01-31"
+          },
+          {
+            "id": 12,
+            "customer_id": 7,
+            "status": "cancelled",
+            "ordered_on": "2025-01-01"
+          },
+          {
+            "id": 13,
+            "customer_id": 4,
+            "status": "paid",
+            "ordered_on": "2025-01-31"
+          },
+          {
+            "id": 14,
+            "customer_id": 6,
+            "status": "cancelled",
+            "ordered_on": "2024-12-31"
+          },
+          {
+            "id": 15,
+            "customer_id": 7,
+            "status": "cancelled",
+            "ordered_on": "2025-01-01"
+          },
+          {
+            "id": 16,
+            "customer_id": 5,
+            "status": "paid",
+            "ordered_on": "2025-01-15"
+          },
+          {
+            "id": 17,
+            "customer_id": 7,
+            "status": "paid",
+            "ordered_on": "2025-01-15"
+          },
+          {
+            "id": 18,
+            "customer_id": 6,
+            "status": "pending",
+            "ordered_on": "2024-12-31"
+          }
+        ],
+        "lines": [
+          {
+            "id": 1,
+            "order_id": 1,
+            "sku": "C",
+            "quantity": 2,
+            "unit_cents": 0
+          },
+          {
+            "id": 2,
+            "order_id": 1,
+            "sku": "B",
+            "quantity": 2,
+            "unit_cents": 100
+          },
+          {
+            "id": 3,
+            "order_id": 3,
+            "sku": "B",
+            "quantity": 3,
+            "unit_cents": 500
+          },
+          {
+            "id": 4,
+            "order_id": 4,
+            "sku": "A",
+            "quantity": 4,
+            "unit_cents": 500
+          },
+          {
+            "id": 5,
+            "order_id": 4,
+            "sku": "B",
+            "quantity": 2,
+            "unit_cents": 500
+          },
+          {
+            "id": 6,
+            "order_id": 4,
+            "sku": "C",
+            "quantity": 1,
+            "unit_cents": 0
+          },
+          {
+            "id": 7,
+            "order_id": 7,
+            "sku": "C",
+            "quantity": 4,
+            "unit_cents": 0
+          },
+          {
+            "id": 8,
+            "order_id": 7,
+            "sku": "C",
+            "quantity": 5,
+            "unit_cents": 500
+          },
+          {
+            "id": 9,
+            "order_id": 8,
+            "sku": "C",
+            "quantity": 2,
+            "unit_cents": 50
+          },
+          {
+            "id": 10,
+            "order_id": 8,
+            "sku": "A",
+            "quantity": 5,
+            "unit_cents": 333
+          },
+          {
+            "id": 11,
+            "order_id": 8,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 50
+          },
+          {
+            "id": 12,
+            "order_id": 9,
+            "sku": "B",
+            "quantity": 4,
+            "unit_cents": 0
+          },
+          {
+            "id": 13,
+            "order_id": 9,
+            "sku": "A",
+            "quantity": 5,
+            "unit_cents": 500
+          },
+          {
+            "id": 14,
+            "order_id": 10,
+            "sku": "B",
+            "quantity": 1,
+            "unit_cents": 50
+          },
+          {
+            "id": 15,
+            "order_id": 10,
+            "sku": "B",
+            "quantity": 3,
+            "unit_cents": 0
+          },
+          {
+            "id": 16,
+            "order_id": 11,
+            "sku": "A",
+            "quantity": 3,
+            "unit_cents": 333
+          },
+          {
+            "id": 17,
+            "order_id": 11,
+            "sku": "A",
+            "quantity": 4,
+            "unit_cents": 0
+          },
+          {
+            "id": 18,
+            "order_id": 12,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 100
+          },
+          {
+            "id": 19,
+            "order_id": 12,
+            "sku": "C",
+            "quantity": 2,
+            "unit_cents": 0
+          },
+          {
+            "id": 20,
+            "order_id": 14,
+            "sku": "C",
+            "quantity": 4,
+            "unit_cents": 500
+          },
+          {
+            "id": 21,
+            "order_id": 14,
+            "sku": "A",
+            "quantity": 3,
+            "unit_cents": 50
+          },
+          {
+            "id": 22,
+            "order_id": 14,
+            "sku": "B",
+            "quantity": 4,
+            "unit_cents": 50
+          },
+          {
+            "id": 23,
+            "order_id": 15,
+            "sku": "B",
+            "quantity": 1,
+            "unit_cents": 50
+          },
+          {
+            "id": 24,
+            "order_id": 15,
+            "sku": "B",
+            "quantity": 3,
+            "unit_cents": 100
+          },
+          {
+            "id": 25,
+            "order_id": 16,
+            "sku": "B",
+            "quantity": 1,
+            "unit_cents": 50
+          },
+          {
+            "id": 26,
+            "order_id": 16,
+            "sku": "C",
+            "quantity": 1,
+            "unit_cents": 50
+          },
+          {
+            "id": 27,
+            "order_id": 16,
+            "sku": "A",
+            "quantity": 1,
+            "unit_cents": 50
+          },
+          {
+            "id": 28,
+            "order_id": 17,
+            "sku": "A",
+            "quantity": 3,
+            "unit_cents": 0
+          },
+          {
+            "id": 29,
+            "order_id": 17,
+            "sku": "B",
+            "quantity": 2,
+            "unit_cents": 100
+          },
+          {
+            "id": 30,
+            "order_id": 18,
+            "sku": "A",
+            "quantity": 4,
+            "unit_cents": 500
+          }
+        ]
+      }
+    },
+    {
+      "id": "commerce-137",
+      "schema": "commerce",
+      "seed": 137,
+      "role": "generated",
+      "tables": {
+        "customers": [
+          {
+            "id": 1,
+            "region": null
+          },
+          {
+            "id": 2,
+            "region": null
+          },
+          {
+            "id": 3,
+            "region": "north"
+          },
+          {
+            "id": 4,
+            "region": "north"
+          },
+          {
+            "id": 5,
+            "region": null
+          },
+          {
+            "id": 6,
+            "region": null
+          },
+          {
+            "id": 7,
+            "region": "north"
+          },
+          {
+            "id": 8,
+            "region": "north"
+          }
+        ],
+        "orders": [
+          {
+            "id": 1,
+            "customer_id": 1,
+            "status": "cancelled",
+            "ordered_on": "2025-02-01"
+          },
+          {
+            "id": 2,
+            "customer_id": 3,
+            "status": "cancelled",
+            "ordered_on": "2025-02-01"
+          },
+          {
+            "id": 3,
+            "customer_id": 4,
+            "status": "paid",
+            "ordered_on": "2025-01-31"
+          },
+          {
+            "id": 4,
+            "customer_id": 5,
+            "status": "pending",
+            "ordered_on": "2024-12-31"
+          },
+          {
+            "id": 5,
+            "customer_id": 5,
+            "status": "paid",
+            "ordered_on": "2025-02-02"
+          },
+          {
+            "id": 6,
+            "customer_id": 6,
+            "status": "paid",
+            "ordered_on": "2025-01-31"
+          },
+          {
+            "id": 7,
+            "customer_id": 3,
+            "status": "paid",
+            "ordered_on": "2025-01-15"
+          },
+          {
+            "id": 8,
+            "customer_id": 7,
+            "status": "paid",
+            "ordered_on": "2025-01-31"
+          },
+          {
+            "id": 9,
+            "customer_id": 4,
+            "status": "pending",
+            "ordered_on": "2025-01-15"
+          },
+          {
+            "id": 10,
+            "customer_id": 6,
+            "status": "paid",
+            "ordered_on": "2025-02-02"
+          },
+          {
+            "id": 11,
+            "customer_id": 4,
+            "status": "pending",
+            "ordered_on": "2024-12-31"
+          },
+          {
+            "id": 12,
+            "customer_id": 6,
+            "status": "pending",
+            "ordered_on": "2025-02-02"
+          },
+          {
+            "id": 13,
+            "customer_id": 5,
+            "status": "paid",
+            "ordered_on": "2025-01-01"
+          },
+          {
+            "id": 14,
+            "customer_id": 1,
+            "status": "pending",
+            "ordered_on": "2025-02-01"
+          },
+          {
+            "id": 15,
+            "customer_id": 5,
+            "status": "pending",
+            "ordered_on": "2024-12-31"
+          },
+          {
+            "id": 16,
+            "customer_id": 2,
+            "status": "paid",
+            "ordered_on": "2025-01-31"
+          },
+          {
+            "id": 17,
+            "customer_id": 5,
+            "status": "paid",
+            "ordered_on": "2025-02-02"
+          },
+          {
+            "id": 18,
+            "customer_id": 6,
+            "status": "paid",
+            "ordered_on": "2025-01-15"
+          }
+        ],
+        "lines": [
+          {
+            "id": 1,
+            "order_id": 1,
+            "sku": "A",
+            "quantity": 5,
+            "unit_cents": 333
+          },
+          {
+            "id": 2,
+            "order_id": 2,
+            "sku": "C",
+            "quantity": 4,
+            "unit_cents": 50
+          },
+          {
+            "id": 3,
+            "order_id": 3,
+            "sku": "B",
+            "quantity": 3,
+            "unit_cents": 500
+          },
+          {
+            "id": 4,
+            "order_id": 3,
+            "sku": "B",
+            "quantity": 2,
+            "unit_cents": 333
+          },
+          {
+            "id": 5,
+            "order_id": 3,
+            "sku": "C",
+            "quantity": 5,
+            "unit_cents": 500
+          },
+          {
+            "id": 6,
+            "order_id": 4,
+            "sku": "C",
+            "quantity": 5,
+            "unit_cents": 0
+          },
+          {
+            "id": 7,
+            "order_id": 4,
+            "sku": "A",
+            "quantity": 4,
+            "unit_cents": 0
+          },
+          {
+            "id": 8,
+            "order_id": 4,
+            "sku": "C",
+            "quantity": 1,
+            "unit_cents": 50
+          },
+          {
+            "id": 9,
+            "order_id": 6,
+            "sku": "C",
+            "quantity": 2,
+            "unit_cents": 500
+          },
+          {
+            "id": 10,
+            "order_id": 6,
+            "sku": "A",
+            "quantity": 5,
+            "unit_cents": 100
+          },
+          {
+            "id": 11,
+            "order_id": 7,
+            "sku": "B",
+            "quantity": 2,
+            "unit_cents": 50
+          },
+          {
+            "id": 12,
+            "order_id": 7,
+            "sku": "C",
+            "quantity": 1,
+            "unit_cents": 50
+          },
+          {
+            "id": 13,
+            "order_id": 7,
+            "sku": "C",
+            "quantity": 5,
+            "unit_cents": 333
+          },
+          {
+            "id": 14,
+            "order_id": 8,
+            "sku": "B",
+            "quantity": 1,
+            "unit_cents": 0
+          },
+          {
+            "id": 15,
+            "order_id": 9,
+            "sku": "C",
+            "quantity": 3,
+            "unit_cents": 500
+          },
+          {
+            "id": 16,
+            "order_id": 9,
+            "sku": "C",
+            "quantity": 4,
+            "unit_cents": 500
+          },
+          {
+            "id": 17,
+            "order_id": 9,
+            "sku": "C",
+            "quantity": 3,
+            "unit_cents": 0
+          },
+          {
+            "id": 18,
+            "order_id": 11,
+            "sku": "A",
+            "quantity": 4,
+            "unit_cents": 100
+          },
+          {
+            "id": 19,
+            "order_id": 11,
+            "sku": "B",
+            "quantity": 3,
+            "unit_cents": 333
+          },
+          {
+            "id": 20,
+            "order_id": 13,
+            "sku": "C",
+            "quantity": 3,
+            "unit_cents": 0
+          },
+          {
+            "id": 21,
+            "order_id": 13,
+            "sku": "B",
+            "quantity": 1,
+            "unit_cents": 500
+          },
+          {
+            "id": 22,
+            "order_id": 13,
+            "sku": "A",
+            "quantity": 4,
+            "unit_cents": 500
+          },
+          {
+            "id": 23,
+            "order_id": 14,
+            "sku": "A",
+            "quantity": 5,
+            "unit_cents": 50
+          },
+          {
+            "id": 24,
+            "order_id": 14,
+            "sku": "A",
+            "quantity": 2,
+            "unit_cents": 50
+          },
+          {
+            "id": 25,
+            "order_id": 14,
+            "sku": "B",
+            "quantity": 3,
+            "unit_cents": 0
+          },
+          {
+            "id": 26,
+            "order_id": 15,
+            "sku": "C",
+            "quantity": 2,
+            "unit_cents": 500
+          },
+          {
+            "id": 27,
+            "order_id": 15,
+            "sku": "B",
+            "quantity": 3,
+            "unit_cents": 100
+          },
+          {
+            "id": 28,
+            "order_id": 15,
+            "sku": "A",
+            "quantity": 5,
+            "unit_cents": 50
+          },
+          {
+            "id": 29,
+            "order_id": 16,
+            "sku": "B",
+            "quantity": 3,
+            "unit_cents": 100
+          },
+          {
+            "id": 30,
+            "order_id": 16,
+            "sku": "B",
+            "quantity": 3,
+            "unit_cents": 500
+          },
+          {
+            "id": 31,
+            "order_id": 17,
+            "sku": "C",
+            "quantity": 3,
+            "unit_cents": 333
+          },
+          {
+            "id": 32,
+            "order_id": 17,
+            "sku": "B",
+            "quantity": 4,
+            "unit_cents": 100
+          },
+          {
+            "id": 33,
+            "order_id": 18,
+            "sku": "C",
+            "quantity": 1,
+            "unit_cents": 100
+          },
+          {
+            "id": 34,
+            "order_id": 18,
+            "sku": "B",
+            "quantity": 3,
+            "unit_cents": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "commerce-empty",
+      "schema": "commerce",
+      "seed": 211,
+      "role": "empty",
+      "tables": {
+        "customers": [],
+        "orders": [],
+        "lines": []
+      }
+    },
+    {
+      "id": "support-anchor",
+      "schema": "support",
+      "seed": 17,
+      "role": "anchor",
+      "tables": {
+        "agents": [
+          {
+            "id": 1,
+            "team": "red"
+          },
+          {
+            "id": 2,
+            "team": "blue"
+          }
+        ],
+        "tickets": [
+          {
+            "id": 1,
+            "agent_id": 1,
+            "opened_on": "2025-01-10",
+            "resolved_on": null,
+            "priority": 3
+          },
+          {
+            "id": 2,
+            "agent_id": 1,
+            "opened_on": "2025-01-11",
+            "resolved_on": null,
+            "priority": 0
+          },
+          {
+            "id": 3,
+            "agent_id": 2,
+            "opened_on": "2025-01-12",
+            "resolved_on": null,
+            "priority": 2
+          }
+        ],
+        "events": [
+          {
+            "id": 1,
+            "ticket_id": 1,
+            "kind": "reply",
+            "happened_on": "2025-01-11"
+          },
+          {
+            "id": 2,
+            "ticket_id": 1,
+            "kind": "reply",
+            "happened_on": "2025-01-12"
+          },
+          {
+            "id": 3,
+            "ticket_id": 2,
+            "kind": "reply",
+            "happened_on": "2025-01-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "support-edge",
+      "schema": "support",
+      "seed": 41,
+      "role": "edge",
+      "tables": {
+        "agents": [
+          {
+            "id": 1,
+            "team": "red"
+          },
+          {
+            "id": 2,
+            "team": "blue"
+          },
+          {
+            "id": 3,
+            "team": "red"
+          },
+          {
+            "id": 4,
+            "team": "green"
+          },
+          {
+            "id": 5,
+            "team": "blue"
+          },
+          {
+            "id": 6,
+            "team": "gold"
+          }
+        ],
+        "tickets": [
+          {
+            "id": 1,
+            "agent_id": 1,
+            "opened_on": "2025-01-01",
+            "resolved_on": null,
+            "priority": 3
+          },
+          {
+            "id": 2,
+            "agent_id": 1,
+            "opened_on": "2025-01-15",
+            "resolved_on": "2025-02-01",
+            "priority": 0
+          },
+          {
+            "id": 3,
+            "agent_id": 2,
+            "opened_on": "2024-12-31",
+            "resolved_on": null,
+            "priority": 3
+          },
+          {
+            "id": 4,
+            "agent_id": 2,
+            "opened_on": "2025-01-31",
+            "resolved_on": "2025-01-31",
+            "priority": 1
+          },
+          {
+            "id": 5,
+            "agent_id": 3,
+            "opened_on": "2025-01-15",
+            "resolved_on": "2025-02-02",
+            "priority": 2
+          },
+          {
+            "id": 6,
+            "agent_id": null,
+            "opened_on": "2025-01-15",
+            "resolved_on": null,
+            "priority": 0
+          },
+          {
+            "id": 7,
+            "agent_id": 4,
+            "opened_on": "2025-02-01",
+            "resolved_on": null,
+            "priority": 2
+          },
+          {
+            "id": 8,
+            "agent_id": 5,
+            "opened_on": "2025-01-01",
+            "resolved_on": "2025-01-02",
+            "priority": 0
+          },
+          {
+            "id": 9,
+            "agent_id": 3,
+            "opened_on": "2025-01-31",
+            "resolved_on": null,
+            "priority": 3
+          },
+          {
+            "id": 10,
+            "agent_id": 5,
+            "opened_on": "2025-01-15",
+            "resolved_on": "2025-01-15",
+            "priority": 1
+          }
+        ],
+        "events": [
+          {
+            "id": 1,
+            "ticket_id": 1,
+            "kind": "reply",
+            "happened_on": "2025-01-02"
+          },
+          {
+            "id": 2,
+            "ticket_id": 1,
+            "kind": "reply",
+            "happened_on": "2025-01-02"
+          },
+          {
+            "id": 3,
+            "ticket_id": 1,
+            "kind": "note",
+            "happened_on": "2025-01-01"
+          },
+          {
+            "id": 4,
+            "ticket_id": 2,
+            "kind": "note",
+            "happened_on": "2025-01-15"
+          },
+          {
+            "id": 5,
+            "ticket_id": 3,
+            "kind": "reply",
+            "happened_on": "2025-01-01"
+          },
+          {
+            "id": 6,
+            "ticket_id": 3,
+            "kind": "reply",
+            "happened_on": "2025-01-03"
+          },
+          {
+            "id": 7,
+            "ticket_id": 4,
+            "kind": "note",
+            "happened_on": "2025-01-31"
+          },
+          {
+            "id": 8,
+            "ticket_id": 4,
+            "kind": "note",
+            "happened_on": "2025-01-31"
+          },
+          {
+            "id": 9,
+            "ticket_id": 5,
+            "kind": "reply",
+            "happened_on": "2025-01-16"
+          },
+          {
+            "id": 10,
+            "ticket_id": 6,
+            "kind": "reply",
+            "happened_on": "2025-01-15"
+          },
+          {
+            "id": 11,
+            "ticket_id": 9,
+            "kind": "reply",
+            "happened_on": "2025-02-01"
+          }
+        ]
+      }
+    },
+    {
+      "id": "support-73",
+      "schema": "support",
+      "seed": 73,
+      "role": "generated",
+      "tables": {
+        "agents": [
+          {
+            "id": 1,
+            "team": "blue"
+          },
+          {
+            "id": 2,
+            "team": "red"
+          },
+          {
+            "id": 3,
+            "team": "green"
+          },
+          {
+            "id": 4,
+            "team": "blue"
+          },
+          {
+            "id": 5,
+            "team": "green"
+          },
+          {
+            "id": 6,
+            "team": "red"
+          },
+          {
+            "id": 7,
+            "team": "blue"
+          }
+        ],
+        "tickets": [
+          {
+            "id": 1,
+            "agent_id": 4,
+            "opened_on": "2025-01-15",
+            "resolved_on": null,
+            "priority": 3
+          },
+          {
+            "id": 2,
+            "agent_id": 3,
+            "opened_on": "2024-12-31",
+            "resolved_on": "2025-01-01",
+            "priority": 3
+          },
+          {
+            "id": 3,
+            "agent_id": 3,
+            "opened_on": "2024-12-31",
+            "resolved_on": "2025-02-01",
+            "priority": 2
+          },
+          {
+            "id": 4,
+            "agent_id": 2,
+            "opened_on": "2025-01-15",
+            "resolved_on": null,
+            "priority": 1
+          },
+          {
+            "id": 5,
+            "agent_id": 6,
+            "opened_on": "2024-12-31",
+            "resolved_on": "2025-02-01",
+            "priority": 0
+          },
+          {
+            "id": 6,
+            "agent_id": 3,
+            "opened_on": "2025-01-01",
+            "resolved_on": "2025-01-31",
+            "priority": 3
+          },
+          {
+            "id": 7,
+            "agent_id": null,
+            "opened_on": "2025-01-01",
+            "resolved_on": "2025-01-31",
+            "priority": 0
+          },
+          {
+            "id": 8,
+            "agent_id": 6,
+            "opened_on": "2025-01-15",
+            "resolved_on": "2025-02-01",
+            "priority": 0
+          },
+          {
+            "id": 9,
+            "agent_id": 2,
+            "opened_on": "2025-02-01",
+            "resolved_on": "2025-02-01",
+            "priority": 3
+          },
+          {
+            "id": 10,
+            "agent_id": 6,
+            "opened_on": "2025-02-02",
+            "resolved_on": null,
+            "priority": 0
+          },
+          {
+            "id": 11,
+            "agent_id": 1,
+            "opened_on": "2024-12-31",
+            "resolved_on": null,
+            "priority": 0
+          },
+          {
+            "id": 12,
+            "agent_id": 5,
+            "opened_on": "2024-12-31",
+            "resolved_on": "2025-02-01",
+            "priority": 3
+          },
+          {
+            "id": 13,
+            "agent_id": 4,
+            "opened_on": "2025-01-01",
+            "resolved_on": "2025-01-01",
+            "priority": 3
+          },
+          {
+            "id": 14,
+            "agent_id": 4,
+            "opened_on": "2024-12-31",
+            "resolved_on": "2025-01-15",
+            "priority": 2
+          },
+          {
+            "id": 15,
+            "agent_id": 3,
+            "opened_on": "2025-01-31",
+            "resolved_on": "2025-02-02",
+            "priority": 3
+          },
+          {
+            "id": 16,
+            "agent_id": 4,
+            "opened_on": "2025-01-15",
+            "resolved_on": null,
+            "priority": 2
+          },
+          {
+            "id": 17,
+            "agent_id": null,
+            "opened_on": "2025-02-01",
+            "resolved_on": "2025-02-02",
+            "priority": 2
+          },
+          {
+            "id": 18,
+            "agent_id": 4,
+            "opened_on": "2025-02-02",
+            "resolved_on": null,
+            "priority": 0
+          }
+        ],
+        "events": [
+          {
+            "id": 1,
+            "ticket_id": 1,
+            "kind": "reply",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 2,
+            "ticket_id": 1,
+            "kind": "reply",
+            "happened_on": "2025-01-15"
+          },
+          {
+            "id": 3,
+            "ticket_id": 1,
+            "kind": "note",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 4,
+            "ticket_id": 2,
+            "kind": "note",
+            "happened_on": "2025-01-01"
+          },
+          {
+            "id": 5,
+            "ticket_id": 2,
+            "kind": "reply",
+            "happened_on": "2025-01-15"
+          },
+          {
+            "id": 6,
+            "ticket_id": 2,
+            "kind": "reply",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 7,
+            "ticket_id": 3,
+            "kind": "reply",
+            "happened_on": "2025-01-01"
+          },
+          {
+            "id": 8,
+            "ticket_id": 3,
+            "kind": "reply",
+            "happened_on": "2025-01-01"
+          },
+          {
+            "id": 9,
+            "ticket_id": 4,
+            "kind": "note",
+            "happened_on": "2025-01-15"
+          },
+          {
+            "id": 10,
+            "ticket_id": 5,
+            "kind": "reply",
+            "happened_on": "2025-02-01"
+          },
+          {
+            "id": 11,
+            "ticket_id": 6,
+            "kind": "note",
+            "happened_on": "2025-01-31"
+          },
+          {
+            "id": 12,
+            "ticket_id": 7,
+            "kind": "note",
+            "happened_on": "2025-01-01"
+          },
+          {
+            "id": 13,
+            "ticket_id": 7,
+            "kind": "reply",
+            "happened_on": "2025-01-31"
+          },
+          {
+            "id": 14,
+            "ticket_id": 7,
+            "kind": "note",
+            "happened_on": "2025-01-15"
+          },
+          {
+            "id": 15,
+            "ticket_id": 8,
+            "kind": "reply",
+            "happened_on": "2025-01-15"
+          },
+          {
+            "id": 16,
+            "ticket_id": 9,
+            "kind": "note",
+            "happened_on": "2025-02-01"
+          },
+          {
+            "id": 17,
+            "ticket_id": 9,
+            "kind": "note",
+            "happened_on": "2025-02-01"
+          },
+          {
+            "id": 18,
+            "ticket_id": 10,
+            "kind": "note",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 19,
+            "ticket_id": 10,
+            "kind": "reply",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 20,
+            "ticket_id": 11,
+            "kind": "reply",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 21,
+            "ticket_id": 11,
+            "kind": "reply",
+            "happened_on": "2025-01-31"
+          },
+          {
+            "id": 22,
+            "ticket_id": 12,
+            "kind": "reply",
+            "happened_on": "2025-01-01"
+          },
+          {
+            "id": 23,
+            "ticket_id": 13,
+            "kind": "note",
+            "happened_on": "2025-01-01"
+          },
+          {
+            "id": 24,
+            "ticket_id": 14,
+            "kind": "note",
+            "happened_on": "2025-01-01"
+          },
+          {
+            "id": 25,
+            "ticket_id": 14,
+            "kind": "note",
+            "happened_on": "2025-01-31"
+          },
+          {
+            "id": 26,
+            "ticket_id": 14,
+            "kind": "note",
+            "happened_on": "2025-01-01"
+          },
+          {
+            "id": 27,
+            "ticket_id": 15,
+            "kind": "note",
+            "happened_on": "2025-02-01"
+          },
+          {
+            "id": 28,
+            "ticket_id": 16,
+            "kind": "reply",
+            "happened_on": "2025-01-15"
+          },
+          {
+            "id": 29,
+            "ticket_id": 16,
+            "kind": "note",
+            "happened_on": "2025-02-01"
+          },
+          {
+            "id": 30,
+            "ticket_id": 17,
+            "kind": "note",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 31,
+            "ticket_id": 17,
+            "kind": "note",
+            "happened_on": "2025-02-01"
+          },
+          {
+            "id": 32,
+            "ticket_id": 17,
+            "kind": "reply",
+            "happened_on": "2025-02-01"
+          },
+          {
+            "id": 33,
+            "ticket_id": 18,
+            "kind": "reply",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 34,
+            "ticket_id": 18,
+            "kind": "note",
+            "happened_on": "2025-02-02"
+          }
+        ]
+      }
+    },
+    {
+      "id": "support-101",
+      "schema": "support",
+      "seed": 101,
+      "role": "generated",
+      "tables": {
+        "agents": [
+          {
+            "id": 1,
+            "team": "green"
+          },
+          {
+            "id": 2,
+            "team": "red"
+          },
+          {
+            "id": 3,
+            "team": "green"
+          },
+          {
+            "id": 4,
+            "team": "blue"
+          },
+          {
+            "id": 5,
+            "team": "blue"
+          },
+          {
+            "id": 6,
+            "team": "red"
+          },
+          {
+            "id": 7,
+            "team": "green"
+          }
+        ],
+        "tickets": [
+          {
+            "id": 1,
+            "agent_id": 1,
+            "opened_on": "2025-02-01",
+            "resolved_on": "2025-02-02",
+            "priority": 1
+          },
+          {
+            "id": 2,
+            "agent_id": 2,
+            "opened_on": "2024-12-31",
+            "resolved_on": "2024-12-31",
+            "priority": 1
+          },
+          {
+            "id": 3,
+            "agent_id": 6,
+            "opened_on": "2025-01-31",
+            "resolved_on": "2025-02-01",
+            "priority": 1
+          },
+          {
+            "id": 4,
+            "agent_id": 3,
+            "opened_on": "2025-01-31",
+            "resolved_on": "2025-02-01",
+            "priority": 1
+          },
+          {
+            "id": 5,
+            "agent_id": 6,
+            "opened_on": "2025-02-02",
+            "resolved_on": "2025-02-02",
+            "priority": 2
+          },
+          {
+            "id": 6,
+            "agent_id": 6,
+            "opened_on": "2024-12-31",
+            "resolved_on": "2025-01-15",
+            "priority": 1
+          },
+          {
+            "id": 7,
+            "agent_id": 6,
+            "opened_on": "2025-01-15",
+            "resolved_on": null,
+            "priority": 2
+          },
+          {
+            "id": 8,
+            "agent_id": 1,
+            "opened_on": "2025-01-31",
+            "resolved_on": "2025-02-01",
+            "priority": 0
+          },
+          {
+            "id": 9,
+            "agent_id": 6,
+            "opened_on": "2025-02-02",
+            "resolved_on": "2025-02-02",
+            "priority": 3
+          },
+          {
+            "id": 10,
+            "agent_id": 5,
+            "opened_on": "2025-01-01",
+            "resolved_on": "2025-02-01",
+            "priority": 0
+          },
+          {
+            "id": 11,
+            "agent_id": null,
+            "opened_on": "2024-12-31",
+            "resolved_on": "2025-01-31",
+            "priority": 2
+          },
+          {
+            "id": 12,
+            "agent_id": 6,
+            "opened_on": "2025-01-01",
+            "resolved_on": "2025-01-01",
+            "priority": 3
+          },
+          {
+            "id": 13,
+            "agent_id": 2,
+            "opened_on": "2025-01-15",
+            "resolved_on": "2025-02-01",
+            "priority": 0
+          },
+          {
+            "id": 14,
+            "agent_id": 4,
+            "opened_on": "2025-02-01",
+            "resolved_on": "2025-02-02",
+            "priority": 2
+          },
+          {
+            "id": 15,
+            "agent_id": 2,
+            "opened_on": "2025-01-01",
+            "resolved_on": "2025-01-31",
+            "priority": 1
+          },
+          {
+            "id": 16,
+            "agent_id": 1,
+            "opened_on": "2025-02-02",
+            "resolved_on": null,
+            "priority": 0
+          },
+          {
+            "id": 17,
+            "agent_id": 1,
+            "opened_on": "2025-02-02",
+            "resolved_on": "2025-02-02",
+            "priority": 2
+          },
+          {
+            "id": 18,
+            "agent_id": 2,
+            "opened_on": "2025-01-01",
+            "resolved_on": "2025-01-15",
+            "priority": 2
+          }
+        ],
+        "events": [
+          {
+            "id": 1,
+            "ticket_id": 1,
+            "kind": "note",
+            "happened_on": "2025-02-01"
+          },
+          {
+            "id": 2,
+            "ticket_id": 1,
+            "kind": "note",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 3,
+            "ticket_id": 3,
+            "kind": "note",
+            "happened_on": "2025-01-31"
+          },
+          {
+            "id": 4,
+            "ticket_id": 3,
+            "kind": "note",
+            "happened_on": "2025-02-01"
+          },
+          {
+            "id": 5,
+            "ticket_id": 3,
+            "kind": "reply",
+            "happened_on": "2025-01-31"
+          },
+          {
+            "id": 6,
+            "ticket_id": 5,
+            "kind": "note",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 7,
+            "ticket_id": 5,
+            "kind": "note",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 8,
+            "ticket_id": 5,
+            "kind": "note",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 9,
+            "ticket_id": 7,
+            "kind": "reply",
+            "happened_on": "2025-02-01"
+          },
+          {
+            "id": 10,
+            "ticket_id": 7,
+            "kind": "reply",
+            "happened_on": "2025-01-15"
+          },
+          {
+            "id": 11,
+            "ticket_id": 8,
+            "kind": "note",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 12,
+            "ticket_id": 9,
+            "kind": "note",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 13,
+            "ticket_id": 11,
+            "kind": "reply",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 14,
+            "ticket_id": 11,
+            "kind": "note",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 15,
+            "ticket_id": 11,
+            "kind": "reply",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 16,
+            "ticket_id": 12,
+            "kind": "reply",
+            "happened_on": "2025-01-15"
+          },
+          {
+            "id": 17,
+            "ticket_id": 14,
+            "kind": "reply",
+            "happened_on": "2025-02-01"
+          },
+          {
+            "id": 18,
+            "ticket_id": 14,
+            "kind": "note",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 19,
+            "ticket_id": 14,
+            "kind": "reply",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 20,
+            "ticket_id": 15,
+            "kind": "reply",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 21,
+            "ticket_id": 15,
+            "kind": "note",
+            "happened_on": "2025-01-15"
+          },
+          {
+            "id": 22,
+            "ticket_id": 15,
+            "kind": "reply",
+            "happened_on": "2025-01-31"
+          },
+          {
+            "id": 23,
+            "ticket_id": 16,
+            "kind": "note",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 24,
+            "ticket_id": 16,
+            "kind": "note",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 25,
+            "ticket_id": 16,
+            "kind": "note",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 26,
+            "ticket_id": 18,
+            "kind": "note",
+            "happened_on": "2025-01-01"
+          },
+          {
+            "id": 27,
+            "ticket_id": 18,
+            "kind": "reply",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 28,
+            "ticket_id": 18,
+            "kind": "reply",
+            "happened_on": "2025-01-15"
+          }
+        ]
+      }
+    },
+    {
+      "id": "support-137",
+      "schema": "support",
+      "seed": 137,
+      "role": "generated",
+      "tables": {
+        "agents": [
+          {
+            "id": 1,
+            "team": "red"
+          },
+          {
+            "id": 2,
+            "team": "red"
+          },
+          {
+            "id": 3,
+            "team": "blue"
+          },
+          {
+            "id": 4,
+            "team": "blue"
+          },
+          {
+            "id": 5,
+            "team": "red"
+          },
+          {
+            "id": 6,
+            "team": "red"
+          },
+          {
+            "id": 7,
+            "team": "blue"
+          }
+        ],
+        "tickets": [
+          {
+            "id": 1,
+            "agent_id": null,
+            "opened_on": "2025-01-15",
+            "resolved_on": "2025-02-01",
+            "priority": 2
+          },
+          {
+            "id": 2,
+            "agent_id": 5,
+            "opened_on": "2025-02-02",
+            "resolved_on": null,
+            "priority": 3
+          },
+          {
+            "id": 3,
+            "agent_id": 6,
+            "opened_on": "2025-01-31",
+            "resolved_on": "2025-02-01",
+            "priority": 2
+          },
+          {
+            "id": 4,
+            "agent_id": 3,
+            "opened_on": "2025-02-02",
+            "resolved_on": "2025-02-02",
+            "priority": 0
+          },
+          {
+            "id": 5,
+            "agent_id": 4,
+            "opened_on": "2025-02-01",
+            "resolved_on": "2025-02-02",
+            "priority": 2
+          },
+          {
+            "id": 6,
+            "agent_id": 6,
+            "opened_on": "2025-01-01",
+            "resolved_on": "2025-02-01",
+            "priority": 0
+          },
+          {
+            "id": 7,
+            "agent_id": 1,
+            "opened_on": "2025-01-31",
+            "resolved_on": "2025-02-02",
+            "priority": 1
+          },
+          {
+            "id": 8,
+            "agent_id": 4,
+            "opened_on": "2025-02-01",
+            "resolved_on": "2025-02-01",
+            "priority": 0
+          },
+          {
+            "id": 9,
+            "agent_id": null,
+            "opened_on": "2025-02-02",
+            "resolved_on": null,
+            "priority": 0
+          },
+          {
+            "id": 10,
+            "agent_id": 1,
+            "opened_on": "2025-01-31",
+            "resolved_on": "2025-01-31",
+            "priority": 0
+          },
+          {
+            "id": 11,
+            "agent_id": null,
+            "opened_on": "2025-01-31",
+            "resolved_on": null,
+            "priority": 3
+          },
+          {
+            "id": 12,
+            "agent_id": 6,
+            "opened_on": "2024-12-31",
+            "resolved_on": "2025-01-01",
+            "priority": 0
+          },
+          {
+            "id": 13,
+            "agent_id": 6,
+            "opened_on": "2025-02-02",
+            "resolved_on": "2025-02-02",
+            "priority": 0
+          },
+          {
+            "id": 14,
+            "agent_id": 1,
+            "opened_on": "2024-12-31",
+            "resolved_on": "2024-12-31",
+            "priority": 2
+          },
+          {
+            "id": 15,
+            "agent_id": 1,
+            "opened_on": "2025-02-02",
+            "resolved_on": "2025-02-02",
+            "priority": 2
+          },
+          {
+            "id": 16,
+            "agent_id": 2,
+            "opened_on": "2025-01-15",
+            "resolved_on": "2025-01-31",
+            "priority": 2
+          },
+          {
+            "id": 17,
+            "agent_id": 2,
+            "opened_on": "2025-02-02",
+            "resolved_on": "2025-02-02",
+            "priority": 0
+          },
+          {
+            "id": 18,
+            "agent_id": 3,
+            "opened_on": "2025-01-15",
+            "resolved_on": "2025-02-02",
+            "priority": 1
+          }
+        ],
+        "events": [
+          {
+            "id": 1,
+            "ticket_id": 1,
+            "kind": "note",
+            "happened_on": "2025-01-31"
+          },
+          {
+            "id": 2,
+            "ticket_id": 1,
+            "kind": "note",
+            "happened_on": "2025-02-01"
+          },
+          {
+            "id": 3,
+            "ticket_id": 1,
+            "kind": "reply",
+            "happened_on": "2025-01-15"
+          },
+          {
+            "id": 4,
+            "ticket_id": 2,
+            "kind": "reply",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 5,
+            "ticket_id": 2,
+            "kind": "reply",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 6,
+            "ticket_id": 4,
+            "kind": "reply",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 7,
+            "ticket_id": 4,
+            "kind": "reply",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 8,
+            "ticket_id": 6,
+            "kind": "reply",
+            "happened_on": "2025-01-15"
+          },
+          {
+            "id": 9,
+            "ticket_id": 6,
+            "kind": "note",
+            "happened_on": "2025-01-15"
+          },
+          {
+            "id": 10,
+            "ticket_id": 6,
+            "kind": "reply",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 11,
+            "ticket_id": 7,
+            "kind": "note",
+            "happened_on": "2025-02-01"
+          },
+          {
+            "id": 12,
+            "ticket_id": 7,
+            "kind": "note",
+            "happened_on": "2025-01-31"
+          },
+          {
+            "id": 13,
+            "ticket_id": 7,
+            "kind": "note",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 14,
+            "ticket_id": 8,
+            "kind": "note",
+            "happened_on": "2025-02-01"
+          },
+          {
+            "id": 15,
+            "ticket_id": 9,
+            "kind": "reply",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 16,
+            "ticket_id": 9,
+            "kind": "note",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 17,
+            "ticket_id": 10,
+            "kind": "note",
+            "happened_on": "2025-01-31"
+          },
+          {
+            "id": 18,
+            "ticket_id": 11,
+            "kind": "note",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 19,
+            "ticket_id": 11,
+            "kind": "note",
+            "happened_on": "2025-01-31"
+          },
+          {
+            "id": 20,
+            "ticket_id": 12,
+            "kind": "note",
+            "happened_on": "2025-01-15"
+          },
+          {
+            "id": 21,
+            "ticket_id": 12,
+            "kind": "note",
+            "happened_on": "2025-01-31"
+          },
+          {
+            "id": 22,
+            "ticket_id": 12,
+            "kind": "reply",
+            "happened_on": "2025-01-31"
+          },
+          {
+            "id": 23,
+            "ticket_id": 13,
+            "kind": "reply",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 24,
+            "ticket_id": 13,
+            "kind": "note",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 25,
+            "ticket_id": 13,
+            "kind": "reply",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 26,
+            "ticket_id": 14,
+            "kind": "reply",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 27,
+            "ticket_id": 14,
+            "kind": "note",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 28,
+            "ticket_id": 15,
+            "kind": "reply",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 29,
+            "ticket_id": 15,
+            "kind": "note",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 30,
+            "ticket_id": 16,
+            "kind": "note",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 31,
+            "ticket_id": 16,
+            "kind": "note",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 32,
+            "ticket_id": 17,
+            "kind": "note",
+            "happened_on": "2025-02-02"
+          },
+          {
+            "id": 33,
+            "ticket_id": 17,
+            "kind": "note",
+            "happened_on": "2025-02-02"
+          }
+        ]
+      }
+    },
+    {
+      "id": "support-empty",
+      "schema": "support",
+      "seed": 211,
+      "role": "empty",
+      "tables": {
+        "agents": [],
+        "tickets": [],
+        "events": []
+      }
+    },
+    {
+      "id": "billing-anchor",
+      "schema": "billing",
+      "seed": 17,
+      "role": "anchor",
+      "tables": {
+        "accounts": [
+          {
+            "id": 1,
+            "plan": "basic",
+            "active": 1
+          },
+          {
+            "id": 2,
+            "plan": "pro",
+            "active": 1
+          }
+        ],
+        "invoices": [
+          {
+            "id": 1,
+            "account_id": 1,
+            "issued_on": "2025-01-10",
+            "total_cents": 100
+          },
+          {
+            "id": 2,
+            "account_id": 2,
+            "issued_on": "2025-01-11",
+            "total_cents": 200
+          }
+        ],
+        "payments": [
+          {
+            "id": 1,
+            "invoice_id": 1,
+            "amount_cents": 100,
+            "paid_on": "2025-01-12"
+          },
+          {
+            "id": 2,
+            "invoice_id": 2,
+            "amount_cents": 200,
+            "paid_on": "2025-01-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "billing-edge",
+      "schema": "billing",
+      "seed": 41,
+      "role": "edge",
+      "tables": {
+        "accounts": [
+          {
+            "id": 1,
+            "plan": "basic",
+            "active": 1
+          },
+          {
+            "id": 2,
+            "plan": "pro",
+            "active": 1
+          },
+          {
+            "id": 3,
+            "plan": "basic",
+            "active": 0
+          },
+          {
+            "id": 4,
+            "plan": "pro",
+            "active": 1
+          },
+          {
+            "id": 5,
+            "plan": "basic",
+            "active": 1
+          },
+          {
+            "id": 6,
+            "plan": "pro",
+            "active": 1
+          },
+          {
+            "id": 7,
+            "plan": "basic",
+            "active": 0
+          }
+        ],
+        "invoices": [
+          {
+            "id": 1,
+            "account_id": 1,
+            "issued_on": "2025-01-01",
+            "total_cents": 1000
+          },
+          {
+            "id": 2,
+            "account_id": 1,
+            "issued_on": "2025-01-31",
+            "total_cents": 500
+          },
+          {
+            "id": 3,
+            "account_id": 2,
+            "issued_on": "2024-12-31",
+            "total_cents": 200
+          },
+          {
+            "id": 4,
+            "account_id": 2,
+            "issued_on": "2025-02-01",
+            "total_cents": 1000
+          },
+          {
+            "id": 5,
+            "account_id": 3,
+            "issued_on": "2025-01-15",
+            "total_cents": 0
+          },
+          {
+            "id": 6,
+            "account_id": 4,
+            "issued_on": "2025-02-01",
+            "total_cents": 0
+          },
+          {
+            "id": 7,
+            "account_id": 5,
+            "issued_on": "2025-01-15",
+            "total_cents": 300
+          },
+          {
+            "id": 8,
+            "account_id": 5,
+            "issued_on": "2025-01-16",
+            "total_cents": 100
+          }
+        ],
+        "payments": [
+          {
+            "id": 1,
+            "invoice_id": 1,
+            "amount_cents": 300,
+            "paid_on": "2025-01-02"
+          },
+          {
+            "id": 2,
+            "invoice_id": 1,
+            "amount_cents": 700,
+            "paid_on": "2025-01-02"
+          },
+          {
+            "id": 3,
+            "invoice_id": 3,
+            "amount_cents": 400,
+            "paid_on": "2025-01-01"
+          },
+          {
+            "id": 4,
+            "invoice_id": 4,
+            "amount_cents": 100,
+            "paid_on": "2025-02-02"
+          },
+          {
+            "id": 5,
+            "invoice_id": 7,
+            "amount_cents": 500,
+            "paid_on": "2025-01-16"
+          },
+          {
+            "id": 6,
+            "invoice_id": 8,
+            "amount_cents": 100,
+            "paid_on": "2025-01-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "billing-73",
+      "schema": "billing",
+      "seed": 73,
+      "role": "generated",
+      "tables": {
+        "accounts": [
+          {
+            "id": 1,
+            "plan": "pro",
+            "active": 0
+          },
+          {
+            "id": 2,
+            "plan": "pro",
+            "active": 0
+          },
+          {
+            "id": 3,
+            "plan": "pro",
+            "active": 1
+          },
+          {
+            "id": 4,
+            "plan": "basic",
+            "active": 1
+          },
+          {
+            "id": 5,
+            "plan": "pro",
+            "active": 0
+          },
+          {
+            "id": 6,
+            "plan": "pro",
+            "active": 0
+          },
+          {
+            "id": 7,
+            "plan": "basic",
+            "active": 1
+          }
+        ],
+        "invoices": [
+          {
+            "id": 1,
+            "account_id": 1,
+            "issued_on": "2025-01-31",
+            "total_cents": 500
+          },
+          {
+            "id": 2,
+            "account_id": 3,
+            "issued_on": "2024-12-31",
+            "total_cents": 1000
+          },
+          {
+            "id": 3,
+            "account_id": 3,
+            "issued_on": "2025-02-02",
+            "total_cents": 200
+          },
+          {
+            "id": 4,
+            "account_id": 3,
+            "issued_on": "2025-01-01",
+            "total_cents": 200
+          },
+          {
+            "id": 5,
+            "account_id": 5,
+            "issued_on": "2025-01-01",
+            "total_cents": 100
+          },
+          {
+            "id": 6,
+            "account_id": 4,
+            "issued_on": "2025-01-01",
+            "total_cents": 500
+          },
+          {
+            "id": 7,
+            "account_id": 4,
+            "issued_on": "2024-12-31",
+            "total_cents": 500
+          },
+          {
+            "id": 8,
+            "account_id": 6,
+            "issued_on": "2025-02-02",
+            "total_cents": 0
+          },
+          {
+            "id": 9,
+            "account_id": 2,
+            "issued_on": "2024-12-31",
+            "total_cents": 100
+          },
+          {
+            "id": 10,
+            "account_id": 3,
+            "issued_on": "2025-02-01",
+            "total_cents": 500
+          },
+          {
+            "id": 11,
+            "account_id": 6,
+            "issued_on": "2024-12-31",
+            "total_cents": 200
+          },
+          {
+            "id": 12,
+            "account_id": 1,
+            "issued_on": "2024-12-31",
+            "total_cents": 200
+          },
+          {
+            "id": 13,
+            "account_id": 6,
+            "issued_on": "2024-12-31",
+            "total_cents": 1000
+          },
+          {
+            "id": 14,
+            "account_id": 2,
+            "issued_on": "2025-01-31",
+            "total_cents": 500
+          },
+          {
+            "id": 15,
+            "account_id": 5,
+            "issued_on": "2024-12-31",
+            "total_cents": 500
+          }
+        ],
+        "payments": [
+          {
+            "id": 1,
+            "invoice_id": 1,
+            "amount_cents": 700,
+            "paid_on": "2025-02-01"
+          },
+          {
+            "id": 2,
+            "invoice_id": 1,
+            "amount_cents": 700,
+            "paid_on": "2025-01-31"
+          },
+          {
+            "id": 3,
+            "invoice_id": 2,
+            "amount_cents": 50,
+            "paid_on": "2025-01-31"
+          },
+          {
+            "id": 4,
+            "invoice_id": 3,
+            "amount_cents": 100,
+            "paid_on": "2025-02-02"
+          },
+          {
+            "id": 5,
+            "invoice_id": 5,
+            "amount_cents": 50,
+            "paid_on": "2025-01-01"
+          },
+          {
+            "id": 6,
+            "invoice_id": 5,
+            "amount_cents": 50,
+            "paid_on": "2025-01-15"
+          },
+          {
+            "id": 7,
+            "invoice_id": 5,
+            "amount_cents": 100,
+            "paid_on": "2025-02-02"
+          },
+          {
+            "id": 8,
+            "invoice_id": 6,
+            "amount_cents": 100,
+            "paid_on": "2025-01-31"
+          },
+          {
+            "id": 9,
+            "invoice_id": 6,
+            "amount_cents": 200,
+            "paid_on": "2025-01-15"
+          },
+          {
+            "id": 10,
+            "invoice_id": 6,
+            "amount_cents": 50,
+            "paid_on": "2025-02-01"
+          },
+          {
+            "id": 11,
+            "invoice_id": 8,
+            "amount_cents": 700,
+            "paid_on": "2025-02-02"
+          },
+          {
+            "id": 12,
+            "invoice_id": 8,
+            "amount_cents": 200,
+            "paid_on": "2025-02-02"
+          },
+          {
+            "id": 13,
+            "invoice_id": 10,
+            "amount_cents": 200,
+            "paid_on": "2025-02-02"
+          },
+          {
+            "id": 14,
+            "invoice_id": 10,
+            "amount_cents": 50,
+            "paid_on": "2025-02-02"
+          },
+          {
+            "id": 15,
+            "invoice_id": 10,
+            "amount_cents": 50,
+            "paid_on": "2025-02-01"
+          },
+          {
+            "id": 16,
+            "invoice_id": 11,
+            "amount_cents": 50,
+            "paid_on": "2025-02-02"
+          },
+          {
+            "id": 17,
+            "invoice_id": 11,
+            "amount_cents": 100,
+            "paid_on": "2025-01-15"
+          },
+          {
+            "id": 18,
+            "invoice_id": 11,
+            "amount_cents": 50,
+            "paid_on": "2025-01-01"
+          },
+          {
+            "id": 19,
+            "invoice_id": 12,
+            "amount_cents": 100,
+            "paid_on": "2025-01-31"
+          },
+          {
+            "id": 20,
+            "invoice_id": 13,
+            "amount_cents": 100,
+            "paid_on": "2024-12-31"
+          },
+          {
+            "id": 21,
+            "invoice_id": 13,
+            "amount_cents": 100,
+            "paid_on": "2025-01-01"
+          },
+          {
+            "id": 22,
+            "invoice_id": 13,
+            "amount_cents": 100,
+            "paid_on": "2025-02-02"
+          },
+          {
+            "id": 23,
+            "invoice_id": 15,
+            "amount_cents": 700,
+            "paid_on": "2025-01-15"
+          },
+          {
+            "id": 24,
+            "invoice_id": 15,
+            "amount_cents": 100,
+            "paid_on": "2025-01-15"
+          }
+        ]
+      }
+    },
+    {
+      "id": "billing-101",
+      "schema": "billing",
+      "seed": 101,
+      "role": "generated",
+      "tables": {
+        "accounts": [
+          {
+            "id": 1,
+            "plan": "basic",
+            "active": 1
+          },
+          {
+            "id": 2,
+            "plan": "pro",
+            "active": 0
+          },
+          {
+            "id": 3,
+            "plan": "basic",
+            "active": 0
+          },
+          {
+            "id": 4,
+            "plan": "pro",
+            "active": 1
+          },
+          {
+            "id": 5,
+            "plan": "basic",
+            "active": 1
+          },
+          {
+            "id": 6,
+            "plan": "pro",
+            "active": 0
+          },
+          {
+            "id": 7,
+            "plan": "pro",
+            "active": 0
+          }
+        ],
+        "invoices": [
+          {
+            "id": 1,
+            "account_id": 1,
+            "issued_on": "2025-01-01",
+            "total_cents": 500
+          },
+          {
+            "id": 2,
+            "account_id": 4,
+            "issued_on": "2025-02-02",
+            "total_cents": 500
+          },
+          {
+            "id": 3,
+            "account_id": 3,
+            "issued_on": "2025-01-31",
+            "total_cents": 100
+          },
+          {
+            "id": 4,
+            "account_id": 5,
+            "issued_on": "2025-02-02",
+            "total_cents": 200
+          },
+          {
+            "id": 5,
+            "account_id": 4,
+            "issued_on": "2024-12-31",
+            "total_cents": 500
+          },
+          {
+            "id": 6,
+            "account_id": 2,
+            "issued_on": "2025-01-31",
+            "total_cents": 1000
+          },
+          {
+            "id": 7,
+            "account_id": 1,
+            "issued_on": "2025-01-15",
+            "total_cents": 200
+          },
+          {
+            "id": 8,
+            "account_id": 2,
+            "issued_on": "2025-01-31",
+            "total_cents": 200
+          },
+          {
+            "id": 9,
+            "account_id": 4,
+            "issued_on": "2025-01-01",
+            "total_cents": 200
+          },
+          {
+            "id": 10,
+            "account_id": 1,
+            "issued_on": "2024-12-31",
+            "total_cents": 1000
+          },
+          {
+            "id": 11,
+            "account_id": 6,
+            "issued_on": "2025-01-01",
+            "total_cents": 100
+          },
+          {
+            "id": 12,
+            "account_id": 2,
+            "issued_on": "2024-12-31",
+            "total_cents": 200
+          },
+          {
+            "id": 13,
+            "account_id": 6,
+            "issued_on": "2025-02-01",
+            "total_cents": 200
+          },
+          {
+            "id": 14,
+            "account_id": 3,
+            "issued_on": "2025-01-01",
+            "total_cents": 500
+          },
+          {
+            "id": 15,
+            "account_id": 3,
+            "issued_on": "2025-02-01",
+            "total_cents": 100
+          }
+        ],
+        "payments": [
+          {
+            "id": 1,
+            "invoice_id": 1,
+            "amount_cents": 100,
+            "paid_on": "2025-02-01"
+          },
+          {
+            "id": 2,
+            "invoice_id": 1,
+            "amount_cents": 200,
+            "paid_on": "2025-01-15"
+          },
+          {
+            "id": 3,
+            "invoice_id": 2,
+            "amount_cents": 50,
+            "paid_on": "2025-02-02"
+          },
+          {
+            "id": 4,
+            "invoice_id": 4,
+            "amount_cents": 700,
+            "paid_on": "2025-02-02"
+          },
+          {
+            "id": 5,
+            "invoice_id": 4,
+            "amount_cents": 100,
+            "paid_on": "2025-02-02"
+          },
+          {
+            "id": 6,
+            "invoice_id": 7,
+            "amount_cents": 50,
+            "paid_on": "2025-02-01"
+          },
+          {
+            "id": 7,
+            "invoice_id": 7,
+            "amount_cents": 100,
+            "paid_on": "2025-01-15"
+          },
+          {
+            "id": 8,
+            "invoice_id": 9,
+            "amount_cents": 100,
+            "paid_on": "2025-02-01"
+          },
+          {
+            "id": 9,
+            "invoice_id": 9,
+            "amount_cents": 200,
+            "paid_on": "2025-01-15"
+          },
+          {
+            "id": 10,
+            "invoice_id": 9,
+            "amount_cents": 50,
+            "paid_on": "2025-01-01"
+          },
+          {
+            "id": 11,
+            "invoice_id": 10,
+            "amount_cents": 700,
+            "paid_on": "2024-12-31"
+          },
+          {
+            "id": 12,
+            "invoice_id": 10,
+            "amount_cents": 700,
+            "paid_on": "2025-02-02"
+          },
+          {
+            "id": 13,
+            "invoice_id": 11,
+            "amount_cents": 700,
+            "paid_on": "2025-01-15"
+          },
+          {
+            "id": 14,
+            "invoice_id": 12,
+            "amount_cents": 700,
+            "paid_on": "2024-12-31"
+          },
+          {
+            "id": 15,
+            "invoice_id": 12,
+            "amount_cents": 50,
+            "paid_on": "2025-02-01"
+          },
+          {
+            "id": 16,
+            "invoice_id": 13,
+            "amount_cents": 50,
+            "paid_on": "2025-02-01"
+          },
+          {
+            "id": 17,
+            "invoice_id": 13,
+            "amount_cents": 200,
+            "paid_on": "2025-02-02"
+          },
+          {
+            "id": 18,
+            "invoice_id": 13,
+            "amount_cents": 50,
+            "paid_on": "2025-02-02"
+          },
+          {
+            "id": 19,
+            "invoice_id": 14,
+            "amount_cents": 700,
+            "paid_on": "2025-01-01"
+          }
+        ]
+      }
+    },
+    {
+      "id": "billing-137",
+      "schema": "billing",
+      "seed": 137,
+      "role": "generated",
+      "tables": {
+        "accounts": [
+          {
+            "id": 1,
+            "plan": "basic",
+            "active": 0
+          },
+          {
+            "id": 2,
+            "plan": "pro",
+            "active": 1
+          },
+          {
+            "id": 3,
+            "plan": "basic",
+            "active": 0
+          },
+          {
+            "id": 4,
+            "plan": "pro",
+            "active": 1
+          },
+          {
+            "id": 5,
+            "plan": "basic",
+            "active": 1
+          },
+          {
+            "id": 6,
+            "plan": "pro",
+            "active": 1
+          },
+          {
+            "id": 7,
+            "plan": "pro",
+            "active": 0
+          }
+        ],
+        "invoices": [
+          {
+            "id": 1,
+            "account_id": 5,
+            "issued_on": "2025-01-31",
+            "total_cents": 1000
+          },
+          {
+            "id": 2,
+            "account_id": 2,
+            "issued_on": "2025-02-02",
+            "total_cents": 500
+          },
+          {
+            "id": 3,
+            "account_id": 3,
+            "issued_on": "2025-01-31",
+            "total_cents": 200
+          },
+          {
+            "id": 4,
+            "account_id": 4,
+            "issued_on": "2025-02-02",
+            "total_cents": 200
+          },
+          {
+            "id": 5,
+            "account_id": 3,
+            "issued_on": "2025-02-02",
+            "total_cents": 1000
+          },
+          {
+            "id": 6,
+            "account_id": 1,
+            "issued_on": "2025-01-01",
+            "total_cents": 1000
+          },
+          {
+            "id": 7,
+            "account_id": 4,
+            "issued_on": "2024-12-31",
+            "total_cents": 1000
+          },
+          {
+            "id": 8,
+            "account_id": 6,
+            "issued_on": "2025-02-02",
+            "total_cents": 100
+          },
+          {
+            "id": 9,
+            "account_id": 6,
+            "issued_on": "2025-02-01",
+            "total_cents": 500
+          },
+          {
+            "id": 10,
+            "account_id": 6,
+            "issued_on": "2025-01-15",
+            "total_cents": 1000
+          },
+          {
+            "id": 11,
+            "account_id": 6,
+            "issued_on": "2024-12-31",
+            "total_cents": 0
+          },
+          {
+            "id": 12,
+            "account_id": 2,
+            "issued_on": "2025-02-02",
+            "total_cents": 1000
+          },
+          {
+            "id": 13,
+            "account_id": 3,
+            "issued_on": "2025-02-01",
+            "total_cents": 500
+          },
+          {
+            "id": 14,
+            "account_id": 1,
+            "issued_on": "2025-01-31",
+            "total_cents": 0
+          },
+          {
+            "id": 15,
+            "account_id": 3,
+            "issued_on": "2024-12-31",
+            "total_cents": 0
+          }
+        ],
+        "payments": [
+          {
+            "id": 1,
+            "invoice_id": 1,
+            "amount_cents": 50,
+            "paid_on": "2025-02-02"
+          },
+          {
+            "id": 2,
+            "invoice_id": 1,
+            "amount_cents": 50,
+            "paid_on": "2025-02-02"
+          },
+          {
+            "id": 3,
+            "invoice_id": 2,
+            "amount_cents": 100,
+            "paid_on": "2025-02-02"
+          },
+          {
+            "id": 4,
+            "invoice_id": 2,
+            "amount_cents": 100,
+            "paid_on": "2025-02-02"
+          },
+          {
+            "id": 5,
+            "invoice_id": 6,
+            "amount_cents": 200,
+            "paid_on": "2025-01-01"
+          },
+          {
+            "id": 6,
+            "invoice_id": 6,
+            "amount_cents": 100,
+            "paid_on": "2025-02-02"
+          },
+          {
+            "id": 7,
+            "invoice_id": 8,
+            "amount_cents": 100,
+            "paid_on": "2025-02-02"
+          },
+          {
+            "id": 8,
+            "invoice_id": 8,
+            "amount_cents": 700,
+            "paid_on": "2025-02-02"
+          },
+          {
+            "id": 9,
+            "invoice_id": 9,
+            "amount_cents": 700,
+            "paid_on": "2025-02-02"
+          },
+          {
+            "id": 10,
+            "invoice_id": 10,
+            "amount_cents": 100,
+            "paid_on": "2025-02-02"
+          },
+          {
+            "id": 11,
+            "invoice_id": 10,
+            "amount_cents": 700,
+            "paid_on": "2025-01-15"
+          },
+          {
+            "id": 12,
+            "invoice_id": 10,
+            "amount_cents": 100,
+            "paid_on": "2025-02-02"
+          },
+          {
+            "id": 13,
+            "invoice_id": 11,
+            "amount_cents": 50,
+            "paid_on": "2025-01-15"
+          },
+          {
+            "id": 14,
+            "invoice_id": 13,
+            "amount_cents": 100,
+            "paid_on": "2025-02-01"
+          },
+          {
+            "id": 15,
+            "invoice_id": 13,
+            "amount_cents": 50,
+            "paid_on": "2025-02-01"
+          },
+          {
+            "id": 16,
+            "invoice_id": 13,
+            "amount_cents": 700,
+            "paid_on": "2025-02-01"
+          },
+          {
+            "id": 17,
+            "invoice_id": 14,
+            "amount_cents": 200,
+            "paid_on": "2025-02-02"
+          },
+          {
+            "id": 18,
+            "invoice_id": 14,
+            "amount_cents": 700,
+            "paid_on": "2025-02-02"
+          },
+          {
+            "id": 19,
+            "invoice_id": 14,
+            "amount_cents": 200,
+            "paid_on": "2025-01-31"
+          },
+          {
+            "id": 20,
+            "invoice_id": 15,
+            "amount_cents": 200,
+            "paid_on": "2025-01-15"
+          },
+          {
+            "id": 21,
+            "invoice_id": 15,
+            "amount_cents": 200,
+            "paid_on": "2025-01-31"
+          },
+          {
+            "id": 22,
+            "invoice_id": 15,
+            "amount_cents": 50,
+            "paid_on": "2025-01-31"
+          }
+        ]
+      }
+    },
+    {
+      "id": "billing-empty",
+      "schema": "billing",
+      "seed": 211,
+      "role": "empty",
+      "tables": {
+        "accounts": [],
+        "invoices": [],
+        "payments": []
+      }
+    }
+  ]
+}

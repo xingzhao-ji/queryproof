@@ -1,0 +1,17 @@
+{
+  "surrogate_result": {
+    "status": "policy",
+    "rows": [],
+    "columns": 0,
+    "error": "SQL must be nonempty UTF-8 <=16 KiB"
+  },
+  "integer_overflow_rejected_by_type": {
+    "pass": false,
+    "reason": "column shape or declared type mismatch"
+  },
+  "source_hashes": {
+    "queryproof/execution.py": "34816ad8b834add85a6d5d3edbf09701c8835bd21e13cbbaa8e5b08743c76890",
+    "queryproof/worker.py": "d43350551dcaea3abd75b0304861f13d89d9367bab05dee445b3487f02ea8d5d"
+  },
+  "initial_record_retained": "evidence/independent-execution-initial.json"
+}

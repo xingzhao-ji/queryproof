@@ -1,0 +1,208 @@
+test_edge_rows_cover_nulls_multiplicity_and_tied_revenue (test_corpus.CorpusTests.test_edge_rows_cover_nulls_multiplicity_and_tied_revenue) ... ok
+test_real_database_constraints_and_no_overwrite (test_corpus.CorpusTests.test_real_database_constraints_and_no_overwrite) ... ok
+test_worlds_include_anchor_edge_empty_and_reproduce (test_corpus.CorpusTests.test_worlds_include_anchor_edge_empty_and_reproduce) ... ok
+test_bag_preserves_duplicates_but_not_order (test_execution.ComparisonTests.test_bag_preserves_duplicates_but_not_order) ... FAIL
+test_numeric_bag_finds_perfect_matching_not_greedy_or_rounding (test_execution.ComparisonTests.test_numeric_bag_finds_perfect_matching_not_greedy_or_rounding) ... FAIL
+test_types_null_empty_columns_and_failed_execution (test_execution.ComparisonTests.test_types_null_empty_columns_and_failed_execution) ... FAIL
+test_actual_query_and_source_unchanged (test_execution.ExecutionTests.test_actual_query_and_source_unchanged) ... FAIL
+test_authorizer_rejects_write_attach_schema_pragma_and_functions (test_execution.ExecutionTests.test_authorizer_rejects_write_attach_schema_pragma_and_functions) ... 
+  test_authorizer_rejects_write_attach_schema_pragma_and_functions (test_execution.ExecutionTests.test_authorizer_rejects_write_attach_schema_pragma_and_functions) (sql='DELETE FROM customers') ... FAIL
+  test_authorizer_rejects_write_attach_schema_pragma_and_functions (test_execution.ExecutionTests.test_authorizer_rejects_write_attach_schema_pragma_and_functions) (sql="ATTACH ':memory:' AS x") ... FAIL
+  test_authorizer_rejects_write_attach_schema_pragma_and_functions (test_execution.ExecutionTests.test_authorizer_rejects_write_attach_schema_pragma_and_functions) (sql='SELECT name FROM sqlite_schema') ... FAIL
+  test_authorizer_rejects_write_attach_schema_pragma_and_functions (test_execution.ExecutionTests.test_authorizer_rejects_write_attach_schema_pragma_and_functions) (sql='PRAGMA table_info(customers)') ... FAIL
+  test_authorizer_rejects_write_attach_schema_pragma_and_functions (test_execution.ExecutionTests.test_authorizer_rejects_write_attach_schema_pragma_and_functions) (sql="SELECT load_extension('x')") ... FAIL
+  test_authorizer_rejects_write_attach_schema_pragma_and_functions (test_execution.ExecutionTests.test_authorizer_rejects_write_attach_schema_pragma_and_functions) (sql='SELECT randomblob(100)') ... FAIL
+  test_authorizer_rejects_write_attach_schema_pragma_and_functions (test_execution.ExecutionTests.test_authorizer_rejects_write_attach_schema_pragma_and_functions) (sql="SELECT * FROM pragma_table_info('customers')") ... FAIL
+  test_authorizer_rejects_write_attach_schema_pragma_and_functions (test_execution.ExecutionTests.test_authorizer_rejects_write_attach_schema_pragma_and_functions) (sql='WITH x AS (SELECT * FROM sqlite_master) SELECT * FROM x') ... FAIL
+test_cell_and_total_bytes_bounded_before_accumulation (test_execution.ExecutionTests.test_cell_and_total_bytes_bounded_before_accumulation) ... FAIL
+test_multiple_statements_and_unknown_table_fail (test_execution.ExecutionTests.test_multiple_statements_and_unknown_table_fail) ... FAIL
+test_vm_and_row_limits (test_execution.ExecutionTests.test_vm_and_row_limits) ... FAIL
+test_wall_deadline_reaps_actual_child (test_execution.ExecutionTests.test_wall_deadline_reaps_actual_child) ... FAIL
+
+======================================================================
+FAIL: test_bag_preserves_duplicates_but_not_order (test_execution.ComparisonTests.test_bag_preserves_duplicates_but_not_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_execution.py", line 70, in test_bag_preserves_duplicates_but_not_order
+    self.assertTrue(compare_result(task,[[1],[1],[2]],self.actual([[2],[1],[1]]))["pass"])
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_numeric_bag_finds_perfect_matching_not_greedy_or_rounding (test_execution.ComparisonTests.test_numeric_bag_finds_perfect_matching_not_greedy_or_rounding)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_execution.py", line 88, in test_numeric_bag_finds_perfect_matching_not_greedy_or_rounding
+    self.assertTrue(compare_result(task,expected,actual)["pass"])
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_types_null_empty_columns_and_failed_execution (test_execution.ComparisonTests.test_types_null_empty_columns_and_failed_execution)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_execution.py", line 78, in test_types_null_empty_columns_and_failed_execution
+    self.assertTrue(compare_result(task,[],self.actual([]))["pass"])
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_actual_query_and_source_unchanged (test_execution.ExecutionTests.test_actual_query_and_source_unchanged)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_execution.py", line 26, in test_actual_query_and_source_unchanged
+    self.assertEqual("ok",result["status"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'ok' != 'error'
+- ok
++ error
+
+
+======================================================================
+FAIL: test_authorizer_rejects_write_attach_schema_pragma_and_functions (test_execution.ExecutionTests.test_authorizer_rejects_write_attach_schema_pragma_and_functions) (sql='DELETE FROM customers')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_execution.py", line 33, in test_authorizer_rejects_write_attach_schema_pragma_and_functions
+    self.assertEqual("policy",execute(self.db,sql,self.tables)["status"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'policy' != 'error'
+- policy
++ error
+
+
+======================================================================
+FAIL: test_authorizer_rejects_write_attach_schema_pragma_and_functions (test_execution.ExecutionTests.test_authorizer_rejects_write_attach_schema_pragma_and_functions) (sql="ATTACH ':memory:' AS x")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_execution.py", line 33, in test_authorizer_rejects_write_attach_schema_pragma_and_functions
+    self.assertEqual("policy",execute(self.db,sql,self.tables)["status"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'policy' != 'error'
+- policy
++ error
+
+
+======================================================================
+FAIL: test_authorizer_rejects_write_attach_schema_pragma_and_functions (test_execution.ExecutionTests.test_authorizer_rejects_write_attach_schema_pragma_and_functions) (sql='SELECT name FROM sqlite_schema')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_execution.py", line 33, in test_authorizer_rejects_write_attach_schema_pragma_and_functions
+    self.assertEqual("policy",execute(self.db,sql,self.tables)["status"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'policy' != 'error'
+- policy
++ error
+
+
+======================================================================
+FAIL: test_authorizer_rejects_write_attach_schema_pragma_and_functions (test_execution.ExecutionTests.test_authorizer_rejects_write_attach_schema_pragma_and_functions) (sql='PRAGMA table_info(customers)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_execution.py", line 33, in test_authorizer_rejects_write_attach_schema_pragma_and_functions
+    self.assertEqual("policy",execute(self.db,sql,self.tables)["status"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'policy' != 'error'
+- policy
++ error
+
+
+======================================================================
+FAIL: test_authorizer_rejects_write_attach_schema_pragma_and_functions (test_execution.ExecutionTests.test_authorizer_rejects_write_attach_schema_pragma_and_functions) (sql="SELECT load_extension('x')")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_execution.py", line 33, in test_authorizer_rejects_write_attach_schema_pragma_and_functions
+    self.assertEqual("policy",execute(self.db,sql,self.tables)["status"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'policy' != 'error'
+- policy
++ error
+
+
+======================================================================
+FAIL: test_authorizer_rejects_write_attach_schema_pragma_and_functions (test_execution.ExecutionTests.test_authorizer_rejects_write_attach_schema_pragma_and_functions) (sql='SELECT randomblob(100)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_execution.py", line 33, in test_authorizer_rejects_write_attach_schema_pragma_and_functions
+    self.assertEqual("policy",execute(self.db,sql,self.tables)["status"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'policy' != 'error'
+- policy
++ error
+
+
+======================================================================
+FAIL: test_authorizer_rejects_write_attach_schema_pragma_and_functions (test_execution.ExecutionTests.test_authorizer_rejects_write_attach_schema_pragma_and_functions) (sql="SELECT * FROM pragma_table_info('customers')")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_execution.py", line 33, in test_authorizer_rejects_write_attach_schema_pragma_and_functions
+    self.assertEqual("policy",execute(self.db,sql,self.tables)["status"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'policy' != 'error'
+- policy
++ error
+
+
+======================================================================
+FAIL: test_authorizer_rejects_write_attach_schema_pragma_and_functions (test_execution.ExecutionTests.test_authorizer_rejects_write_attach_schema_pragma_and_functions) (sql='WITH x AS (SELECT * FROM sqlite_master) SELECT * FROM x')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_execution.py", line 33, in test_authorizer_rejects_write_attach_schema_pragma_and_functions
+    self.assertEqual("policy",execute(self.db,sql,self.tables)["status"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'policy' != 'error'
+- policy
++ error
+
+
+======================================================================
+FAIL: test_cell_and_total_bytes_bounded_before_accumulation (test_execution.ExecutionTests.test_cell_and_total_bytes_bounded_before_accumulation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_execution.py", line 49, in test_cell_and_total_bytes_bounded_before_accumulation
+    self.assertEqual("limit",execute(self.db,cell,self.tables)["status"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'limit' != 'error'
+- limit
++ error
+
+
+======================================================================
+FAIL: test_multiple_statements_and_unknown_table_fail (test_execution.ExecutionTests.test_multiple_statements_and_unknown_table_fail)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_execution.py", line 37, in test_multiple_statements_and_unknown_table_fail
+    self.assertEqual("policy",execute(self.db,"SELECT * FROM lines",["customers"])["status"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'policy' != 'error'
+- policy
++ error
+
+
+======================================================================
+FAIL: test_vm_and_row_limits (test_execution.ExecutionTests.test_vm_and_row_limits)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_execution.py", line 41, in test_vm_and_row_limits
+    self.assertEqual("limit",execute(self.db,expensive,self.tables)["status"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'limit' != 'error'
+- limit
++ error
+
+
+======================================================================
+FAIL: test_wall_deadline_reaps_actual_child (test_execution.ExecutionTests.test_wall_deadline_reaps_actual_child)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_execution.py", line 56, in test_wall_deadline_reaps_actual_child
+    self.assertEqual("timeout",result["status"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'timeout' != 'error'
+- timeout
++ error
+
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.050s
+
+FAILED (failures=16)

@@ -1,0 +1,4134 @@
+{
+  "version": 1,
+  "results": [
+    {
+      "task_id": "C01",
+      "world_id": "commerce-anchor",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            300
+          ],
+          [
+            2,
+            50
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39479,
+        "elapsed_seconds": 0.07400545800919645
+      }
+    },
+    {
+      "task_id": "C02",
+      "world_id": "commerce-anchor",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39480,
+        "elapsed_seconds": 0.07146529198507778
+      }
+    },
+    {
+      "task_id": "C03",
+      "world_id": "commerce-anchor",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            2
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39481,
+        "elapsed_seconds": 0.0780666249920614
+      }
+    },
+    {
+      "task_id": "C04",
+      "world_id": "commerce-anchor",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39482,
+        "elapsed_seconds": 0.07401858302182518
+      }
+    },
+    {
+      "task_id": "C05",
+      "world_id": "commerce-anchor",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            350
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39483,
+        "elapsed_seconds": 0.07053370898938738
+      }
+    },
+    {
+      "task_id": "C06",
+      "world_id": "commerce-anchor",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            300
+          ],
+          [
+            2,
+            50
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39484,
+        "elapsed_seconds": 0.07412883298820816
+      }
+    },
+    {
+      "task_id": "C07",
+      "world_id": "commerce-anchor",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            "A"
+          ],
+          [
+            "B"
+          ],
+          [
+            "C"
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39485,
+        "elapsed_seconds": 0.07078362497850321
+      }
+    },
+    {
+      "task_id": "C08",
+      "world_id": "commerce-anchor",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            1
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39486,
+        "elapsed_seconds": 0.07333529199240729
+      }
+    },
+    {
+      "task_id": "C01",
+      "world_id": "commerce-edge",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            1000
+          ],
+          [
+            2,
+            1000
+          ],
+          [
+            3,
+            999
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            6,
+            50
+          ],
+          [
+            7,
+            0
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39487,
+        "elapsed_seconds": 0.0742069999978412
+      }
+    },
+    {
+      "task_id": "C02",
+      "world_id": "commerce-edge",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            4
+          ],
+          [
+            7
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39488,
+        "elapsed_seconds": 0.07511891701142304
+      }
+    },
+    {
+      "task_id": "C03",
+      "world_id": "commerce-edge",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            2
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39489,
+        "elapsed_seconds": 0.07214412500616163
+      }
+    },
+    {
+      "task_id": "C04",
+      "world_id": "commerce-edge",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            9
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            6,
+            11
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39490,
+        "elapsed_seconds": 0.07466795900836587
+      }
+    },
+    {
+      "task_id": "C05",
+      "world_id": "commerce-edge",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            1550
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39491,
+        "elapsed_seconds": 0.07488670799648389
+      }
+    },
+    {
+      "task_id": "C06",
+      "world_id": "commerce-edge",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            1000
+          ],
+          [
+            2,
+            1000
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39492,
+        "elapsed_seconds": 0.07518625000375323
+      }
+    },
+    {
+      "task_id": "C07",
+      "world_id": "commerce-edge",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            "A"
+          ],
+          [
+            "A"
+          ],
+          [
+            "B"
+          ],
+          [
+            "C"
+          ],
+          [
+            "A"
+          ],
+          [
+            "B"
+          ],
+          [
+            "C"
+          ],
+          [
+            "A"
+          ],
+          [
+            "C"
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39493,
+        "elapsed_seconds": 0.07522404097835533
+      }
+    },
+    {
+      "task_id": "C08",
+      "world_id": "commerce-edge",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39494,
+        "elapsed_seconds": 0.07477683297474869
+      }
+    },
+    {
+      "task_id": "C01",
+      "world_id": "commerce-73",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            500
+          ],
+          [
+            2,
+            3150
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            4932
+          ],
+          [
+            5,
+            400
+          ],
+          [
+            6,
+            400
+          ],
+          [
+            7,
+            3366
+          ],
+          [
+            8,
+            0
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39495,
+        "elapsed_seconds": 0.074274750018958
+      }
+    },
+    {
+      "task_id": "C02",
+      "world_id": "commerce-73",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            3
+          ],
+          [
+            8
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39496,
+        "elapsed_seconds": 0.07467933298903517
+      }
+    },
+    {
+      "task_id": "C03",
+      "world_id": "commerce-73",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            7,
+            3
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39497,
+        "elapsed_seconds": 0.07056150000425987
+      }
+    },
+    {
+      "task_id": "C04",
+      "world_id": "commerce-73",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            17
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            5,
+            8
+          ],
+          [
+            6,
+            13
+          ],
+          [
+            7,
+            16
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39498,
+        "elapsed_seconds": 0.06947416698676534
+      }
+    },
+    {
+      "task_id": "C05",
+      "world_id": "commerce-73",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            5066
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39499,
+        "elapsed_seconds": 0.07424241700209677
+      }
+    },
+    {
+      "task_id": "C06",
+      "world_id": "commerce-73",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            4,
+            4932
+          ],
+          [
+            7,
+            3366
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39500,
+        "elapsed_seconds": 0.07123970799148083
+      }
+    },
+    {
+      "task_id": "C07",
+      "world_id": "commerce-73",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            "C"
+          ],
+          [
+            "B"
+          ],
+          [
+            "A"
+          ],
+          [
+            "B"
+          ],
+          [
+            "B"
+          ],
+          [
+            "B"
+          ],
+          [
+            "A"
+          ],
+          [
+            "B"
+          ],
+          [
+            "C"
+          ],
+          [
+            "A"
+          ],
+          [
+            "A"
+          ],
+          [
+            "A"
+          ],
+          [
+            "B"
+          ],
+          [
+            "B"
+          ],
+          [
+            "A"
+          ],
+          [
+            "B"
+          ],
+          [
+            "B"
+          ],
+          [
+            "C"
+          ],
+          [
+            "A"
+          ],
+          [
+            "B"
+          ],
+          [
+            "A"
+          ],
+          [
+            "C"
+          ],
+          [
+            "A"
+          ],
+          [
+            "B"
+          ],
+          [
+            "A"
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39501,
+        "elapsed_seconds": 0.07460287498543039
+      }
+    },
+    {
+      "task_id": "C08",
+      "world_id": "commerce-73",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39502,
+        "elapsed_seconds": 0.07491545798256993
+      }
+    },
+    {
+      "task_id": "C01",
+      "world_id": "commerce-101",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            5015
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            1500
+          ],
+          [
+            5,
+            150
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            7,
+            200
+          ],
+          [
+            8,
+            0
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39503,
+        "elapsed_seconds": 0.07357958299689926
+      }
+    },
+    {
+      "task_id": "C02",
+      "world_id": "commerce-101",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            1
+          ],
+          [
+            3
+          ],
+          [
+            6
+          ],
+          [
+            8
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39504,
+        "elapsed_seconds": 0.07358779100468382
+      }
+    },
+    {
+      "task_id": "C03",
+      "world_id": "commerce-101",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39505,
+        "elapsed_seconds": 0.07853087500552647
+      }
+    },
+    {
+      "task_id": "C04",
+      "world_id": "commerce-101",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            2,
+            8
+          ],
+          [
+            4,
+            13
+          ],
+          [
+            5,
+            16
+          ],
+          [
+            7,
+            17
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39506,
+        "elapsed_seconds": 0.0788808329962194
+      }
+    },
+    {
+      "task_id": "C05",
+      "world_id": "commerce-101",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            3865
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39507,
+        "elapsed_seconds": 0.0783182909945026
+      }
+    },
+    {
+      "task_id": "C06",
+      "world_id": "commerce-101",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            2,
+            5015
+          ],
+          [
+            4,
+            1500
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39508,
+        "elapsed_seconds": 0.0774950000050012
+      }
+    },
+    {
+      "task_id": "C07",
+      "world_id": "commerce-101",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            "C"
+          ],
+          [
+            "B"
+          ],
+          [
+            "B"
+          ],
+          [
+            "A"
+          ],
+          [
+            "B"
+          ],
+          [
+            "C"
+          ],
+          [
+            "C"
+          ],
+          [
+            "A"
+          ],
+          [
+            "A"
+          ],
+          [
+            "B"
+          ],
+          [
+            "C"
+          ],
+          [
+            "A"
+          ],
+          [
+            "A"
+          ],
+          [
+            "B"
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39509,
+        "elapsed_seconds": 0.07309037502272986
+      }
+    },
+    {
+      "task_id": "C08",
+      "world_id": "commerce-101",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            2
+          ],
+          [
+            5
+          ],
+          [
+            7
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39510,
+        "elapsed_seconds": 0.07266812500893138
+      }
+    },
+    {
+      "task_id": "C01",
+      "world_id": "commerce-137",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            1800
+          ],
+          [
+            3,
+            1815
+          ],
+          [
+            4,
+            4666
+          ],
+          [
+            5,
+            3899
+          ],
+          [
+            6,
+            1900
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            8,
+            0
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39511,
+        "elapsed_seconds": 0.07591054198564962
+      }
+    },
+    {
+      "task_id": "C02",
+      "world_id": "commerce-137",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            1
+          ],
+          [
+            8
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39512,
+        "elapsed_seconds": 0.07128916701185517
+      }
+    },
+    {
+      "task_id": "C03",
+      "world_id": "commerce-137",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            5,
+            3
+          ],
+          [
+            6,
+            3
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39513,
+        "elapsed_seconds": 0.06894195801578462
+      }
+    },
+    {
+      "task_id": "C04",
+      "world_id": "commerce-137",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            2,
+            16
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            5,
+            17
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            7,
+            8
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39514,
+        "elapsed_seconds": 0.07183791598072276
+      }
+    },
+    {
+      "task_id": "C05",
+      "world_id": "commerce-137",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            12681
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39515,
+        "elapsed_seconds": 0.0765443749842234
+      }
+    },
+    {
+      "task_id": "C06",
+      "world_id": "commerce-137",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            4,
+            4666
+          ],
+          [
+            5,
+            3899
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39516,
+        "elapsed_seconds": 0.06839183301781304
+      }
+    },
+    {
+      "task_id": "C07",
+      "world_id": "commerce-137",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            "B"
+          ],
+          [
+            "B"
+          ],
+          [
+            "C"
+          ],
+          [
+            "C"
+          ],
+          [
+            "A"
+          ],
+          [
+            "B"
+          ],
+          [
+            "C"
+          ],
+          [
+            "C"
+          ],
+          [
+            "B"
+          ],
+          [
+            "C"
+          ],
+          [
+            "B"
+          ],
+          [
+            "A"
+          ],
+          [
+            "B"
+          ],
+          [
+            "B"
+          ],
+          [
+            "C"
+          ],
+          [
+            "B"
+          ],
+          [
+            "C"
+          ],
+          [
+            "B"
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39517,
+        "elapsed_seconds": 0.07174704200588167
+      }
+    },
+    {
+      "task_id": "C08",
+      "world_id": "commerce-137",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            5
+          ],
+          [
+            6
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39518,
+        "elapsed_seconds": 0.07761358300922439
+      }
+    },
+    {
+      "task_id": "C01",
+      "world_id": "commerce-empty",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39519,
+        "elapsed_seconds": 0.07078220901894383
+      }
+    },
+    {
+      "task_id": "C02",
+      "world_id": "commerce-empty",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39520,
+        "elapsed_seconds": 0.07369908300461248
+      }
+    },
+    {
+      "task_id": "C03",
+      "world_id": "commerce-empty",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39521,
+        "elapsed_seconds": 0.07474679200095125
+      }
+    },
+    {
+      "task_id": "C04",
+      "world_id": "commerce-empty",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39522,
+        "elapsed_seconds": 0.07048170900088735
+      }
+    },
+    {
+      "task_id": "C05",
+      "world_id": "commerce-empty",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            0
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39523,
+        "elapsed_seconds": 0.06927245898987167
+      }
+    },
+    {
+      "task_id": "C06",
+      "world_id": "commerce-empty",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39524,
+        "elapsed_seconds": 0.07361862499965355
+      }
+    },
+    {
+      "task_id": "C07",
+      "world_id": "commerce-empty",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39525,
+        "elapsed_seconds": 0.06837337499018759
+      }
+    },
+    {
+      "task_id": "C08",
+      "world_id": "commerce-empty",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39526,
+        "elapsed_seconds": 0.07556262498837896
+      }
+    },
+    {
+      "task_id": "S01",
+      "world_id": "support-anchor",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39527,
+        "elapsed_seconds": 0.07763600000180304
+      }
+    },
+    {
+      "task_id": "S02",
+      "world_id": "support-anchor",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39528,
+        "elapsed_seconds": 0.07178083402686752
+      }
+    },
+    {
+      "task_id": "S03",
+      "world_id": "support-anchor",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            2
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39529,
+        "elapsed_seconds": 0.07057825001538731
+      }
+    },
+    {
+      "task_id": "S04",
+      "world_id": "support-anchor",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39530,
+        "elapsed_seconds": 0.07153216699953191
+      }
+    },
+    {
+      "task_id": "S05",
+      "world_id": "support-anchor",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39531,
+        "elapsed_seconds": 0.07155758401495405
+      }
+    },
+    {
+      "task_id": "S06",
+      "world_id": "support-anchor",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39532,
+        "elapsed_seconds": 0.07398087499313988
+      }
+    },
+    {
+      "task_id": "S07",
+      "world_id": "support-anchor",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            "red"
+          ],
+          [
+            "blue"
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39533,
+        "elapsed_seconds": 0.0678094580071047
+      }
+    },
+    {
+      "task_id": "S08",
+      "world_id": "support-anchor",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            1
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39534,
+        "elapsed_seconds": 0.07473987500998192
+      }
+    },
+    {
+      "task_id": "S01",
+      "world_id": "support-edge",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            0
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39535,
+        "elapsed_seconds": 0.07598862500162795
+      }
+    },
+    {
+      "task_id": "S02",
+      "world_id": "support-edge",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            5
+          ],
+          [
+            6
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39536,
+        "elapsed_seconds": 0.07138504198519513
+      }
+    },
+    {
+      "task_id": "S03",
+      "world_id": "support-edge",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39537,
+        "elapsed_seconds": 0.07633433400769718
+      }
+    },
+    {
+      "task_id": "S04",
+      "world_id": "support-edge",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            9,
+            11
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39538,
+        "elapsed_seconds": 0.07181233301525936
+      }
+    },
+    {
+      "task_id": "S05",
+      "world_id": "support-edge",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            9
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39539,
+        "elapsed_seconds": 0.07076691600377671
+      }
+    },
+    {
+      "task_id": "S06",
+      "world_id": "support-edge",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            9,
+            3
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39540,
+        "elapsed_seconds": 0.07482933299615979
+      }
+    },
+    {
+      "task_id": "S07",
+      "world_id": "support-edge",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            "red"
+          ],
+          [
+            "blue"
+          ],
+          [
+            "green"
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39541,
+        "elapsed_seconds": 0.07648824999341741
+      }
+    },
+    {
+      "task_id": "S08",
+      "world_id": "support-edge",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            1
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39542,
+        "elapsed_seconds": 0.07264720898820087
+      }
+    },
+    {
+      "task_id": "S01",
+      "world_id": "support-73",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            7,
+            0
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39543,
+        "elapsed_seconds": 0.07314541697269306
+      }
+    },
+    {
+      "task_id": "S02",
+      "world_id": "support-73",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            3
+          ],
+          [
+            5
+          ],
+          [
+            7
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39544,
+        "elapsed_seconds": 0.06986666700686328
+      }
+    },
+    {
+      "task_id": "S03",
+      "world_id": "support-73",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            11,
+            2
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39545,
+        "elapsed_seconds": 0.07422062498517334
+      }
+    },
+    {
+      "task_id": "S04",
+      "world_id": "support-73",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            7,
+            13
+          ],
+          [
+            8,
+            15
+          ],
+          [
+            10,
+            19
+          ],
+          [
+            11,
+            21
+          ],
+          [
+            12,
+            22
+          ],
+          [
+            16,
+            28
+          ],
+          [
+            17,
+            32
+          ],
+          [
+            18,
+            33
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39546,
+        "elapsed_seconds": 0.07761050001136027
+      }
+    },
+    {
+      "task_id": "S05",
+      "world_id": "support-73",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            1
+          ],
+          [
+            4
+          ],
+          [
+            8
+          ],
+          [
+            15
+          ],
+          [
+            16
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39547,
+        "elapsed_seconds": 0.07676837500184774
+      }
+    },
+    {
+      "task_id": "S06",
+      "world_id": "support-73",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            3
+          ],
+          [
+            16,
+            2
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39548,
+        "elapsed_seconds": 0.07546312498743646
+      }
+    },
+    {
+      "task_id": "S07",
+      "world_id": "support-73",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            "blue"
+          ],
+          [
+            "red"
+          ],
+          [
+            "green"
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39549,
+        "elapsed_seconds": 0.07620729200425558
+      }
+    },
+    {
+      "task_id": "S08",
+      "world_id": "support-73",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            4
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39550,
+        "elapsed_seconds": 0.07145612500607967
+      }
+    },
+    {
+      "task_id": "S01",
+      "world_id": "support-101",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            7,
+            0
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39551,
+        "elapsed_seconds": 0.07506595802260563
+      }
+    },
+    {
+      "task_id": "S02",
+      "world_id": "support-101",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            7
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39552,
+        "elapsed_seconds": 0.07842904099379666
+      }
+    },
+    {
+      "task_id": "S03",
+      "world_id": "support-101",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            7,
+            2
+          ],
+          [
+            11,
+            2
+          ],
+          [
+            14,
+            2
+          ],
+          [
+            15,
+            2
+          ],
+          [
+            18,
+            2
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39553,
+        "elapsed_seconds": 0.07036645797779784
+      }
+    },
+    {
+      "task_id": "S04",
+      "world_id": "support-101",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            3,
+            5
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            11,
+            13
+          ],
+          [
+            12,
+            16
+          ],
+          [
+            14,
+            17
+          ],
+          [
+            15,
+            22
+          ],
+          [
+            18,
+            28
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39577,
+        "elapsed_seconds": 0.07185454200953245
+      }
+    },
+    {
+      "task_id": "S05",
+      "world_id": "support-101",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            7
+          ],
+          [
+            8
+          ],
+          [
+            10
+          ],
+          [
+            13
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39579,
+        "elapsed_seconds": 0.07586224999977276
+      }
+    },
+    {
+      "task_id": "S06",
+      "world_id": "support-101",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            7,
+            2
+          ],
+          [
+            16,
+            0
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39580,
+        "elapsed_seconds": 0.07403708400670439
+      }
+    },
+    {
+      "task_id": "S07",
+      "world_id": "support-101",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            "green"
+          ],
+          [
+            "red"
+          ],
+          [
+            "blue"
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39581,
+        "elapsed_seconds": 0.07347166698309593
+      }
+    },
+    {
+      "task_id": "S08",
+      "world_id": "support-101",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39582,
+        "elapsed_seconds": 0.07452979098889045
+      }
+    },
+    {
+      "task_id": "S01",
+      "world_id": "support-137",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            0
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39583,
+        "elapsed_seconds": 0.07049666700186208
+      }
+    },
+    {
+      "task_id": "S02",
+      "world_id": "support-137",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39584,
+        "elapsed_seconds": 0.06781391700496897
+      }
+    },
+    {
+      "task_id": "S03",
+      "world_id": "support-137",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            13,
+            2
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39585,
+        "elapsed_seconds": 0.07371183400391601
+      }
+    },
+    {
+      "task_id": "S04",
+      "world_id": "support-137",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            9,
+            15
+          ],
+          [
+            12,
+            22
+          ],
+          [
+            13,
+            23
+          ],
+          [
+            14,
+            26
+          ],
+          [
+            15,
+            28
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39586,
+        "elapsed_seconds": 0.07088541600387543
+      }
+    },
+    {
+      "task_id": "S05",
+      "world_id": "support-137",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            1
+          ],
+          [
+            3
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ],
+          [
+            11
+          ],
+          [
+            18
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39587,
+        "elapsed_seconds": 0.07428816598257981
+      }
+    },
+    {
+      "task_id": "S06",
+      "world_id": "support-137",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            2,
+            3
+          ],
+          [
+            11,
+            3
+          ],
+          [
+            9,
+            0
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39588,
+        "elapsed_seconds": 0.07571079200715758
+      }
+    },
+    {
+      "task_id": "S07",
+      "world_id": "support-137",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            "red"
+          ],
+          [
+            "blue"
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39589,
+        "elapsed_seconds": 0.06971966600394808
+      }
+    },
+    {
+      "task_id": "S08",
+      "world_id": "support-137",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            6
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39590,
+        "elapsed_seconds": 0.0719913329812698
+      }
+    },
+    {
+      "task_id": "S01",
+      "world_id": "support-empty",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39591,
+        "elapsed_seconds": 0.07699258302454837
+      }
+    },
+    {
+      "task_id": "S02",
+      "world_id": "support-empty",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39592,
+        "elapsed_seconds": 0.07381954102311283
+      }
+    },
+    {
+      "task_id": "S03",
+      "world_id": "support-empty",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39593,
+        "elapsed_seconds": 0.07067366698174737
+      }
+    },
+    {
+      "task_id": "S04",
+      "world_id": "support-empty",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39594,
+        "elapsed_seconds": 0.07065245800185949
+      }
+    },
+    {
+      "task_id": "S05",
+      "world_id": "support-empty",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39595,
+        "elapsed_seconds": 0.07639195802039467
+      }
+    },
+    {
+      "task_id": "S06",
+      "world_id": "support-empty",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39596,
+        "elapsed_seconds": 0.07259979101945646
+      }
+    },
+    {
+      "task_id": "S07",
+      "world_id": "support-empty",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39597,
+        "elapsed_seconds": 0.07194049999816343
+      }
+    },
+    {
+      "task_id": "S08",
+      "world_id": "support-empty",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39598,
+        "elapsed_seconds": 0.07338525002705865
+      }
+    },
+    {
+      "task_id": "B01",
+      "world_id": "billing-anchor",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39599,
+        "elapsed_seconds": 0.07118379097664729
+      }
+    },
+    {
+      "task_id": "B02",
+      "world_id": "billing-anchor",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39600,
+        "elapsed_seconds": 0.0730908750265371
+      }
+    },
+    {
+      "task_id": "B03",
+      "world_id": "billing-anchor",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39601,
+        "elapsed_seconds": 0.07384891700348817
+      }
+    },
+    {
+      "task_id": "B04",
+      "world_id": "billing-anchor",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39602,
+        "elapsed_seconds": 0.07462525001028553
+      }
+    },
+    {
+      "task_id": "B05",
+      "world_id": "billing-anchor",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            "2025-01",
+            300
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39603,
+        "elapsed_seconds": 0.06985141601762734
+      }
+    },
+    {
+      "task_id": "B06",
+      "world_id": "billing-anchor",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 3,
+        "rows": [
+          [
+            1,
+            1,
+            100
+          ],
+          [
+            2,
+            2,
+            200
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39604,
+        "elapsed_seconds": 0.07109129198943265
+      }
+    },
+    {
+      "task_id": "B07",
+      "world_id": "billing-anchor",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            "basic",
+            100.0
+          ],
+          [
+            "pro",
+            200.0
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39605,
+        "elapsed_seconds": 0.07502608298091218
+      }
+    },
+    {
+      "task_id": "B08",
+      "world_id": "billing-anchor",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39606,
+        "elapsed_seconds": 0.07477570799528621
+      }
+    },
+    {
+      "task_id": "B01",
+      "world_id": "billing-edge",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            500
+          ],
+          [
+            3,
+            -200
+          ],
+          [
+            4,
+            900
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            7,
+            -200
+          ],
+          [
+            8,
+            0
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39607,
+        "elapsed_seconds": 0.06860458399751224
+      }
+    },
+    {
+      "task_id": "B02",
+      "world_id": "billing-edge",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            500
+          ],
+          [
+            2,
+            700
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39608,
+        "elapsed_seconds": 0.07378429200616665
+      }
+    },
+    {
+      "task_id": "B03",
+      "world_id": "billing-edge",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            2
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39609,
+        "elapsed_seconds": 0.07280958400224335
+      }
+    },
+    {
+      "task_id": "B04",
+      "world_id": "billing-edge",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39610,
+        "elapsed_seconds": 0.0719507499889005
+      }
+    },
+    {
+      "task_id": "B05",
+      "world_id": "billing-edge",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            "2024-12",
+            200
+          ],
+          [
+            "2025-01",
+            1900
+          ],
+          [
+            "2025-02",
+            1000
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39611,
+        "elapsed_seconds": 0.07441254198784009
+      }
+    },
+    {
+      "task_id": "B06",
+      "world_id": "billing-edge",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 3,
+        "rows": [
+          [
+            1,
+            1,
+            300
+          ],
+          [
+            1,
+            2,
+            1000
+          ],
+          [
+            3,
+            3,
+            400
+          ],
+          [
+            4,
+            4,
+            100
+          ],
+          [
+            7,
+            5,
+            500
+          ],
+          [
+            8,
+            6,
+            100
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39612,
+        "elapsed_seconds": 0.07609908300219104
+      }
+    },
+    {
+      "task_id": "B07",
+      "world_id": "billing-edge",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            "basic",
+            380.0
+          ],
+          [
+            "pro",
+            400.0
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39613,
+        "elapsed_seconds": 0.07474999999976717
+      }
+    },
+    {
+      "task_id": "B08",
+      "world_id": "billing-edge",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            6
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39614,
+        "elapsed_seconds": 0.0727141659881454
+      }
+    },
+    {
+      "task_id": "B01",
+      "world_id": "billing-73",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            -900
+          ],
+          [
+            2,
+            950
+          ],
+          [
+            3,
+            100
+          ],
+          [
+            4,
+            200
+          ],
+          [
+            5,
+            -100
+          ],
+          [
+            6,
+            150
+          ],
+          [
+            7,
+            500
+          ],
+          [
+            8,
+            -900
+          ],
+          [
+            9,
+            100
+          ],
+          [
+            10,
+            200
+          ],
+          [
+            11,
+            0
+          ],
+          [
+            12,
+            100
+          ],
+          [
+            13,
+            700
+          ],
+          [
+            14,
+            500
+          ],
+          [
+            15,
+            -300
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39615,
+        "elapsed_seconds": 0.07326895897858776
+      }
+    },
+    {
+      "task_id": "B02",
+      "world_id": "billing-73",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            2,
+            600
+          ],
+          [
+            3,
+            1450
+          ],
+          [
+            4,
+            650
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39616,
+        "elapsed_seconds": 0.06744975000037812
+      }
+    },
+    {
+      "task_id": "B03",
+      "world_id": "billing-73",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            4
+          ],
+          [
+            7
+          ],
+          [
+            9
+          ],
+          [
+            14
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39617,
+        "elapsed_seconds": 0.06845787502243184
+      }
+    },
+    {
+      "task_id": "B04",
+      "world_id": "billing-73",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            5
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39618,
+        "elapsed_seconds": 0.07120754197239876
+      }
+    },
+    {
+      "task_id": "B05",
+      "world_id": "billing-73",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            "2024-12",
+            3500
+          ],
+          [
+            "2025-01",
+            1800
+          ],
+          [
+            "2025-02",
+            700
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39619,
+        "elapsed_seconds": 0.0779616670042742
+      }
+    },
+    {
+      "task_id": "B06",
+      "world_id": "billing-73",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 3,
+        "rows": [
+          [
+            1,
+            2,
+            700
+          ],
+          [
+            1,
+            1,
+            1400
+          ],
+          [
+            2,
+            3,
+            50
+          ],
+          [
+            3,
+            4,
+            100
+          ],
+          [
+            5,
+            5,
+            50
+          ],
+          [
+            5,
+            6,
+            100
+          ],
+          [
+            5,
+            7,
+            200
+          ],
+          [
+            6,
+            9,
+            200
+          ],
+          [
+            6,
+            8,
+            300
+          ],
+          [
+            6,
+            10,
+            350
+          ],
+          [
+            8,
+            11,
+            700
+          ],
+          [
+            8,
+            12,
+            900
+          ],
+          [
+            10,
+            15,
+            50
+          ],
+          [
+            10,
+            13,
+            250
+          ],
+          [
+            10,
+            14,
+            300
+          ],
+          [
+            11,
+            18,
+            50
+          ],
+          [
+            11,
+            17,
+            150
+          ],
+          [
+            11,
+            16,
+            200
+          ],
+          [
+            12,
+            19,
+            100
+          ],
+          [
+            13,
+            20,
+            100
+          ],
+          [
+            13,
+            21,
+            200
+          ],
+          [
+            13,
+            22,
+            300
+          ],
+          [
+            15,
+            23,
+            700
+          ],
+          [
+            15,
+            24,
+            800
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39620,
+        "elapsed_seconds": 0.07185741601279005
+      }
+    },
+    {
+      "task_id": "B07",
+      "world_id": "billing-73",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            "basic",
+            500.0
+          ],
+          [
+            "pro",
+            384.61538461538464
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39621,
+        "elapsed_seconds": 0.0725950830092188
+      }
+    },
+    {
+      "task_id": "B08",
+      "world_id": "billing-73",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            7
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39622,
+        "elapsed_seconds": 0.06975787499686703
+      }
+    },
+    {
+      "task_id": "B01",
+      "world_id": "billing-101",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            200
+          ],
+          [
+            2,
+            450
+          ],
+          [
+            3,
+            100
+          ],
+          [
+            4,
+            -600
+          ],
+          [
+            5,
+            500
+          ],
+          [
+            6,
+            1000
+          ],
+          [
+            7,
+            50
+          ],
+          [
+            8,
+            200
+          ],
+          [
+            9,
+            -150
+          ],
+          [
+            10,
+            -400
+          ],
+          [
+            11,
+            -600
+          ],
+          [
+            12,
+            -550
+          ],
+          [
+            13,
+            -100
+          ],
+          [
+            14,
+            -200
+          ],
+          [
+            15,
+            100
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39623,
+        "elapsed_seconds": 0.06843991699861363
+      }
+    },
+    {
+      "task_id": "B02",
+      "world_id": "billing-101",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            2,
+            650
+          ],
+          [
+            4,
+            800
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39624,
+        "elapsed_seconds": 0.07438641699263826
+      }
+    },
+    {
+      "task_id": "B03",
+      "world_id": "billing-101",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            3
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            8
+          ],
+          [
+            15
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39625,
+        "elapsed_seconds": 0.07009770898730494
+      }
+    },
+    {
+      "task_id": "B04",
+      "world_id": "billing-101",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            5
+          ],
+          [
+            6
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39626,
+        "elapsed_seconds": 0.0759478329855483
+      }
+    },
+    {
+      "task_id": "B05",
+      "world_id": "billing-101",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            "2024-12",
+            1700
+          ],
+          [
+            "2025-01",
+            2800
+          ],
+          [
+            "2025-02",
+            1000
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39627,
+        "elapsed_seconds": 0.07348012502188794
+      }
+    },
+    {
+      "task_id": "B06",
+      "world_id": "billing-101",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 3,
+        "rows": [
+          [
+            1,
+            2,
+            200
+          ],
+          [
+            1,
+            1,
+            300
+          ],
+          [
+            2,
+            3,
+            50
+          ],
+          [
+            4,
+            4,
+            700
+          ],
+          [
+            4,
+            5,
+            800
+          ],
+          [
+            7,
+            7,
+            100
+          ],
+          [
+            7,
+            6,
+            150
+          ],
+          [
+            9,
+            10,
+            50
+          ],
+          [
+            9,
+            9,
+            250
+          ],
+          [
+            9,
+            8,
+            350
+          ],
+          [
+            10,
+            11,
+            700
+          ],
+          [
+            10,
+            12,
+            1400
+          ],
+          [
+            11,
+            13,
+            700
+          ],
+          [
+            12,
+            14,
+            700
+          ],
+          [
+            12,
+            15,
+            750
+          ],
+          [
+            13,
+            16,
+            50
+          ],
+          [
+            13,
+            17,
+            250
+          ],
+          [
+            13,
+            18,
+            300
+          ],
+          [
+            14,
+            19,
+            700
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39628,
+        "elapsed_seconds": 0.06733579200226814
+      }
+    },
+    {
+      "task_id": "B07",
+      "world_id": "billing-101",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            "basic",
+            371.42857142857144
+          ],
+          [
+            "pro",
+            362.5
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39629,
+        "elapsed_seconds": 0.07502641700557433
+      }
+    },
+    {
+      "task_id": "B08",
+      "world_id": "billing-101",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            5
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39630,
+        "elapsed_seconds": 0.07225783399189822
+      }
+    },
+    {
+      "task_id": "B01",
+      "world_id": "billing-137",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            1,
+            900
+          ],
+          [
+            2,
+            300
+          ],
+          [
+            3,
+            200
+          ],
+          [
+            4,
+            200
+          ],
+          [
+            5,
+            1000
+          ],
+          [
+            6,
+            700
+          ],
+          [
+            7,
+            1000
+          ],
+          [
+            8,
+            -700
+          ],
+          [
+            9,
+            -200
+          ],
+          [
+            10,
+            100
+          ],
+          [
+            11,
+            -50
+          ],
+          [
+            12,
+            1000
+          ],
+          [
+            13,
+            -350
+          ],
+          [
+            14,
+            -1100
+          ],
+          [
+            15,
+            -450
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39631,
+        "elapsed_seconds": 0.07059837499400601
+      }
+    },
+    {
+      "task_id": "B02",
+      "world_id": "billing-137",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            2,
+            1300
+          ],
+          [
+            3,
+            400
+          ],
+          [
+            4,
+            1200
+          ],
+          [
+            5,
+            900
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39632,
+        "elapsed_seconds": 0.07036008301656693
+      }
+    },
+    {
+      "task_id": "B03",
+      "world_id": "billing-137",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            7
+          ],
+          [
+            12
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39633,
+        "elapsed_seconds": 0.07806737499777228
+      }
+    },
+    {
+      "task_id": "B04",
+      "world_id": "billing-137",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39637,
+        "elapsed_seconds": 0.0710502500005532
+      }
+    },
+    {
+      "task_id": "B05",
+      "world_id": "billing-137",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            "2024-12",
+            1000
+          ],
+          [
+            "2025-01",
+            3200
+          ],
+          [
+            "2025-02",
+            3800
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39638,
+        "elapsed_seconds": 0.07540845801122487
+      }
+    },
+    {
+      "task_id": "B06",
+      "world_id": "billing-137",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 3,
+        "rows": [
+          [
+            1,
+            1,
+            50
+          ],
+          [
+            1,
+            2,
+            100
+          ],
+          [
+            2,
+            3,
+            100
+          ],
+          [
+            2,
+            4,
+            200
+          ],
+          [
+            6,
+            5,
+            200
+          ],
+          [
+            6,
+            6,
+            300
+          ],
+          [
+            8,
+            7,
+            100
+          ],
+          [
+            8,
+            8,
+            800
+          ],
+          [
+            9,
+            9,
+            700
+          ],
+          [
+            10,
+            11,
+            700
+          ],
+          [
+            10,
+            10,
+            800
+          ],
+          [
+            10,
+            12,
+            900
+          ],
+          [
+            11,
+            13,
+            50
+          ],
+          [
+            13,
+            14,
+            100
+          ],
+          [
+            13,
+            15,
+            150
+          ],
+          [
+            13,
+            16,
+            850
+          ],
+          [
+            14,
+            19,
+            200
+          ],
+          [
+            14,
+            17,
+            400
+          ],
+          [
+            14,
+            18,
+            1100
+          ],
+          [
+            15,
+            20,
+            200
+          ],
+          [
+            15,
+            21,
+            400
+          ],
+          [
+            15,
+            22,
+            450
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39639,
+        "elapsed_seconds": 0.0753825000138022
+      }
+    },
+    {
+      "task_id": "B07",
+      "world_id": "billing-137",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [
+          [
+            "basic",
+            528.5714285714286
+          ],
+          [
+            "pro",
+            537.5
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39640,
+        "elapsed_seconds": 0.07440137499361299
+      }
+    },
+    {
+      "task_id": "B08",
+      "world_id": "billing-137",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [
+          [
+            2
+          ],
+          [
+            4
+          ]
+        ],
+        "error": null,
+        "worker_pid": 39641,
+        "elapsed_seconds": 0.07747258400195278
+      }
+    },
+    {
+      "task_id": "B01",
+      "world_id": "billing-empty",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39642,
+        "elapsed_seconds": 0.07410362499649636
+      }
+    },
+    {
+      "task_id": "B02",
+      "world_id": "billing-empty",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39643,
+        "elapsed_seconds": 0.07900425000116229
+      }
+    },
+    {
+      "task_id": "B03",
+      "world_id": "billing-empty",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39644,
+        "elapsed_seconds": 0.07335824999609031
+      }
+    },
+    {
+      "task_id": "B04",
+      "world_id": "billing-empty",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39645,
+        "elapsed_seconds": 0.0731956249801442
+      }
+    },
+    {
+      "task_id": "B05",
+      "world_id": "billing-empty",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39646,
+        "elapsed_seconds": 0.07886933299596421
+      }
+    },
+    {
+      "task_id": "B06",
+      "world_id": "billing-empty",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 3,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39647,
+        "elapsed_seconds": 0.06848941699718125
+      }
+    },
+    {
+      "task_id": "B07",
+      "world_id": "billing-empty",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 2,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39648,
+        "elapsed_seconds": 0.07715333299711347
+      }
+    },
+    {
+      "task_id": "B08",
+      "world_id": "billing-empty",
+      "pass": true,
+      "reason": "matches declared result semantics",
+      "actual": {
+        "status": "ok",
+        "columns": 1,
+        "rows": [],
+        "error": null,
+        "worker_pid": 39649,
+        "elapsed_seconds": 0.07173733299714513
+      }
+    }
+  ],
+  "cells": 144,
+  "passed": 144,
+  "input_sha256": {
+    "corpus/oracles.json": "02eccb173affad7ee9d08ba846aeb8b882450ac81bfd9152f26a9a6a3f2f7a11",
+    "corpus/worlds.json": "731c66878d4774841ea6db0ca4162e091ce1c7c49653e122238305aa43c49aae",
+    "corpus/tasks.json": "8a212e1e8654d4b6cffad94472783d1e153584d08e28d292085976f93c0ae195",
+    "corpus/schemas.json": "51f1d2de36f129185c1a54160c7a4266b33120db789ae3cc3fb97341f2ad7893",
+    "evidence/independent-expected.json": "dea0fa294c6523506feda7c8c6ad7968a428fd02f4ecef77c4106b808dfaef71"
+  }
+}

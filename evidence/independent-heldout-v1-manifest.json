@@ -1,0 +1,8 @@
+{
+  "authored_at_utc": "2026-10-23T20:14:42.138349+00:00",
+  "frozen_manifest_sha256": "31f8c39a507953ea54b52721c1592efa53e4771c26fb96d0644da216abde3085",
+  "candidate_sha256": "0f059a22c0b08c5577520b6fce8a2b6c720679d28a7c353d163bdc20cc93b980",
+  "positive_count": 6,
+  "semantic_negative_count": 6,
+  "method": "New reviewer-authored queries after v1 implementation freeze; separately reported non-random adversarial controls, no model output claim. One negative has a reviewer-only external world to establish semantic error even if the frozen suite cannot discriminate it."
+}

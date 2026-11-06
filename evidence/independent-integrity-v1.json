@@ -1,0 +1,24 @@
+{
+  "frozen_manifest_sha256": "31f8c39a507953ea54b52721c1592efa53e4771c26fb96d0644da216abde3085",
+  "results": [
+    {
+      "case": "empty_planned_slots",
+      "outcome": "ACCEPTED_CHANGED_METADATA"
+    },
+    {
+      "case": "changed_policy_limits",
+      "outcome": "ACCEPTED_CHANGED_METADATA"
+    },
+    {
+      "case": "modified_prompt_and_digest",
+      "outcome": "ACCEPTED_CHANGED_METADATA"
+    },
+    {
+      "case": "whole_capture_malformed",
+      "outcome": "ValueError: invalid bounded JSON",
+      "attempt_artifact_created": false,
+      "planned_slots_recorded": 0
+    }
+  ],
+  "scope": "Private copied freeze metadata only; original frozen-v1 unchanged; no source edits."
+}

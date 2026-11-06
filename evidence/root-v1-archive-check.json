@@ -1,0 +1,13 @@
+{
+  "reviewed_on": "2026-10-23",
+  "reviewer": "root",
+  "archive": "evidence/source-v1.tar.gz",
+  "archive_bytes": 46110,
+  "sha256": "4cfae3944280e08565749047962c6319fa0912a64b4af8112bd643ff33cbff2d",
+  "extraction": "Fresh temporary directory using Python tarfile data filter",
+  "verification": "Executed archived queryproof.freeze.verify against archived frozen-v1",
+  "exit_code": 0,
+  "manifest_bound_files": 20,
+  "planned_slots": 24,
+  "scope": "The historical source/input bundle extracts and verifies. This does not rerun all v1 SQL results or remove the recorded v1 defects."
+}

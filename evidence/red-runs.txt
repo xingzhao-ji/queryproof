@@ -1,0 +1,45 @@
+test_concurrent_writer_refused (test_runs.RunTests.test_concurrent_writer_refused) ... FAIL
+test_evaluate_resume_keeps_result_bytes_and_detects_corruption (test_runs.RunTests.test_evaluate_resume_keeps_result_bytes_and_detects_corruption) ... FAIL
+test_missing_and_malformed_model_answers_keep_all_24_slots (test_runs.RunTests.test_missing_and_malformed_model_answers_keep_all_24_slots) ... FAIL
+test_real_sigkill_then_resume_preserves_committed_outcomes (test_runs.RunTests.test_real_sigkill_then_resume_preserves_committed_outcomes) ... FAIL
+
+======================================================================
+FAIL: test_concurrent_writer_refused (test_runs.RunTests.test_concurrent_writer_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_runs.py", line 60, in test_concurrent_writer_refused
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_evaluate_resume_keeps_result_bytes_and_detects_corruption (test_runs.RunTests.test_evaluate_resume_keeps_result_bytes_and_detects_corruption)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_runs.py", line 34, in test_evaluate_resume_keeps_result_bytes_and_detects_corruption
+    self.assertTrue(result.get("complete",False))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_missing_and_malformed_model_answers_keep_all_24_slots (test_runs.RunTests.test_missing_and_malformed_model_answers_keep_all_24_slots)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_runs.py", line 48, in test_missing_and_malformed_model_answers_keep_all_24_slots
+    self.assertEqual(24,result.get("planned_slots"))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 24 != None
+
+======================================================================
+FAIL: test_real_sigkill_then_resume_preserves_committed_outcomes (test_runs.RunTests.test_real_sigkill_then_resume_preserves_committed_outcomes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_runs.py", line 75, in test_real_sigkill_then_resume_preserves_committed_outcomes
+    self.assertGreater(len(before),0)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: 0 not greater than 0
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.100s
+
+FAILED (failures=4)

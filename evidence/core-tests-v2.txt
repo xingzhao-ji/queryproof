@@ -1,0 +1,36 @@
+test_malformed_whole_capture_reaches_report_as_zero_of_24 (test_cli.ProductTests.test_malformed_whole_capture_reaches_report_as_zero_of_24) ... ok
+test_model_headline_uses_planned_denominator_not_calibration (test_cli.ProductTests.test_model_headline_uses_planned_denominator_not_calibration) ... ok
+test_model_primary_rate_includes_missing_and_invalid_slots (test_cli.ProductTests.test_model_primary_rate_includes_missing_and_invalid_slots) ... ok
+test_real_cli_task_run_inspect_compare_and_report (test_cli.ProductTests.test_real_cli_task_run_inspect_compare_and_report) ... ok
+test_report_escapes_untrusted_text (test_cli.ProductTests.test_report_escapes_untrusted_text) ... ok
+test_edge_rows_cover_nulls_multiplicity_and_tied_revenue (test_corpus.CorpusTests.test_edge_rows_cover_nulls_multiplicity_and_tied_revenue) ... ok
+test_real_database_constraints_and_no_overwrite (test_corpus.CorpusTests.test_real_database_constraints_and_no_overwrite) ... ok
+test_worlds_include_anchor_edge_empty_and_reproduce (test_corpus.CorpusTests.test_worlds_include_anchor_edge_empty_and_reproduce) ... ok
+test_bag_preserves_duplicates_but_not_order (test_execution.ComparisonTests.test_bag_preserves_duplicates_but_not_order) ... ok
+test_numeric_bag_finds_perfect_matching_not_greedy_or_rounding (test_execution.ComparisonTests.test_numeric_bag_finds_perfect_matching_not_greedy_or_rounding) ... ok
+test_types_null_empty_columns_and_failed_execution (test_execution.ComparisonTests.test_types_null_empty_columns_and_failed_execution) ... ok
+test_actual_query_and_source_unchanged (test_execution.ExecutionTests.test_actual_query_and_source_unchanged) ... ok
+test_authorizer_rejects_write_attach_schema_pragma_and_functions (test_execution.ExecutionTests.test_authorizer_rejects_write_attach_schema_pragma_and_functions) ... ok
+test_cell_and_total_bytes_bounded_before_accumulation (test_execution.ExecutionTests.test_cell_and_total_bytes_bounded_before_accumulation) ... ok
+test_multiple_statements_and_unknown_table_fail (test_execution.ExecutionTests.test_multiple_statements_and_unknown_table_fail) ... ok
+test_unpaired_surrogate_is_policy_result_not_parent_exception (test_execution.ExecutionTests.test_unpaired_surrogate_is_policy_result_not_parent_exception) ... ok
+test_vm_and_row_limits (test_execution.ExecutionTests.test_vm_and_row_limits) ... ok
+test_wall_deadline_reaps_actual_child (test_execution.ExecutionTests.test_wall_deadline_reaps_actual_child) ... ok
+test_duplicate_json_ids_and_unknown_tasks_rejected_without_publication (test_freeze.FreezeTests.test_duplicate_json_ids_and_unknown_tasks_rejected_without_publication) ... ok
+test_freeze_binds_source_worlds_and_planned_slots (test_freeze.FreezeTests.test_freeze_binds_source_worlds_and_planned_slots) ... ok
+test_import_preserves_all_slots_and_malformed_sql (test_freeze.FreezeTests.test_import_preserves_all_slots_and_malformed_sql) ... ok
+test_modified_slots_limits_policy_or_prompt_cannot_redefine_freeze (test_freeze.FreezeTests.test_modified_slots_limits_policy_or_prompt_cannot_redefine_freeze) ... ok
+test_non_string_task_id_is_failed_capture_not_typeerror (test_freeze.FreezeTests.test_non_string_task_id_is_failed_capture_not_typeerror) ... ok
+test_stale_control_adjudication_cannot_freeze (test_freeze.FreezeTests.test_stale_control_adjudication_cannot_freeze) ... ok
+test_whole_malformed_model_capture_is_preserved_with_all_slots (test_freeze.FreezeTests.test_whole_malformed_model_capture_is_preserved_with_all_slots) ... ok
+test_gold_and_control_coverage (test_oracles.OracleTests.test_gold_and_control_coverage) ... ok
+test_hand_computed_edge_results (test_oracles.OracleTests.test_hand_computed_edge_results) ... ok
+test_concurrent_writer_refused (test_runs.RunTests.test_concurrent_writer_refused) ... ok
+test_evaluate_resume_keeps_result_bytes_and_detects_corruption (test_runs.RunTests.test_evaluate_resume_keeps_result_bytes_and_detects_corruption) ... ok
+test_missing_and_malformed_model_answers_keep_all_24_slots (test_runs.RunTests.test_missing_and_malformed_model_answers_keep_all_24_slots) ... ok
+test_real_sigkill_then_resume_preserves_committed_outcomes (test_runs.RunTests.test_real_sigkill_then_resume_preserves_committed_outcomes) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 8.862s
+
+OK

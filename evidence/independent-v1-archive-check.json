@@ -1,0 +1,8 @@
+{
+  "archive_sha256": "4cfae3944280e08565749047962c6319fa0912a64b4af8112bd643ff33cbff2d",
+  "manifest_sha256": "31f8c39a507953ea54b52721c1592efa53e4771c26fb96d0644da216abde3085",
+  "bound_files": 20,
+  "checked": 20,
+  "missing": [],
+  "all_hashes_match": true
+}

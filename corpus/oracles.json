@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "oracles": {
+    "C01": "SELECT c.id, COALESCE(SUM(l.quantity*l.unit_cents),0) FROM customers c LEFT JOIN orders o ON o.customer_id=c.id AND o.status='paid' LEFT JOIN lines l ON l.order_id=o.id GROUP BY c.id",
+    "C02": "SELECT c.id FROM customers c WHERE NOT EXISTS (SELECT 1 FROM orders o WHERE o.customer_id=c.id AND o.status='paid')",
+    "C03": "SELECT customer_id, COUNT(*) FROM orders WHERE status='paid' GROUP BY customer_id HAVING COUNT(*)>=2",
+    "C04": "SELECT customer_id,id FROM (SELECT customer_id,id,ROW_NUMBER() OVER(PARTITION BY customer_id ORDER BY ordered_on DESC,id DESC) AS r FROM orders WHERE status='paid') WHERE r=1",
+    "C05": "SELECT COALESCE(SUM(l.quantity*l.unit_cents),0) FROM orders o JOIN lines l ON l.order_id=o.id WHERE o.status='paid' AND o.ordered_on>='2025-01-01' AND o.ordered_on<'2025-02-01'",
+    "C06": "SELECT c.id,COALESCE(SUM(l.quantity*l.unit_cents),0) AS revenue FROM customers c LEFT JOIN orders o ON o.customer_id=c.id AND o.status='paid' LEFT JOIN lines l ON l.order_id=o.id GROUP BY c.id ORDER BY revenue DESC,c.id ASC LIMIT 2",
+    "C07": "SELECT l.sku FROM lines l JOIN orders o ON o.id=l.order_id WHERE o.status='paid'",
+    "C08": "SELECT o.customer_id FROM orders o JOIN lines l ON l.order_id=o.id WHERE o.status='paid' AND l.sku IN ('A','B') GROUP BY o.customer_id HAVING COUNT(DISTINCT l.sku)=2",
+    "S01": "SELECT a.id,COUNT(t.id) FROM agents a LEFT JOIN tickets t ON t.agent_id=a.id GROUP BY a.id",
+    "S02": "SELECT a.id FROM agents a WHERE NOT EXISTS (SELECT 1 FROM tickets t WHERE t.agent_id=a.id AND t.resolved_on IS NULL)",
+    "S03": "SELECT ticket_id,COUNT(*) FROM events WHERE kind='reply' GROUP BY ticket_id HAVING COUNT(*)>=2",
+    "S04": "SELECT ticket_id,id FROM (SELECT ticket_id,id,ROW_NUMBER() OVER(PARTITION BY ticket_id ORDER BY happened_on ASC,id ASC) AS r FROM events WHERE kind='reply') WHERE r=1",
+    "S05": "SELECT id FROM tickets WHERE opened_on>='2025-01-01' AND opened_on<'2025-02-01' AND (resolved_on IS NULL OR resolved_on>='2025-02-01')",
+    "S06": "SELECT id,priority FROM tickets WHERE resolved_on IS NULL ORDER BY priority DESC,id ASC LIMIT 3",
+    "S07": "SELECT DISTINCT a.team FROM agents a WHERE EXISTS (SELECT 1 FROM tickets t WHERE t.agent_id=a.id)",
+    "S08": "SELECT a.id FROM agents a WHERE EXISTS (SELECT 1 FROM tickets t WHERE t.agent_id=a.id AND t.priority>=2) AND EXISTS (SELECT 1 FROM tickets t WHERE t.agent_id=a.id AND t.priority=0)",
+    "B01": "SELECT i.id,i.total_cents-COALESCE(SUM(p.amount_cents),0) FROM invoices i LEFT JOIN payments p ON p.invoice_id=i.id GROUP BY i.id",
+    "B02": "WITH balances AS (SELECT i.account_id,i.total_cents-COALESCE(SUM(p.amount_cents),0) AS balance FROM invoices i LEFT JOIN payments p ON p.invoice_id=i.id GROUP BY i.id) SELECT account_id,SUM(balance) FROM balances GROUP BY account_id HAVING SUM(balance)>0",
+    "B03": "SELECT i.id FROM invoices i WHERE NOT EXISTS (SELECT 1 FROM payments p WHERE p.invoice_id=i.id)",
+    "B04": "SELECT a.id FROM accounts a WHERE EXISTS (SELECT 1 FROM invoices i WHERE i.account_id=a.id) AND NOT EXISTS (SELECT 1 FROM invoices i WHERE i.account_id=a.id AND i.total_cents>COALESCE((SELECT SUM(p.amount_cents) FROM payments p WHERE p.invoice_id=i.id),0))",
+    "B05": "SELECT SUBSTR(issued_on,1,7) AS month,SUM(total_cents) FROM invoices GROUP BY SUBSTR(issued_on,1,7) ORDER BY month ASC",
+    "B06": "SELECT invoice_id,id,SUM(amount_cents) OVER(PARTITION BY invoice_id ORDER BY paid_on,id ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) FROM payments ORDER BY invoice_id,paid_on,id",
+    "B07": "SELECT a.plan,AVG(i.total_cents) FROM accounts a JOIN invoices i ON i.account_id=a.id GROUP BY a.plan",
+    "B08": "SELECT a.id FROM accounts a WHERE a.active=1 AND NOT EXISTS (SELECT 1 FROM invoices i WHERE i.account_id=a.id AND i.issued_on>='2025-01-01' AND i.issued_on<'2025-02-01')"
+  }
+}

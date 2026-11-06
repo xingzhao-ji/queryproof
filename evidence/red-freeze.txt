@@ -1,0 +1,35 @@
+test_duplicate_json_ids_and_unknown_tasks_rejected_without_publication (test_freeze.FreezeTests.test_duplicate_json_ids_and_unknown_tasks_rejected_without_publication) ... FAIL
+test_freeze_binds_source_worlds_and_planned_slots (test_freeze.FreezeTests.test_freeze_binds_source_worlds_and_planned_slots) ... FAIL
+test_import_preserves_all_slots_and_malformed_sql (test_freeze.FreezeTests.test_import_preserves_all_slots_and_malformed_sql) ... FAIL
+
+======================================================================
+FAIL: test_duplicate_json_ids_and_unknown_tasks_rejected_without_publication (test_freeze.FreezeTests.test_duplicate_json_ids_and_unknown_tasks_rejected_without_publication)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_freeze.py", line 60, in test_duplicate_json_ids_and_unknown_tasks_rejected_without_publication
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_freeze_binds_source_worlds_and_planned_slots (test_freeze.FreezeTests.test_freeze_binds_source_worlds_and_planned_slots)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_freeze.py", line 35, in test_freeze_binds_source_worlds_and_planned_slots
+    self.assertEqual(24,len(manifest.get("planned_slots",[])))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 24 != 0
+
+======================================================================
+FAIL: test_import_preserves_all_slots_and_malformed_sql (test_freeze.FreezeTests.test_import_preserves_all_slots_and_malformed_sql)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$HOME/Desktop/job-apps/projects/queryproof/tests/test_freeze.py", line 48, in test_import_preserves_all_slots_and_malformed_sql
+    self.assertEqual(24,len(result.get("slots",[])))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 24 != 0
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.018s
+
+FAILED (failures=3)

@@ -1,0 +1,121 @@
+{
+  "version": 1,
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "sqlite": "3.53.4",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "core_tests": {
+    "passed": 31,
+    "failed": 0,
+    "owner_log": "evidence/core-tests-v2.txt",
+    "independent_log": "evidence/independent-tests-v2.txt"
+  },
+  "source_manifest_sha256": "585e685d78b28da74ed098ce9988aeaf44aea1c9d00592b38a88d7169ae3dfcb",
+  "source_files_verified": 20,
+  "source_archive_sha256": "5c752fea83e67485363ed11bfd9152cdd7fc42a60cf007d867e61d106c263d17",
+  "source_archive_bytes": 48480,
+  "public_prompt_sha256": "13fc1e94f961cb0f25857e2614c7e9b477d62a908062228eec7b07eeace986db",
+  "controls": {
+    "completed_worlds": 432,
+    "planned_worlds": 432,
+    "graders": {
+      "exact": {
+        "evaluated_negatives": 24,
+        "evaluated_positives": 24,
+        "false_accept_rate": 0.0,
+        "false_accepts": 0,
+        "false_reject_rate": 1.0,
+        "false_rejects": 24,
+        "negative_execution_rejections": 0,
+        "negative_slots": 24,
+        "pending_slots": 0,
+        "positive_slots": 24,
+        "true_accepts": 0,
+        "true_rejects": 24
+      },
+      "multi": {
+        "evaluated_negatives": 24,
+        "evaluated_positives": 24,
+        "false_accept_rate": 0.0,
+        "false_accepts": 0,
+        "false_reject_rate": 0.0,
+        "false_rejects": 0,
+        "negative_execution_rejections": 0,
+        "negative_slots": 24,
+        "pending_slots": 0,
+        "positive_slots": 24,
+        "true_accepts": 24,
+        "true_rejects": 24
+      },
+      "single": {
+        "evaluated_negatives": 24,
+        "evaluated_positives": 24,
+        "false_accept_rate": 1.0,
+        "false_accepts": 24,
+        "false_reject_rate": 0.0,
+        "false_rejects": 0,
+        "negative_execution_rejections": 0,
+        "negative_slots": 24,
+        "pending_slots": 0,
+        "positive_slots": 24,
+        "true_accepts": 24,
+        "true_rejects": 0
+      }
+    }
+  },
+  "runtime_cache_allocated_bytes": 23252992,
+  "host_free_bytes": 122034446336,
+  "limitations": [
+    "POSIX local subprocess boundary, not OS sandbox",
+    "No hard address-space cap claim",
+    "Runtime versions recorded here; cross-version execution equivalence is not guaranteed",
+    "Independent reviewer LIMIT100 false accept retained; no post-holdout corpus tuning",
+    "Frozen byte replay is reproducible under recorded environment; hosted generation is not claimed reproducible"
+  ],
+  "status": "accepted_independent_review",
+  "external_cloud_or_provider_api_calls": false,
+  "generation_cost": null,
+  "model_capture_status": "graded_once_owner_and_independently_verified",
+  "model": {
+    "primary_successes": 24,
+    "planned_slots": 24,
+    "dev_successes": 12,
+    "assessment_successes": 12,
+    "world_executions": 144,
+    "status_ok": 144,
+    "exact_string_successes": 0,
+    "single_world_successes": 24,
+    "multi_world_successes": 24,
+    "raw_sha256": "a9a215714428aa6d4fd53c4b0aa92d5423ce7539f0866cea067a6bcce48ff7e1"
+  },
+  "independent_holdout": {
+    "positives": 6,
+    "equivalent_false_rejects": 0,
+    "negatives": 6,
+    "single_false_accepts": 6,
+    "multi_false_accepts": 1,
+    "limitation": "LIMIT100 survives frozen worlds; separate101-line world disproves it; no corpus tuning"
+  },
+  "crash_drill": {
+    "returncode": -9,
+    "committed_before_kill": 2,
+    "resumed_worlds": 18,
+    "prior_result_bytes_preserved": true
+  },
+  "portable_package": {
+    "version": 1,
+    "path": "evidence/queryproof-replay-v2.tar.gz",
+    "sha256": "5b31257106b082ceef05a588c8da1e22cf81da5e257a5a14ded7310668bcc847",
+    "bytes": 700914,
+    "member_files": 1926,
+    "frozen_sha256": "585e685d78b28da74ed098ce9988aeaf44aea1c9d00592b38a88d7169ae3dfcb",
+    "contains": "Runtime, corpus, tests, docs including accepted final independent review, raw captures/metadata, reports, all saved runs and V1/V2 source snapshots.",
+    "authentication": "SHA256 byte integrity, not publisher authentication",
+    "extracted_verification": {
+      "member_hashes_matched": 1925,
+      "tests_passed": 31,
+      "model_summary_exact_match": true,
+      "counterexample": "C03-mutant / commerce-edge"
+    }
+  },
+  "independent_review": "docs/independent-employer-review.md"
+}

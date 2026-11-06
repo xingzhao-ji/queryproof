@@ -1,0 +1,16 @@
+{
+  "recorded_at_utc": "2026-10-23T19:58:49.457932+00:00",
+  "author_role": "independent reviewer",
+  "reference_path": "evidence/independent-reference.py",
+  "reference_sha256": "108bf1e7e9edc8c04f24ae63d64316263b327d5871ee0e65ddc5fd79fe72a0e0",
+  "task_contract_sha256": "f914a3199dc503d7a072a44fc845ff702e8c75b4fb3bf185780b3c9c3c971bc4",
+  "gold_file_present_at_recording": false,
+  "independence_statement": "Derived from natural-language task contract and schema only; no gold SQL, production reference, or production grading implementation inspected. Builder instructed not to inspect reviewer reference before authoring gold.",
+  "self_checks": {
+    "empty_task_cases": 24,
+    "hand_reasoned_task_cases": 24,
+    "comparator_negative_cases": 4,
+    "status": "passed"
+  },
+  "world_results": "Pending materialized rows; no claim of 144-cell agreement yet."
+}

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "make",
+    "test"
+  ],
+  "exit_code": 0,
+  "error": null,
+  "elapsed_seconds": 19.35525758299991,
+  "verified_utc": "2026-11-06T18:32:59.329567+00:00",
+  "scope": "Fresh standalone 31-test suite; no new model capture or benchmark. Runtime/corpus/frozen inputs unchanged.",
+  "frozen_inputs_unchanged": 20,
+  "tests_passed": 31,
+  "hosted_ci": "not configured"
+}

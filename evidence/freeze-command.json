@@ -1,0 +1,156 @@
+{
+  "expected_cells": 144,
+  "files": {
+    "corpus/controls.json": "9ca76d54b662604d090567a4d1f44fd7e7d381465f157b578b9c85b193a14f00",
+    "corpus/oracles.json": "02eccb173affad7ee9d08ba846aeb8b882450ac81bfd9152f26a9a6a3f2f7a11",
+    "corpus/schemas.json": "51f1d2de36f129185c1a54160c7a4266b33120db789ae3cc3fb97341f2ad7893",
+    "corpus/tasks.json": "8a212e1e8654d4b6cffad94472783d1e153584d08e28d292085976f93c0ae195",
+    "corpus/worlds.json": "731c66878d4774841ea6db0ca4162e091ce1c7c49653e122238305aa43c49aae",
+    "docs/task-contract.md": "f914a3199dc503d7a072a44fc845ff702e8c75b4fb3bf185780b3c9c3c971bc4",
+    "evidence/independent-control-adjudication.json": "a8cdf9c6b7bc06bee7051159c2aa35fae6a66202c3439586e8523ab44e62f92b",
+    "evidence/independent-expected.json": "dea0fa294c6523506feda7c8c6ad7968a428fd02f4ecef77c4106b808dfaef71",
+    "evidence/independent-oracle-review.json": "2ed310cbea79fcbc89430884c01bb01625b5ecdd802d2f508d880ed07609e261",
+    "queryproof/__init__.py": "4181e9170bdccfefc44f17e9c41fc91aad1658b42dde0d67ee1138bbf6758a3d",
+    "queryproof/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "queryproof/cli.py": "679788e4fa834b4f4fc771ac55fe3883681c2a8f9199c0c6f0caadd18d764762",
+    "queryproof/corpus.py": "dc50fbfd4af53690d75d69003d1e7854df13e053289bb61e43453e4d86f22f43",
+    "queryproof/execution.py": "34816ad8b834add85a6d5d3edbf09701c8835bd21e13cbbaa8e5b08743c76890",
+    "queryproof/freeze.py": "f5fa90eee97c5956badda1f27bb4b157b3930eae3e8d4895131b2646aab32e93",
+    "queryproof/imports.py": "370f4a23dfdcf5b1cac4f59fb71a6d95b3aa2daf662a8da316ad2f00d523d8d8",
+    "queryproof/report.py": "8ac1cfa6c3426788f603d1601e6b5c6e286d7420418f5df77d5c61a4799d421e",
+    "queryproof/runs.py": "cbef71e7cfde34f37ce5d08d2269eea49a132f5a67adaad4af96eb43cd858159",
+    "queryproof/storage.py": "386d42917fbe57e488837602e928014335f3d1182399a3bdba526337a031e98c",
+    "queryproof/worker.py": "d43350551dcaea3abd75b0304861f13d89d9367bab05dee445b3487f02ea8d5d"
+  },
+  "limits": {
+    "approximate_bag_rows": 200,
+    "cell_bytes": 16384,
+    "columns": 32,
+    "result_bytes": 262144,
+    "rows": 1000,
+    "sql_bytes": 16384,
+    "vm_operations": 200000,
+    "wall_seconds": 2
+  },
+  "oracle_review": "evidence/independent-oracle-review.json",
+  "planned_slots": [
+    {
+      "prompt_policy": "direct_v1",
+      "task_id": "C01"
+    },
+    {
+      "prompt_policy": "direct_v1",
+      "task_id": "C02"
+    },
+    {
+      "prompt_policy": "direct_v1",
+      "task_id": "C03"
+    },
+    {
+      "prompt_policy": "direct_v1",
+      "task_id": "C04"
+    },
+    {
+      "prompt_policy": "direct_v1",
+      "task_id": "C05"
+    },
+    {
+      "prompt_policy": "direct_v1",
+      "task_id": "C06"
+    },
+    {
+      "prompt_policy": "direct_v1",
+      "task_id": "C07"
+    },
+    {
+      "prompt_policy": "direct_v1",
+      "task_id": "C08"
+    },
+    {
+      "prompt_policy": "direct_v1",
+      "task_id": "S01"
+    },
+    {
+      "prompt_policy": "direct_v1",
+      "task_id": "S02"
+    },
+    {
+      "prompt_policy": "direct_v1",
+      "task_id": "S03"
+    },
+    {
+      "prompt_policy": "direct_v1",
+      "task_id": "S04"
+    },
+    {
+      "prompt_policy": "direct_v1",
+      "task_id": "S05"
+    },
+    {
+      "prompt_policy": "direct_v1",
+      "task_id": "S06"
+    },
+    {
+      "prompt_policy": "direct_v1",
+      "task_id": "S07"
+    },
+    {
+      "prompt_policy": "direct_v1",
+      "task_id": "S08"
+    },
+    {
+      "prompt_policy": "direct_v1",
+      "task_id": "B01"
+    },
+    {
+      "prompt_policy": "direct_v1",
+      "task_id": "B02"
+    },
+    {
+      "prompt_policy": "direct_v1",
+      "task_id": "B03"
+    },
+    {
+      "prompt_policy": "direct_v1",
+      "task_id": "B04"
+    },
+    {
+      "prompt_policy": "direct_v1",
+      "task_id": "B05"
+    },
+    {
+      "prompt_policy": "direct_v1",
+      "task_id": "B06"
+    },
+    {
+      "prompt_policy": "direct_v1",
+      "task_id": "B07"
+    },
+    {
+      "prompt_policy": "direct_v1",
+      "task_id": "B08"
+    }
+  ],
+  "policy": "queryproof-v1",
+  "prompt_sha256": "13fc1e94f961cb0f25857e2614c7e9b477d62a908062228eec7b07eeace986db",
+  "source_paths": [
+    "corpus/controls.json",
+    "corpus/oracles.json",
+    "corpus/schemas.json",
+    "corpus/tasks.json",
+    "corpus/worlds.json",
+    "docs/task-contract.md",
+    "queryproof/__init__.py",
+    "queryproof/__main__.py",
+    "queryproof/cli.py",
+    "queryproof/corpus.py",
+    "queryproof/execution.py",
+    "queryproof/freeze.py",
+    "queryproof/imports.py",
+    "queryproof/report.py",
+    "queryproof/runs.py",
+    "queryproof/storage.py",
+    "queryproof/worker.py"
+  ],
+  "version": 1
+}

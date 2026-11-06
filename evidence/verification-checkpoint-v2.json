@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "sqlite": "3.53.4",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "core_tests": {
+    "passed": 31,
+    "failed": 0,
+    "owner_log": "evidence/core-tests-v2.txt",
+    "independent_log": "evidence/independent-tests-v2.txt"
+  },
+  "source_manifest_sha256": "585e685d78b28da74ed098ce9988aeaf44aea1c9d00592b38a88d7169ae3dfcb",
+  "source_files_verified": 20,
+  "source_archive_sha256": "5c752fea83e67485363ed11bfd9152cdd7fc42a60cf007d867e61d106c263d17",
+  "source_archive_bytes": 48480,
+  "public_prompt_sha256": "13fc1e94f961cb0f25857e2614c7e9b477d62a908062228eec7b07eeace986db",
+  "controls": {
+    "completed_worlds": 432,
+    "planned_worlds": 432,
+    "graders": {
+      "exact": {
+        "evaluated_negatives": 24,
+        "evaluated_positives": 24,
+        "false_accept_rate": 0.0,
+        "false_accepts": 0,
+        "false_reject_rate": 1.0,
+        "false_rejects": 24,
+        "negative_execution_rejections": 0,
+        "negative_slots": 24,
+        "pending_slots": 0,
+        "positive_slots": 24,
+        "true_accepts": 0,
+        "true_rejects": 24
+      },
+      "multi": {
+        "evaluated_negatives": 24,
+        "evaluated_positives": 24,
+        "false_accept_rate": 0.0,
+        "false_accepts": 0,
+        "false_reject_rate": 0.0,
+        "false_rejects": 0,
+        "negative_execution_rejections": 0,
+        "negative_slots": 24,
+        "pending_slots": 0,
+        "positive_slots": 24,
+        "true_accepts": 24,
+        "true_rejects": 24
+      },
+      "single": {
+        "evaluated_negatives": 24,
+        "evaluated_positives": 24,
+        "false_accept_rate": 1.0,
+        "false_accepts": 24,
+        "false_reject_rate": 0.0,
+        "false_rejects": 0,
+        "negative_execution_rejections": 0,
+        "negative_slots": 24,
+        "pending_slots": 0,
+        "positive_slots": 24,
+        "true_accepts": 24,
+        "true_rejects": 0
+      }
+    }
+  },
+  "runtime_cache_allocated_bytes": 9158656,
+  "host_free_bytes": 119318810624,
+  "cloud_or_api_spending": false,
+  "real_model_capture_status": "pending_root_blind_capture",
+  "limitations": [
+    "POSIX local subprocess boundary, not OS sandbox",
+    "No hard address-space cap claim",
+    "Runtime versions recorded here; cross-version execution equivalence is not guaranteed",
+    "Independent reviewer LIMIT100 false accept retained; no post-holdout corpus tuning",
+    "Frozen byte replay is reproducible under recorded environment; hosted generation is not claimed reproducible"
+  ]
+}

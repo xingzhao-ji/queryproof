@@ -1,0 +1,328 @@
+{
+  "candidate": {
+    "capture_error": null,
+    "id": "held-C01-unit-only",
+    "label": "negative",
+    "label_kind": "semantic_mutant",
+    "rationale": "Drops quantity multiplication; a quantity-two positive-priced line is a direct counterexample.",
+    "sql": "SELECT c.id,COALESCE(SUM(l.unit_cents),0) FROM customers c LEFT JOIN orders o ON o.customer_id=c.id AND o.status='paid' LEFT JOIN lines l ON l.order_id=o.id GROUP BY c.id",
+    "task_id": "C01"
+  },
+  "counterexample": {
+    "actual": {
+      "columns": 2,
+      "elapsed_seconds": 0.07471600000280887,
+      "error": null,
+      "rows": [
+        [
+          1,
+          900
+        ],
+        [
+          2,
+          1000
+        ],
+        [
+          3,
+          999
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          6,
+          50
+        ],
+        [
+          7,
+          0
+        ]
+      ],
+      "status": "ok",
+      "worker_pid": 53881
+    },
+    "database_sha256": "e86013fc447ae69371c59533f558eff497c0b116f8a990c61d1c4bd9e72c82a8",
+    "expected_rows": [
+      [
+        1,
+        1000
+      ],
+      [
+        2,
+        1000
+      ],
+      [
+        3,
+        999
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        50
+      ],
+      [
+        7,
+        0
+      ]
+    ],
+    "reason": "typed result bag differs",
+    "world": {
+      "id": "commerce-edge",
+      "role": "edge",
+      "schema": "commerce",
+      "seed": 41,
+      "tables": {
+        "customers": [
+          {
+            "id": 1,
+            "region": "north"
+          },
+          {
+            "id": 2,
+            "region": "south"
+          },
+          {
+            "id": 3,
+            "region": null
+          },
+          {
+            "id": 4,
+            "region": "north"
+          },
+          {
+            "id": 5,
+            "region": "west"
+          },
+          {
+            "id": 6,
+            "region": "south"
+          },
+          {
+            "id": 7,
+            "region": "east"
+          }
+        ],
+        "lines": [
+          {
+            "id": 1,
+            "order_id": 1,
+            "quantity": 1,
+            "sku": "A",
+            "unit_cents": 100
+          },
+          {
+            "id": 2,
+            "order_id": 1,
+            "quantity": 2,
+            "sku": "A",
+            "unit_cents": 100
+          },
+          {
+            "id": 3,
+            "order_id": 2,
+            "quantity": 1,
+            "sku": "B",
+            "unit_cents": 300
+          },
+          {
+            "id": 4,
+            "order_id": 9,
+            "quantity": 1,
+            "sku": "C",
+            "unit_cents": 400
+          },
+          {
+            "id": 5,
+            "order_id": 5,
+            "quantity": 1,
+            "sku": "A",
+            "unit_cents": 500
+          },
+          {
+            "id": 6,
+            "order_id": 6,
+            "quantity": 1,
+            "sku": "B",
+            "unit_cents": 500
+          },
+          {
+            "id": 7,
+            "order_id": 4,
+            "quantity": 1,
+            "sku": "C",
+            "unit_cents": 999
+          },
+          {
+            "id": 8,
+            "order_id": 7,
+            "quantity": 1,
+            "sku": "A",
+            "unit_cents": 0
+          },
+          {
+            "id": 9,
+            "order_id": 3,
+            "quantity": 1,
+            "sku": "B",
+            "unit_cents": 10000
+          },
+          {
+            "id": 10,
+            "order_id": 8,
+            "quantity": 1,
+            "sku": "C",
+            "unit_cents": 123
+          },
+          {
+            "id": 11,
+            "order_id": 11,
+            "quantity": 1,
+            "sku": "C",
+            "unit_cents": 50
+          }
+        ],
+        "orders": [
+          {
+            "customer_id": 1,
+            "id": 1,
+            "ordered_on": "2025-01-01",
+            "status": "paid"
+          },
+          {
+            "customer_id": 1,
+            "id": 2,
+            "ordered_on": "2025-01-15",
+            "status": "paid"
+          },
+          {
+            "customer_id": 2,
+            "id": 3,
+            "ordered_on": "2025-01-15",
+            "status": "pending"
+          },
+          {
+            "customer_id": 3,
+            "id": 4,
+            "ordered_on": "2025-02-01",
+            "status": "paid"
+          },
+          {
+            "customer_id": 2,
+            "id": 5,
+            "ordered_on": "2024-12-31",
+            "status": "paid"
+          },
+          {
+            "customer_id": 2,
+            "id": 6,
+            "ordered_on": "2025-01-31",
+            "status": "paid"
+          },
+          {
+            "customer_id": 3,
+            "id": 7,
+            "ordered_on": "2025-01-15",
+            "status": "paid"
+          },
+          {
+            "customer_id": 4,
+            "id": 8,
+            "ordered_on": "2025-01-15",
+            "status": "cancelled"
+          },
+          {
+            "customer_id": 1,
+            "id": 9,
+            "ordered_on": "2025-01-15",
+            "status": "paid"
+          },
+          {
+            "customer_id": 5,
+            "id": 10,
+            "ordered_on": "2025-01-31",
+            "status": "paid"
+          },
+          {
+            "customer_id": 6,
+            "id": 11,
+            "ordered_on": "2025-01-15",
+            "status": "paid"
+          },
+          {
+            "customer_id": 5,
+            "id": 12,
+            "ordered_on": "2025-01-16",
+            "status": "paid"
+          }
+        ]
+      }
+    },
+    "world_sha256": "e21bf5f56d2c7e96394512954808a4c20010f39195bd65b8eacc575695ed77fc"
+  },
+  "coverage": [
+    {
+      "pass_": true,
+      "status": "ok",
+      "world_id": "commerce-anchor"
+    },
+    {
+      "pass_": false,
+      "status": "ok",
+      "world_id": "commerce-edge"
+    },
+    {
+      "pass_": false,
+      "status": "ok",
+      "world_id": "commerce-73"
+    },
+    {
+      "pass_": false,
+      "status": "ok",
+      "world_id": "commerce-101"
+    },
+    {
+      "pass_": false,
+      "status": "ok",
+      "world_id": "commerce-137"
+    },
+    {
+      "pass_": true,
+      "status": "ok",
+      "world_id": "commerce-empty"
+    }
+  ],
+  "sql": "SELECT c.id,COALESCE(SUM(l.unit_cents),0) FROM customers c LEFT JOIN orders o ON o.customer_id=c.id AND o.status='paid' LEFT JOIN lines l ON l.order_id=o.id GROUP BY c.id",
+  "task": {
+    "category": "outer_aggregation",
+    "columns": [
+      {
+        "name": "customer_id",
+        "nullable": false,
+        "type": "integer"
+      },
+      {
+        "name": "revenue_cents",
+        "nullable": false,
+        "type": "integer"
+      }
+    ],
+    "id": "C01",
+    "ordered": false,
+    "prompt": "For every customer, sum revenue of all their paid-order lines; return zero for no such lines.",
+    "schema": "commerce",
+    "semantics": "customer_id integer, revenue_cents integer; bag, one row/customer",
+    "split": "dev"
+  }
+}
